@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Owly View User Manual</title>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+
+:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
+.pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
+.logo{font-size:18px;font-weight:700;color:var(--b-deep);letter-spacing:1px;}.logo span{color:var(--b-warm);}
+.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
+.wrap{max-width:860px;margin:0 auto;padding:48px 40px 60px;}
+.hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}.hero-title span{color:var(--b-warm);}
+.hero-sub{font-size:15px;color:var(--text2);margin-bottom:36px;}
+/* ann */
+.ann-list{display:flex;flex-direction:column;gap:18px;}
+.ann-item{display:flex;gap:14px;align-items:flex-start;}
+.ann-badge{min-width:28px;height:28px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.ann-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
+.ann-desc{font-size:13px;color:var(--text2);line-height:1.75;}
+.divider{height:1px;background:var(--border);margin:4px 0;}
+.tip{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:16px 20px;font-size:13px;color:var(--text2);margin-top:4px;line-height:1.8;}
+.tip strong{color:var(--amber);}
+.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:5px;font-size:11px;color:var(--muted);}
+.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
+/* desc cards */
+.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
+.dc-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
+.step-dot{min-width:22px;height:22px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
+.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:13px;color:var(--text2);margin-top:18px;line-height:1.8;}
+.tip-box strong{color:var(--amber);}
+/* phone */
+.phone{border:2.5px dashed var(--wire);border-radius:34px;position:relative;}
+.notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:50px;height:13px;border:2px dashed #334155;border-radius:7px;}
+/* layout */
+.layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.phones-row{display:flex;gap:28px;align-items:flex-start;margin-bottom:44px;}
+.phone-block{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
+.block-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;align-self:flex-start;}
+.phone-caption{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;}
+/* TOC */
+.toc-section{max-width:860px;margin:0 auto;padding:60px 40px;text-align:center;}
+.toc-owl{font-size:48px;margin-bottom:12px;}
+.toc-title{font-size:32px;font-weight:700;color:#2e1005;letter-spacing:3px;margin-bottom:4px;}
+.toc-sub{font-size:14px;color:#9a7050;margin-bottom:40px;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:6px;max-width:480px;margin:0 auto;}
+.toc-link{display:block;padding:12px 20px;background:#fff;border:1.5px solid #e8d5b7;border-radius:12px;color:#5c2e0e;font-size:14px;text-decoration:none;}
+.toc-link:hover{background:#fef3d0;border-color:#d4890a;}
+.page-divider{height:2px;background:linear-gradient(to right,transparent,#e8d5b7,transparent);margin:0;}
+.manual-section{position:relative;}
+.section-nav{text-align:center;padding:20px 0 8px;}
+.nav-btn{display:inline-block;padding:8px 20px;background:#fff;border:1.5px solid #e8d5b7;border-radius:20px;color:#9a7050;font-size:13px;text-decoration:none;}
+/* lang switcher */
+.lang-bar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:1.5px solid #e8d5b7;padding:8px 40px;display:flex;justify-content:flex-end;gap:8px;}
+.lang-btn-ko{padding:4px 14px;border-radius:16px;font-size:12px;font-weight:700;text-decoration:none;background:#fef3d0;border:1.5px solid #d4890a;color:#d4890a;}
+.lang-btn-en{padding:4px 14px;border-radius:16px;font-size:12px;font-weight:700;text-decoration:none;background:#fff;border:1.5px solid #e8d5b7;color:#9a7050;}
+.pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
+
+</style>
+</head>
+<body>
+<div class="lang-bar">
+  <a href="index.html" class="lang-btn-ko">🇰🇷 한국어</a>
+  <a href="en.html" class="lang-btn-en" style="background:#e8f0fe;border-color:#4285f4;color:#4285f4;">🇺🇸 English</a>
+</div>
+<section id="toc" class="toc-section">
+  <div class="toc-owl">🦉</div>
+  <h1 class="toc-title">OWLY VIEW</h1>
+  <p class="toc-sub">User Manual</p>
+  <ol class="toc-list">
+    <li><a href="#page00" class="toc-link">00 · Introduction</a></li>
+    <li><a href="#page01" class="toc-link">01 · Choose Your Role</a></li>
+    <li><a href="#page02" class="toc-link">02 · Hub Phone — Permissions</a></li>
+    <li><a href="#page03" class="toc-link">03 · Hub Phone — Setup Screen</a></li>
+    <li><a href="#page03b" class="toc-link">03b · ROI Setup &amp; Broadcasting</a></li>
+    <li><a href="#page04" class="toc-link">04 · Viewer Connection</a></li>
+    <li><a href="#page05" class="toc-link">05 · Monitor &amp; Family Approval</a></li>
+    <li><a href="#page06" class="toc-link">06 · AI Detection Alerts</a></li>
+    <li><a href="#page07" class="toc-link">07 · Detection Log</a></li>
+    <li><a href="#page08" class="toc-link">08 · Baby Care Box</a></li>
+    <li><a href="#page09" class="toc-link">09 · Baby Care Features</a></li>
+    <li><a href="#page10" class="toc-link">10 · Nest Settings</a></li>
+  </ol>
+</section>
+<div class="page-divider"></div>
+<section id="page00" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">00 · Introduction</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">Welcome to <span>Owly View</span> — Your Baby's Guardian Owl</h1>
+<p class="hero-sub">Owly View is a free AI baby monitor app that works with just two smartphones.</p>
+<div class="two-col">
+  <div>
+    <div style="display:flex;gap:20px;align-items:flex-start;justify-content:center;margin-bottom:24px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="width:90px;height:150px;border:2px dashed var(--wire);border-radius:20px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:24px;">📷</div>
+        <div style="font-size:12px;font-weight:700;color:var(--b-warm);">Hub Phone</div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">Camera near baby<br>transmits video</div>
+      </div>
+      <div style="display:flex;align-items:center;padding-top:60px;">
+        <svg width="48" height="24" viewBox="0 0 48 24"><line x1="4" y1="12" x2="38" y2="12" stroke="#c8845a" stroke-width="2" stroke-dasharray="4 3"/><polyline points="30,6 38,12 30,18" stroke="#c8845a" stroke-width="2" fill="none"/><text x="6" y="22" font-size="8" fill="#9a7050" font-family="sans-serif">video</text></svg>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="width:90px;height:150px;border:2px dashed var(--wire);border-radius:20px;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:24px;">👁️</div>
+        <div style="font-size:12px;font-weight:700;color:var(--b-warm);">Viewer Phone</div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">Parent's phone<br>receives video</div>
+      </div>
+    </div>
+    <div style="background:var(--amber-bg);border:1.5px solid #f0c060;border-radius:12px;padding:18px 22px;">
+      <div style="font-size:13px;font-weight:700;color:var(--amber);margin-bottom:8px;">📋 What you need</div>
+      <ul style="padding-left:18px;font-size:13px;color:var(--text2);line-height:2;">
+        <li><strong>2 Android smartphones</strong> (different models OK)</li>
+        <li>Both phones on the <strong>same Wi-Fi</strong></li>
+        <li>Search <strong>"Owly View"</strong> on Google Play and install</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ann-list">
+    <div class="ann-item"><div class="ann-badge">1</div><div><div class="ann-title">📡 Real-time Video Monitoring</div><div class="ann-desc">Hub phone's camera streams live to the viewer phone over Wi-Fi via direct P2P connection — no external server.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">2</div><div><div class="ann-title">😢 AI Cry Detection</div><div class="ann-desc">AI analyzes audio in real-time and sends an alert to the viewer phone when crying is detected. All processing stays on-device.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">3</div><div><div class="ann-title">👶 AI Face Detection</div><div class="ann-desc">Alerts you when the baby's face disappears from the camera — whether flipped over or out of frame.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">4</div><div><div class="ann-title">🦉 Baby Care Box</div><div class="ann-desc">Manage feeding, sleep, medicine reminders, and growth records all in one place.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">5</div><div><div class="ann-title">🔒 Completely Free &amp; Private</div><div class="ann-desc">All features are free. Video and audio never pass through an external server, keeping your privacy protected.</div></div></div>
+  </div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 00 / Introduction &nbsp;|&nbsp; Next: 01 · Choose Your Role →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page01" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">01 · Choose Your Role</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">When you open the app, choose your <span>role</span></h1>
+<p class="hero-sub">The person who enters the code first becomes the <strong>host</strong>. Hosts go straight to the viewer screen. Both phones need to select their role separately.</p>
+<div class="layout">
+  <div>
+    <div style="width:220px;border:2.5px dashed var(--wire);border-radius:34px;position:relative;padding:42px 13px 22px;min-height:460px;background:#0f1729;">
+      <div class="notch" style="border-color:#334155;"></div>
+      <div style="position:absolute;top:50px;right:11px;border:1.5px dashed #334155;border-radius:14px;padding:2px 7px;font-size:7px;color:#94a3b8;display:flex;align-items:center;gap:2px;">🌐 KO</div>
+      <div style="display:flex;justify-content:center;margin:6px 0 4px;"><div style="width:36px;height:36px;border-radius:50%;border:1.5px dashed rgba(251,191,36,0.4);background:rgba(251,191,36,0.08);display:flex;align-items:center;justify-content:center;font-size:15px;">🌙</div></div>
+      <div style="font-size:9px;font-weight:700;color:#fef08a;text-align:center;margin-bottom:2px;">Choose your mode</div>
+      <div style="font-size:7.5px;color:#d97706;text-align:center;margin-bottom:12px;">Please select your role for tonight.</div>
+      <div style="background:linear-gradient(135deg,rgba(69,26,3,0.85),rgba(15,23,42,0.9));border:1.5px dashed rgba(251,191,36,0.5);border-radius:14px;padding:10px 11px;margin-bottom:10px;display:flex;align-items:center;gap:8px;">
+        <div style="width:30px;height:30px;border-radius:9px;background:rgba(251,191,36,0.12);border:1.5px dashed rgba(251,191,36,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📷</div>
+        <div><div style="font-size:9.5px;font-weight:700;color:#fef08a;">📷 Hub Camera <span style="font-size:7px;padding:1px 5px;border-radius:8px;background:rgba(251,191,36,0.12);color:#fbbf24;">For Baby</span></div><div style="font-size:7.5px;color:rgba(251,191,36,0.75);">"Leave it in the baby's room."</div></div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(30,27,75,0.85),rgba(15,23,42,0.9));border:1.5px dashed rgba(99,102,241,0.5);border-radius:14px;padding:10px 11px;display:flex;align-items:center;gap:8px;">
+        <div style="width:30px;height:30px;border-radius:9px;background:rgba(99,102,241,0.12);border:1.5px dashed rgba(99,102,241,0.4);display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">📱</div>
+        <div><div style="font-size:9.5px;font-weight:700;color:#c7d2fe;">📱 Viewer Phone <span style="font-size:7px;padding:1px 5px;border-radius:8px;background:rgba(99,102,241,0.15);color:#a5b4fc;">For Parents</span></div><div style="font-size:7.5px;color:rgba(199,210,254,0.65);">"Finally off duty!" 🛏️</div></div>
+      </div>
+      <div style="position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:6.5px;color:rgba(148,163,184,0.35);">✦ PURE SENSE : Designed for Serene Nights</div>
+    </div>
+    <div class="phone-caption">Role selection screen</div>
+  </div>
+  <div class="ann-list">
+    <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">Night theme background</div><div class="ann-desc">The app uses a dark background throughout, designed to be easy on the eyes at night. Stars twinkle in the animation.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">🌐 Language toggle (top right)</div><div class="ann-desc">Switch between KO and EN. The entire app language changes, including the hub setup screen.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">📷 Hub Camera card</div><div class="ann-desc">The phone placed near the baby acting as a camera. Tapping it shows a guide popup first, then proceeds to the hub setup screen.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">D</div><div><div class="ann-title">📱 Viewer Phone card</div><div class="ann-desc">The phone parents carry to watch the feed. Tapping it goes directly to the viewer screen — no popup.</div></div></div>
+    <div class="divider"></div>
+    <div class="ann-item"><div class="ann-badge">!</div><div><div class="ann-title">Both phones must be on the same Wi-Fi</div><div class="ann-desc">Hub and viewer phones must be on the same Wi-Fi network for video to stream. If one is on mobile data, connection may fail.</div></div></div>
+    <div class="tip"><strong>💡 First-time setup</strong><br>Hub phone: tap Hub Camera → confirm popup → hub setup screen<br>Viewer phone: tap Viewer Phone → viewer screen directly</div>
+  </div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 01 / Choose Your Role &nbsp;|&nbsp; ← 00 · Introduction &nbsp;&nbsp; 02 · Hub Permissions →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page02" class="manual-section">
+<style>
+.three-phones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-bottom:40px;}
+.phone-col2{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.phone2{width:190px;border:2.5px dashed var(--wire);border-radius:30px;background:#fff;position:relative;padding:38px 14px 18px;min-height:300px;}
+.notch2{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed var(--wire-lt);border-radius:7px;}
+.ui-row{display:flex;gap:6px;margin-bottom:8px;}
+.ui-box{border:1.5px dashed var(--wire-lt);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--muted);text-align:center;line-height:1.3;padding:2px;}
+.ui-bar2{height:28px;flex:1;}
+.s-num2{min-width:28px;height:28px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.info-card2{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;}
+.info-card2.warn{border-color:#f0c060;background:var(--amber-bg);}
+.perm-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:6px;}
+.perm-list li{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text2);}
+.perm-dot{width:8px;height:8px;border-radius:50%;background:var(--b-warm);flex-shrink:0;}
+</style><div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">02 · Hub Phone — Permissions</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">Grant permissions on the <span>Hub Phone</span> once</h1>
+<p class="hero-sub">The app needs access to camera, microphone, and notifications. When prompted on first launch, tap "Allow" for each.</p>
+<div class="three-phones">
+  <div class="phone-col2">
+    <div style="display:flex;align-items:center;gap:8px;"><div class="s-num2">1</div><div style="font-size:12px;font-weight:700;color:var(--b-warm);">Camera</div></div>
+    <div class="phone2"><div class="notch2"></div>
+      <div class="ui-row"><div class="ui-box ui-bar2" style="background:var(--cream2,#f5e9d6);">OWLY VIEW</div></div>
+      <div class="ui-row"><div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;"><div style="font-size:16px;">📷</div><div>Camera access</div></div></div>
+      <div class="ui-row"><div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">"Owly View" would like<br>access to your camera</div></div>
+      <div class="ui-row" style="gap:8px;margin-top:4px;"><div class="ui-box" style="height:24px;flex:1;">Deny</div><div class="ui-box" style="height:24px;flex:1;background:var(--cream2,#f5e9d6);color:var(--b-warm);">Allow</div></div>
+    </div>
+    <div class="phone-caption">👆 Tap <strong>Allow</strong><br>needed for video</div>
+  </div>
+  <div class="phone-col2">
+    <div style="display:flex;align-items:center;gap:8px;"><div class="s-num2">2</div><div style="font-size:12px;font-weight:700;color:var(--b-warm);">Microphone</div></div>
+    <div class="phone2"><div class="notch2"></div>
+      <div class="ui-row"><div class="ui-box ui-bar2" style="background:var(--cream2,#f5e9d6);">OWLY VIEW</div></div>
+      <div class="ui-row"><div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;"><div style="font-size:16px;">🎙️</div><div>Microphone access</div></div></div>
+      <div class="ui-row"><div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">"Owly View" would like<br>access to your microphone</div></div>
+      <div class="ui-row" style="gap:8px;margin-top:4px;"><div class="ui-box" style="height:24px;flex:1;">Deny</div><div class="ui-box" style="height:24px;flex:1;background:var(--cream2,#f5e9d6);color:var(--b-warm);">Allow</div></div>
+    </div>
+    <div class="phone-caption">👆 Tap <strong>Allow</strong><br>needed for cry detection</div>
+  </div>
+  <div class="phone-col2">
+    <div style="display:flex;align-items:center;gap:8px;"><div class="s-num2">3</div><div style="font-size:12px;font-weight:700;color:var(--b-warm);">Notifications</div></div>
+    <div class="phone2"><div class="notch2"></div>
+      <div class="ui-row"><div class="ui-box ui-bar2" style="background:var(--cream2,#f5e9d6);">OWLY VIEW</div></div>
+      <div class="ui-row"><div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;"><div style="font-size:16px;">🔔</div><div>Notification access</div></div></div>
+      <div class="ui-row"><div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">Allow to receive baby cry<br>alerts immediately</div></div>
+      <div class="ui-row" style="gap:8px;margin-top:4px;"><div class="ui-box" style="height:24px;flex:1;">Later</div><div class="ui-box" style="height:24px;flex:1;background:var(--cream2,#f5e9d6);color:var(--b-warm);">Allow</div></div>
+    </div>
+    <div class="phone-caption">👆 Tap <strong>Allow</strong><br>needed for background alerts</div>
+  </div>
+</div>
+<div class="bottom-grid">
+  <div class="info-card2"><div style="font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:8px;">✅ Required permissions</div><ul class="perm-list"><li><div class="perm-dot"></div>Camera — video capture</li><li><div class="perm-dot"></div>Microphone — audio &amp; cry detection</li><li><div class="perm-dot"></div>Notifications — cry &amp; face alerts</li><li><div class="perm-dot"></div>Keep screen on — prevent monitoring from stopping</li></ul></div>
+  <div class="info-card2 warn"><div style="font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:8px;">⚠️ If you denied a permission</div><div style="font-size:13px;color:var(--text2);">Go to your phone's <strong>Settings → Apps → Owly View → Permissions</strong> to enable them manually.</div></div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 02 / Hub Phone Permissions &nbsp;|&nbsp; ← 01 · Choose Your Role &nbsp;&nbsp; 03 · Hub Setup Screen →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page03" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">03 · Hub Phone — Setup Screen</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title"><span>Hub Phone Setup</span> — 4 steps before broadcasting</h1>
+<p class="hero-sub">After selecting Hub Camera, this screen appears. Scroll through each step. The background is dark brown.</p>
+<div class="layout">
+  <div>
+    <div style="width:220px;border:2.5px dashed var(--wire);border-radius:34px;position:relative;padding:40px 12px 20px;background:#2e1005;min-height:560px;">
+      <div style="position:absolute;top:13px;left:50%;transform:translateX(-50%);width:50px;height:13px;border:2px dashed #5c2e0e;border-radius:7px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><div style="font-size:10px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:4px;">🌙 Hub Phone Setup</div><div style="font-size:7px;color:rgba(253,230,138,0.6);border:1px dashed #5c2e0e;border-radius:6px;padding:2px 6px;">Exit</div></div>
+      <div style="background:rgba(249,115,22,0.15);border:1.5px dashed rgba(249,115,22,0.4);border-radius:10px;padding:6px 8px;margin-bottom:7px;display:flex;align-items:center;gap:5px;"><div style="font-size:12px;">📱</div><div style="font-size:7px;color:#fed7aa;font-weight:700;line-height:1.3;">Place hub phone horizontally facing the baby</div></div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:12px;padding:8px 10px;margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><span style="font-size:10px;">🔑</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;">Step 1. Device Pairing Token</span></div>
+        <div style="display:flex;gap:4px;margin-bottom:4px;"><div style="flex:1;background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px;text-align:center;font-size:11px;font-family:monospace;color:#fde68a;letter-spacing:2px;font-weight:700;">A3F7</div><div style="flex:1;background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px;text-align:center;font-size:11px;font-family:monospace;color:#fde68a;letter-spacing:2px;font-weight:700;">K9M2</div><div style="width:28px;height:28px;background:rgba(69,26,3,0.8);border:1.5px dashed #5c2e0e;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;">🔄</div></div>
+        <div style="font-size:6.5px;color:rgba(251,191,36,0.4);line-height:1.3;">🦉 Tokens expire if no broadcast within 72 hours.</div>
+      </div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:12px;padding:8px 10px;margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><span style="font-size:10px;">💾</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;">Step 2. Recording Storage</span></div>
+        <div style="background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px 7px;margin-bottom:5px;"><div style="display:flex;justify-content:space-between;font-size:7px;color:#fde68a;margin-bottom:3px;"><span>Used: <span style="color:#f97316;">1.2GB</span></span><span>Free: <span style="color:#6ee7b7;">14.8GB</span></span></div><div style="height:5px;background:#1a0902;border-radius:3px;overflow:hidden;"><div style="height:5px;background:linear-gradient(90deg,#f97316,#ef4444);width:35%;border-radius:3px;"></div></div></div>
+        <div style="background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px;text-align:center;font-size:7.5px;color:#fde68a;">📂 Event Video (15s) Folder</div>
+      </div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:12px;padding:8px 10px;margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:5px;"><span style="font-size:10px;">📷</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;">Step 3. Video Quality</span></div>
+        <div style="display:flex;gap:4px;"><div style="flex:1;border-radius:6px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;background:rgba(0,0,0,0.2);border:1.5px dashed #5c2e0e;color:rgba(180,83,9,0.6);">HD (1080p)</div><div style="flex:1;border-radius:6px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;background:rgba(16,185,129,0.15);border:1.5px dashed rgba(16,185,129,0.4);color:#6ee7b7;">Power Save (720p)</div></div>
+      </div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:12px;padding:8px 10px;margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:4px;margin-bottom:5px;"><span style="font-size:10px;">🌡️</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;">Step 4. Magic Sensor (Optional)</span></div>
+        <div style="background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:6px;text-align:center;font-size:7.5px;color:#f97316;display:flex;align-items:center;justify-content:center;gap:4px;">📡 Scan Bluetooth</div>
+      </div>
+      <div style="background:linear-gradient(90deg,#f97316,#fbbf24);color:#1a0902;font-size:9px;font-weight:700;text-align:center;padding:9px;border-radius:10px;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:4px;">✨ Setup Done (Move to ROI)</div>
+    </div>
+    <div class="phone-caption">Hub setup screen (scrollable)</div>
+  </div>
+  <div class="ann-list">
+    <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">Screen background &amp; header</div><div class="ann-desc">Dark brown background. Header shows "🌙 Hub Phone Setup" with an Exit button on the right. Exit returns to role selection.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">Landscape mode banner (orange)</div><div class="ann-desc">The hub phone must be used in landscape mode. If you try to broadcast in portrait, a rotation warning appears and it won't work.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">Step 1. Device Pairing Token</div><div class="ann-desc">Two code boxes (A code + B code) are displayed. Enter these on the viewer phone to connect. Tap 🔄 to generate new codes. Tokens expire if no broadcast within 72 hours.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">D</div><div><div class="ann-title">Step 2. Recording Storage</div><div class="ann-desc">On event detection, 15-second clips are auto-saved to the device. The storage usage bar is shown. 15-second clips save to the hub phone's <strong>Downloads folder</strong>.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">E</div><div><div class="ann-title">Step 3. Video Quality</div><div class="ann-desc">Choose between HD (1080p) and Power Save (720p). Power Save is the default — recommended for older phones or when overheating.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">F</div><div><div class="ann-title">Step 4. Magic Sensor (Optional)</div><div class="ann-desc">Connect an Owly Bluetooth temperature/humidity sensor (LYWSD03MMC). This is optional — the app works fine without it.</div></div></div>
+    <div class="tip"><strong>💡 Tip</strong> Once codes are set up, the viewer phone connects automatically as long as the hub is on. No need to re-enter codes each time.</div>
+  </div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 03 / Hub Setup Screen &nbsp;|&nbsp; ← 02 · Permissions &nbsp;&nbsp; 03b · ROI &amp; Broadcasting →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page03b" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">03b · ROI Setup &amp; Broadcasting</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">After setup: <span>ROI Setup</span> then <span>Live Broadcasting</span></h1>
+<p class="hero-sub">The hub phone must be in landscape (horizontal) mode. In portrait mode, a rotation warning appears and these screens won't show.</p>
+<div class="phones-row">
+  <div class="phone-block">
+    <div class="block-label"><div class="step-dot">1</div> ROI Setup Screen</div>
+    <div style="width:100%;border:2.5px dashed var(--wire);border-radius:24px;background:#000;position:relative;aspect-ratio:16/9;overflow:hidden;">
+      <div style="position:absolute;top:50%;transform:translateY(-50%);left:8px;width:10px;height:40px;border:1.5px dashed #334155;border-radius:5px;"></div>
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(255,255,255,0.03) 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(255,255,255,0.03) 20px);background-color:#1a1a1a;"></div>
+      <div style="position:absolute;top:8px;left:20px;border:1.5px dashed rgba(16,185,129,0.5);background:rgba(6,78,59,0.7);border-radius:14px;padding:3px 8px;font-size:7px;color:#6ee7b7;display:flex;align-items:center;gap:3px;">🌙 AI Night Vision ON</div>
+      <div style="position:absolute;top:8px;right:10px;display:flex;gap:5px;"><div style="width:26px;height:26px;background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fde68a;">✕</div><div style="width:26px;height:26px;background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fde68a;">📷</div></div>
+      <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;padding:3px 10px;font-size:7px;color:#fde68a;white-space:nowrap;">☀️ Bright. [Level 1: Precision Tracking]</div>
+      <div style="position:absolute;left:22%;top:15%;width:54%;height:65%;border:2px dashed #fbbf24;border-radius:6px;background:rgba(251,191,36,0.06);box-shadow:0 0 12px rgba(251,191,36,0.2);">
+        <div style="position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);border:1px dashed rgba(251,191,36,0.3);border-radius:8px;padding:2px 8px;font-size:6.5px;color:#fde68a;white-space:nowrap;">Drag box to fit baby's position</div>
+        <div style="position:absolute;top:-4px;left:-4px;width:8px;height:8px;background:#fff;border:2px solid #fbbf24;border-radius:50%;"></div>
+        <div style="position:absolute;top:-4px;right:-4px;width:8px;height:8px;background:#fff;border:2px solid #fbbf24;border-radius:50%;"></div>
+        <div style="position:absolute;bottom:-4px;left:-4px;width:8px;height:8px;background:#fff;border:2px solid #fbbf24;border-radius:50%;"></div>
+        <div style="position:absolute;bottom:-4px;right:-4px;width:8px;height:8px;background:#fff;border:2px solid #fbbf24;border-radius:50%;"></div>
+      </div>
+      <div style="position:absolute;bottom:8px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:4px;"><div style="font-size:7px;color:rgba(253,230,138,0.7);background:rgba(0,0,0,0.4);padding:2px 10px;border-radius:10px;">Tap screen to set focus</div><div style="background:linear-gradient(90deg,#f97316,#fbbf24);color:#1a0902;font-size:8px;font-weight:700;padding:6px 28px;border-radius:10px;">Start Broadcast</div></div>
+    </div>
+    <div class="phone-caption">ROI setup (landscape mode)</div>
+  </div>
+  <div class="phone-block">
+    <div class="block-label"><div class="step-dot">2</div> Live Broadcasting HUD</div>
+    <div style="width:100%;border:2.5px dashed var(--wire);border-radius:24px;background:#111;position:relative;aspect-ratio:16/9;overflow:hidden;">
+      <div style="position:absolute;top:50%;transform:translateY(-50%);left:8px;width:10px;height:40px;border:1.5px dashed #334155;border-radius:5px;"></div>
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(255,255,255,0.03) 20px);background-color:#111;"></div>
+      <div style="position:absolute;top:8px;left:16px;display:flex;flex-direction:column;gap:3px;"><div style="font-size:6.5px;color:#fbbf24;">✦ P2P &amp; Blackbox Active</div><div style="font-size:6.5px;font-weight:700;padding:2px 7px;border-radius:10px;background:rgba(6,78,59,0.7);border:1px dashed rgba(16,185,129,0.4);color:#6ee7b7;width:fit-content;">✦ AI Precision Tracking</div></div>
+      <div style="position:absolute;top:8px;right:12px;width:26px;height:26px;background:rgba(255,255,255,0.1);border:1.5px dashed rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;color:#fff;">⏻</div>
+      <div style="position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:16px;color:#fde68a;letter-spacing:2px;">( ᴗ ˕ ᴗ )  ☕</div>
+    </div>
+    <div class="phone-caption">Live broadcast — face detected</div>
+    <div style="margin-top:14px;width:100%;">
+      <div style="border:2.5px dashed var(--wire);border-radius:16px;background:#150a00;position:relative;aspect-ratio:16/5;overflow:hidden;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
+        <div style="font-size:12px;color:#f97316;letter-spacing:2px;">( &gt; ﹏ &lt; )  💦</div>
+        <div style="background:rgba(127,29,29,0.7);border:1px dashed rgba(239,68,68,0.5);border-radius:8px;padding:2px 8px;font-size:6.5px;color:#fca5a5;">🔴 Blackbox recording...</div>
+      </div>
+      <div class="phone-caption" style="font-size:10px;">Face lost / event detected</div>
+    </div>
+  </div>
+</div>
+<div class="desc-grid">
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">A</div> ROI (Region of Interest) Box</div><div class="dc-body">The dashed border box shows where the AI focuses. Drag the 4 corner handles to resize and drag inside to reposition. Align it over where the baby sleeps.</div><div class="dc-tip"><div class="tip-dot"></div>The AI analyzes this region most intensively</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">B</div> Night Vision &amp; Camera Flip</div><div class="dc-body">Toggle AI night vision with the top-left button. Top-right has ✕ (back to setup) and 📷 (switch front/rear camera).</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">C</div> AI Gear Status (while broadcasting)</div><div class="dc-body">AI switches automatically based on brightness:<br>☀️ Level 1 (bright): Precision Tracking — green<br>🌥️ Level 2 (dim): Silhouette Protection — amber<br>🌙 Level 3 (dark): Smart Audio Guard — purple</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">D</div> Center Emoji &amp; Blackbox</div><div class="dc-body">Face detected: ( ᴗ ˕ ᴗ ) ☕ — shown normally. Face lost / event: ( &gt; ﹏ &lt; ) 💦 — changes and "🔴 Blackbox recording..." badge appears. 15-second clips auto-record and save to the hub phone's Downloads folder.</div></div>
+</div>
+<div class="tip-box"><strong>💡 Tap screen while broadcasting</strong> The HUD (controls) briefly appears then hides. If there's no tap for a while, the screen dims to save battery. Broadcasting continues.</div>
+</div>
+<div class="pg-footer">Owly View Manual · 03b / ROI &amp; Broadcasting &nbsp;|&nbsp; ← 03 · Hub Setup &nbsp;&nbsp; 04 · Viewer Connection →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page04" class="manual-section">
+<style>
+.phones-row2{display:flex;gap:28px;align-items:flex-start;margin-bottom:44px;}
+.phone-block2{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
+.ph-dark{border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 18px;min-height:440px;width:100%;}
+.notch-dark{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;}
+</style><div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">04 · Viewer Connection</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">Enter the code on the <span>Viewer Phone</span> to connect</h1>
+<p class="hero-sub">The first person to enter the code becomes the <strong>host</strong> and enters directly. Other family members who connect later go through the waiting room for host approval.</p>
+<div class="phones-row2">
+  <div class="phone-block2">
+    <div class="block-label"><div class="step-dot">1</div> Code Entry Screen (all viewers)</div>
+    <div class="ph-dark"><div class="notch-dark"></div>
+      <div style="text-align:center;font-size:26px;margin-bottom:4px;opacity:0.85;">🦉</div>
+      <div style="text-align:center;font-size:10px;font-weight:700;color:#fde68a;margin-bottom:2px;">Owly View ✦</div>
+      <div style="text-align:center;font-size:7.5px;color:rgba(253,230,138,0.6);margin-bottom:10px;">"A Magic Mirror from the Guardian Owl.<br>Rest easy now."</div>
+      <div style="background:rgba(69,26,3,0.6);border:1.5px dashed rgba(180,83,9,0.5);border-radius:16px;padding:10px 10px;">
+        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:8px;"><div style="font-size:14px;margin-bottom:2px;">🔥</div><div style="font-size:9px;font-weight:700;color:#fde68a;">Connect Magic Mirror</div><div style="font-size:7px;color:rgba(253,230,138,0.5);">Enter the 2 passwords from Owly.</div></div>
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:7px;"><div style="flex:1;background:#fef3c7;border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:7px 4px;text-align:center;font-family:monospace;font-size:13px;font-weight:700;color:#78350f;letter-spacing:2px;">ABCD</div><div style="font-size:12px;font-weight:700;color:#fbbf24;">-</div><div style="flex:1;background:#fef3c7;border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:7px 4px;text-align:center;font-family:monospace;font-size:13px;font-weight:700;color:#78350f;letter-spacing:2px;">1234</div></div>
+        <div style="width:100%;background:#fef3c7;border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:7px 8px;text-align:center;font-size:8px;color:rgba(120,53,15,0.5);margin-bottom:8px;">Your name (e.g. Grandma, Uncle)</div>
+        <div style="background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:10px;padding:8px;text-align:center;font-size:8.5px;font-weight:700;color:#2e1005;display:flex;align-items:center;justify-content:center;gap:4px;">✦ Connect Magic Mirror →</div>
+      </div>
+    </div>
+    <div class="phone-caption">Code entry + name input</div>
+  </div>
+  <div class="phone-block2">
+    <div class="block-label"><div class="step-dot">2</div> Waiting Room (family members only)</div>
+    <div class="ph-dark" style="background:#3e1e04;"><div class="notch-dark"></div>
+      <div style="text-align:center;font-size:30px;margin-bottom:6px;">🦉</div>
+      <div style="background:rgba(26,9,2,0.8);border:1.5px dashed rgba(180,83,9,0.3);border-radius:18px;padding:10px 12px;margin-bottom:8px;">
+        <div style="font-size:9.5px;font-weight:700;color:#fef9e8;text-align:center;margin-bottom:3px;line-height:1.4;">Our Guardian Owl is<br>taking a short rest.</div>
+        <div style="font-size:7.5px;color:rgba(253,230,138,0.6);text-align:center;margin-bottom:8px;">Please wait until the host grants access ☕</div>
+        <div style="height:1px;background:rgba(180,83,9,0.3);margin:6px 0;"></div>
+        <div style="font-size:8.5px;font-weight:700;color:rgba(212,212,216,0.85);text-align:center;margin-bottom:2px;">수호 부엉이가 잠시 숨을 고르고 있어요.</div>
+        <div style="font-size:7px;color:rgba(113,113,122,0.6);text-align:center;">방장님이 문을 열어줄 때까지 기다려 주세요 ☕</div>
+      </div>
+      <div style="background:rgba(26,9,2,0.6);border:1.5px dashed rgba(180,83,9,0.3);border-radius:12px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><div style="font-size:8px;font-weight:700;color:rgba(253,230,138,0.7);">Knocking...</div><div style="display:flex;gap:3px;"><div style="width:6px;height:6px;border-radius:50%;background:#fb923c;opacity:.5;"></div><div style="width:6px;height:6px;border-radius:50%;background:#fb923c;opacity:.75;"></div><div style="width:6px;height:6px;border-radius:50%;background:#fb923c;"></div></div></div>
+      <div style="text-align:center;font-size:7.5px;color:rgba(180,83,9,0.6);">‹ I've waited long enough</div>
+    </div>
+    <div class="phone-caption">Waiting room (family members only)</div>
+  </div>
+</div>
+<div class="desc-grid">
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">A</div> 2 codes + name</div><div class="dc-body">Enter the two 4-digit codes shown on the hub phone's setup screen. The name helps the host identify who is requesting access (e.g. Grandma, Uncle).</div><div class="dc-tip"><div class="tip-dot"></div>If you've connected before, codes are auto-filled</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">B</div> Host vs Family — different entry</div><div class="dc-body">The <strong>first person to enter the code is the host</strong> and goes straight to the viewer screen. Family members who connect later go to the waiting room for the host's approval.</div></div>
+  <div class="desc-card" style="border-color:#f0c060;background:var(--amber-bg);"><div class="dc-title"><div class="step-dot">C</div> Wrong code — lockout</div><div class="dc-body">Multiple wrong entries trigger temporary lockout. 3 levels: Level 1 (temporary) → Level 2 (24 hours) → Level 3 (30 days). Check the exact codes on the hub phone.</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">D</div> Rejected?</div><div class="dc-body">If the host rejects your request, "Entry was declined" appears with a "Knock Again" button to retry.</div><div class="dc-tip"><div class="tip-dot"></div>"I've waited long enough" returns to the code entry screen</div></div>
+</div>
+<div class="tip-box"><strong>💡 Host vs Family</strong> The host (first viewer) enters directly after the code. Family members joining later need the host's approval from the waiting room. The host must have the app open to approve entry requests.</div>
+</div>
+<div class="pg-footer">Owly View Manual · 04 / Viewer Connection &nbsp;|&nbsp; ← 03b · ROI &amp; Broadcasting &nbsp;&nbsp; 05 · Monitor &amp; Family Approval →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page05" class="manual-section">
+<style>
+.p05-phone{width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 8px;min-height:520px;overflow:hidden;}
+.p05-notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;}
+.vv-header2{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.panels-row2{display:flex;gap:5px;margin-bottom:8px;}
+.ai-panel2{flex:1.3;background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 7px;}
+.env-panel2{flex:1;background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 7px;position:relative;overflow:hidden;}
+.panel-head2{font-size:7px;font-weight:700;color:#fbbf24;margin-bottom:4px;}
+.panel-row2{display:flex;justify-content:space-between;align-items:center;background:rgba(69,26,3,0.4);border:1px dashed rgba(180,83,9,0.3);border-radius:6px;padding:3px 5px;margin-bottom:3px;font-size:7px;}
+.env-blur2{position:absolute;inset:0;background:rgba(26,9,2,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:7px;color:#fbbf24;text-align:center;line-height:1.4;}
+.video-box2{border:2.5px dashed #7c2d12;border-radius:14px;background:#0a0f16;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:8px;position:relative;}
+.chat-bar2{background:#170801;border:1px dashed rgba(180,83,9,0.3);border-radius:12px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.tab-bar2{display:flex;border-top:1.5px dashed rgba(180,83,9,0.3);padding-top:5px;}
+.tab2{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:6.5px;color:rgba(180,83,9,0.5);}
+.tab2.active2{color:#fbbf24;}
+.approval-banner2{position:absolute;top:48px;left:10px;right:10px;z-index:20;background:rgba(24,24,27,0.92);border:1.5px dashed rgba(113,113,122,0.5);border-radius:14px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+.tab-badge2{position:absolute;top:-1px;right:10%;width:7px;height:7px;border-radius:50%;background:#ef4444;}
+</style><div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">05 · Monitor &amp; Family Approval</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">Watch on the <span>Monitor</span>, approve family from the same screen</h1>
+<p class="hero-sub">The person who entered the code first is the host. When the host enters, the Monitor (live video) screen appears. When other family members knock, an approval banner slides down for the host.</p>
+<div class="phones-row">
+  <div class="phone-block">
+    <div class="block-label"><div class="step-dot">A</div> Monitor (host default screen)</div>
+    <div class="p05-phone"><div class="p05-notch"></div>
+      <div class="vv-header2"><div style="font-size:10px;font-weight:700;color:#fde68a;">🦉 Owly View 🛡️</div><div style="display:flex;gap:3px;"><div style="font-size:7px;font-weight:700;padding:2px 5px;border-radius:6px;border:1px dashed;background:rgba(69,26,3,0.8);border-color:rgba(180,83,9,0.5);color:#fcd34d;">🔋 85%</div><div style="font-size:7px;font-weight:700;padding:2px 5px;border-radius:6px;border:1px dashed;background:rgba(6,78,59,0.5);border-color:rgba(16,185,129,0.4);color:#6ee7b7;">● Good</div><div style="font-size:7px;font-weight:700;padding:2px 5px;border-radius:6px;border:1px dashed;background:rgba(69,26,3,0.8);border-color:rgba(180,83,9,0.5);color:#fde68a;">🔔</div></div></div>
+      <div class="panels-row2">
+        <div class="ai-panel2"><div class="panel-head2">🧠 AI Smart Detection</div><div class="panel-row2"><span style="color:rgba(253,230,138,0.6);">👁️ Sleep Safety</span><span style="font-size:7px;font-weight:700;color:#34d399;">🟢 Tracking</span></div><div class="panel-row2"><span style="color:rgba(253,230,138,0.6);">🎙️ Sound</span><span style="font-size:7px;font-weight:700;color:#fef3c7;">💤 Quiet</span></div></div>
+        <div class="env-panel2"><div class="panel-head2">🌡️ Env Sensor</div><div class="panel-row2"><span style="color:rgba(253,230,138,0.6);">🔥 Temp</span><span style="font-size:7px;font-weight:700;color:#fff;">24.5°C</span></div><div class="panel-row2"><span style="color:rgba(253,230,138,0.6);">💧 Humid</span><span style="font-size:7px;font-weight:700;color:#fff;">52%</span></div><div class="env-blur2">🌡️ Sensor<br>not connected</div></div>
+      </div>
+      <div class="video-box2"><div style="font-size:18px;color:#bbb;">📺</div><div style="font-size:7px;color:#bbb;">Live Video (3:2)</div></div>
+      <div class="chat-bar2"><div style="font-size:10px;color:rgba(180,83,9,0.5);">💬</div><div style="font-size:7.5px;font-weight:700;letter-spacing:1px;color:rgba(180,83,9,0.6);">FAMILY CHAT</div><div style="font-size:9px;color:rgba(180,83,9,0.5);">∧</div></div>
+      <div class="tab-bar2"><div class="tab2 active2"><div style="font-size:11px;">📷</div><span>Monitor</span></div><div class="tab2"><div style="font-size:11px;">📋</div><span>History</span></div><div class="tab2"><div style="font-size:11px;">🌲</div><span>Community</span></div><div class="tab2"><div style="font-size:11px;">🎁</div><span>Baby Care</span></div><div class="tab2" style="position:relative;"><div style="font-size:11px;">⚙️</div><span>Settings</span><div class="tab-badge2"></div></div></div>
+    </div>
+    <div class="phone-caption">Monitor tab (default screen)</div>
+  </div>
+  <div class="phone-block">
+    <div class="block-label"><div class="step-dot">B</div> Family knock — host's screen</div>
+    <div class="p05-phone" style="position:relative;">
+      <div class="p05-notch"></div>
+      <div style="opacity:0.35;">
+        <div class="vv-header2"><div style="font-size:10px;font-weight:700;color:#fde68a;">🦉 Owly View</div></div>
+        <div class="panels-row2"><div class="ai-panel2" style="height:52px;"></div><div class="env-panel2" style="height:52px;"></div></div>
+        <div class="video-box2" style="height:100px;"></div>
+      </div>
+      <div class="approval-banner2">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;"><div style="width:26px;height:26px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;">🌐</div><div><div style="font-size:7px;color:rgba(161,161,170,0.8);font-weight:700;letter-spacing:1px;">NEW FAMILY ENTRY REQUEST</div><div style="font-size:10px;font-weight:700;color:#fff;">Grandma</div></div></div>
+        <div style="display:flex;gap:5px;"><div style="flex:1;background:#3f3f46;border-radius:8px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#d4d4d8;">Decline</div><div style="flex:1;background:#059669;border-radius:8px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#fff;box-shadow:0 0 10px rgba(16,185,129,0.3);">Allow Entry</div></div>
+      </div>
+      <div class="tab-bar2" style="position:absolute;bottom:8px;left:12px;right:12px;opacity:0.3;"><div class="tab2 active2"><div style="font-size:11px;">📷</div><span>Monitor</span></div><div class="tab2"><div style="font-size:11px;">📋</div><span>History</span></div><div class="tab2"><div style="font-size:11px;">🌲</div><span>Community</span></div><div class="tab2"><div style="font-size:11px;">🎁</div><span>Baby Care</span></div><div class="tab2"><div style="font-size:11px;">⚙️</div><span>Settings</span></div></div>
+    </div>
+    <div class="phone-caption">Family knock — host sees banner</div>
+  </div>
+</div>
+<div class="desc-grid">
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">1</div> AI Smart Detection panel</div><div class="dc-body">Shows real-time status of Sleep Safety (face detection) and Sound Analysis (cry detection). When something is detected, the relevant item turns red.</div><div class="dc-tip"><div class="tip-dot"></div>Toggle each detection on/off in Settings</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">2</div> Environment Sensor panel</div><div class="dc-body">Shows room temperature and humidity when a Bluetooth sensor is connected. The panel appears blurred if no sensor is connected.</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">3</div> Live Video (Monitor)</div><div class="dc-body">Hub phone's camera streams live here. If face detection loses the baby, the video border turns red and an alert sounds.</div><div class="dc-tip"><div class="tip-dot"></div>Rotate phone to landscape for a bigger view</div><div class="dc-tip"><div class="tip-dot"></div>Pinch to zoom in/out</div></div>
+  <div class="desc-card" style="border-color:#6ee7b7;background:#f0fff8;"><div class="dc-title"><div class="step-dot">4</div> Family Entry Approval Banner</div><div class="dc-body">When family knocks, a banner slides down from the top of the host's screen. Check the name and tap <strong>Allow Entry</strong> or <strong>Decline</strong>.</div><div class="dc-tip"><div class="tip-dot"></div>Only the host sees this banner</div><div class="dc-tip"><div class="tip-dot"></div>A red dot on the Settings tab also signals pending requests</div></div>
+</div>
+<div style="background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:18px;">
+  <div style="font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:12px;">Bottom Tab Bar</div>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;">
+    <div style="text-align:center;"><div style="font-size:18px;margin-bottom:3px;">📷</div><div style="font-size:11px;font-weight:700;color:var(--b-warm);">Monitor</div><div style="font-size:10px;color:var(--muted);">Live video + AI</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;margin-bottom:3px;">📋</div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">History</div><div style="font-size:10px;color:var(--muted);">Event log</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;margin-bottom:3px;">🌲</div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">Community</div><div style="font-size:10px;color:var(--muted);">Parent forum</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;margin-bottom:3px;">🎁</div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">Baby Care</div><div style="font-size:10px;color:var(--muted);">Records</div></div>
+    <div style="text-align:center;"><div style="font-size:18px;margin-bottom:3px;">⚙️</div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">Settings</div><div style="font-size:10px;color:var(--muted);">AI &amp; family</div></div>
+  </div>
+</div>
+<div class="tip-box"><strong>💡 Family Chat</strong> Tap the "FAMILY CHAT" bar at the bottom to expand the chat overlay. Connected family members can send real-time messages to each other.</div>
+</div>
+<div class="pg-footer">Owly View Manual · 05 / Monitor &amp; Family Approval &nbsp;|&nbsp; ← 04 · Viewer Connection &nbsp;&nbsp; 06 · AI Alerts →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page06" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">06 · AI Detection Alerts</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">A <span>full-screen alert</span> fires when something is detected</h1>
+<p class="hero-sub">A full-screen overlay covers the viewer phone. Works for crying, face loss, and temperature/humidity out of range.</p>
+<div style="font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:12px;">Alert types</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;">
+  <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;"><div style="font-size:20px;margin-bottom:4px;">😭</div><div style="font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;">Cry Detected</div><div style="font-size:11px;color:var(--muted);">Crying, screaming, coughing</div></div>
+  <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;"><div style="font-size:20px;margin-bottom:4px;">👶</div><div style="font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;">Sleep Safety</div><div style="font-size:11px;color:var(--muted);">Face lost, tossing &amp; turning</div></div>
+  <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;"><div style="font-size:20px;margin-bottom:4px;">🌡️</div><div style="font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;">Temp Alert</div><div style="font-size:11px;color:var(--muted);">Room temp out of range</div></div>
+  <div style="background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;"><div style="font-size:20px;margin-bottom:4px;">💧</div><div style="font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;">Humidity Alert</div><div style="font-size:11px;color:var(--muted);">Room humidity out of range</div></div>
+</div>
+<div class="phones-row">
+  <div class="phone-block">
+    <div class="block-label"><div class="step-dot">A</div> Portrait alert screen</div>
+    <div style="width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#0f1712;position:relative;padding:40px 12px 20px;min-height:500px;overflow:hidden;">
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #1a2e1a;border-radius:6px;"></div>
+      <div style="font-size:7px;font-weight:700;letter-spacing:2px;color:#b4c4b2;text-transform:uppercase;display:flex;align-items:center;gap:4px;justify-content:center;margin-bottom:8px;">🍃 FOREST NEST ALERT</div>
+      <div style="display:flex;justify-content:center;margin-bottom:10px;"><div style="width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#4a5c48,#2e4032);border:2px dashed #6b8265;display:flex;align-items:center;justify-content:center;font-size:22px;position:relative;">🔔<div style="position:absolute;top:-4px;right:-4px;font-size:10px;">✦</div></div></div>
+      <div style="font-size:14px;font-weight:700;color:#f1f3e6;text-align:center;margin-bottom:12px;line-height:1.4;">Baby is tossing and turning!</div>
+      <div style="background:rgba(46,64,50,0.6);border:1px dashed rgba(90,107,84,0.5);border-radius:16px;padding:12px 14px;margin-bottom:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:8px;margin-bottom:8px;border-bottom:1px dashed rgba(90,107,84,0.5);"><div><div style="font-size:7px;font-weight:700;color:#98a896;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;">CURRENT STATUS</div><div style="font-size:22px;font-weight:700;color:#ffd166;">Sleep Safety</div></div><div style="width:22px;height:22px;border-radius:50%;background:rgba(28,38,30,0.5);border:1px dashed #4a5c48;display:flex;align-items:center;justify-content:center;font-size:10px;">📊</div></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(28,38,30,0.4);border:1px dashed #3a4d3e;border-radius:8px;padding:5px 8px;"><span style="font-size:7px;color:#7e8f7c;font-weight:700;letter-spacing:1px;text-transform:uppercase;">GUARDIAN THRESHOLD</span><span style="font-size:11px;font-weight:700;color:#e9c46a;">15s</span></div>
+      </div>
+      <div style="background:linear-gradient(90deg,#ffd166,#f4a261);border-radius:12px;padding:10px;text-align:center;"><div style="font-size:9px;font-weight:700;color:#1c261e;letter-spacing:1px;">Got it</div><div style="font-size:7px;color:rgba(28,38,30,0.6);letter-spacing:1px;margin-top:1px;">Pause fairy for 3 mins</div></div>
+    </div>
+    <div class="phone-caption">Portrait — full-screen alert</div>
+  </div>
+  <div class="phone-block">
+    <div class="block-label"><div class="step-dot">B</div> Landscape alert screen</div>
+    <div style="width:100%;border:2.5px dashed var(--wire);border-radius:24px;background:#0f1712;position:relative;padding:20px 16px;aspect-ratio:16/9;overflow:hidden;display:flex;align-items:center;justify-content:center;">
+      <div style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:10px;height:40px;border:1.5px dashed #1a2e1a;border-radius:5px;"></div>
+      <div style="display:flex;align-items:center;gap:14px;z-index:10;position:relative;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:80px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(180deg,#4a5c48,#2e4032);border:1.5px dashed #6b8265;display:flex;align-items:center;justify-content:center;font-size:15px;">🔔</div>
+          <div style="font-size:6px;color:#b4c4b2;letter-spacing:1px;">FOREST NEST ALERT</div>
+          <div style="font-size:7px;font-weight:700;color:#f1f3e6;text-align:center;line-height:1.4;">Baby is tossing<br>and turning!</div>
+        </div>
+        <div style="background:rgba(46,64,50,0.6);border:1px dashed rgba(90,107,84,0.5);border-radius:12px;padding:8px 10px;width:120px;">
+          <div style="font-size:7px;color:#98a896;margin-bottom:2px;">CURRENT STATUS</div>
+          <div style="font-size:16px;font-weight:700;color:#ffd166;margin-bottom:4px;">Sleep Safety</div>
+          <div style="background:rgba(28,38,30,0.4);border:1px dashed #3a4d3e;border-radius:6px;padding:3px 6px;display:flex;justify-content:space-between;font-size:7px;"><span style="color:#7e8f7c;">THRESHOLD</span><span style="color:#e9c46a;font-weight:700;">15s</span></div>
+        </div>
+        <div style="background:linear-gradient(90deg,#ffd166,#f4a261);border-radius:10px;padding:8px 10px;text-align:center;width:90px;"><div style="font-size:8px;font-weight:700;color:#1c261e;">Got it</div><div style="font-size:6px;color:rgba(28,38,30,0.6);margin-top:1px;">Pause 3 mins</div></div>
+      </div>
+    </div>
+    <div class="phone-caption" style="margin-top:10px;">Landscape — compact one-line layout</div>
+  </div>
+</div>
+<div class="desc-grid">
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">1</div> Bell icon + alert title</div><div class="dc-body">A dark forest-themed background with a green circle bell icon. The alert type is shown at a glance. An alert sound also plays.</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">2</div> Status card</div><div class="dc-body">Shows the detected value and the configured threshold side by side. For temperature alerts, both current temp and configured range are shown.</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">3</div> Got it button</div><div class="dc-body">Tap to dismiss the alert. "Pause fairy for 3 mins" means the same alert won't fire again for 3 minutes after dismissing.</div></div>
+  <div class="desc-card"><div class="dc-title"><div class="step-dot">4</div> Portrait vs Landscape layout</div><div class="dc-body">Layout adapts automatically to phone orientation. Portrait stacks vertically; landscape puts bell, status card, and button in one row.</div></div>
+</div>
+<div class="tip-box"><strong>💡 To receive alerts</strong> Notifications must be allowed for Owly View on the viewer phone. Even when the app is in the background, full-screen alerts fire. If alerts aren't coming, go to Settings → Apps → Owly View → Notifications and enable them.</div>
+</div>
+<div class="pg-footer">Owly View Manual · 06 / AI Detection Alerts &nbsp;|&nbsp; ← 05 · Monitor &nbsp;&nbsp; 07 · Detection Log →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page07" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">07 · Detection Log</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">Review the past <span>72 hours</span> in the Detection Log</h1>
+<p class="hero-sub">Also called the Magic Log. A 24-hour timeline chart and event list let you see at a glance what happened overnight.</p>
+<div class="layout">
+  <div>
+    <div style="width:220px;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 18px;min-height:560px;">
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;"></div>
+      <div style="font-size:11px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:4px;margin-bottom:10px;">📖 Magic Log ★</div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:14px;padding:8px 10px;margin-bottom:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;"><div style="font-size:7px;font-weight:700;color:#f97316;letter-spacing:1px;display:flex;align-items:center;gap:3px;">🕐 Daily Trend</div><div style="font-size:7px;color:#92400e;background:rgba(26,9,2,0.6);border:1px dashed rgba(180,83,9,0.4);border-radius:8px;padding:1px 6px;">Today</div></div>
+        <div style="background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;height:72px;position:relative;overflow:hidden;margin-bottom:6px;padding:4px 6px 14px;">
+          <svg width="100%" height="100%" viewBox="0 0 160 60" preserveAspectRatio="none" style="position:absolute;inset:0;">
+            <line x1="0" y1="12" x2="160" y2="12" stroke="#ef4444" stroke-width="0.5" stroke-opacity="0.3"/>
+            <text x="0" y="10" fill="#ef4444" font-size="5" font-weight="900" opacity="0.7">Sound</text>
+            <circle cx="45" cy="12" r="3" fill="#ef4444" opacity="0.9"/>
+            <circle cx="98" cy="12" r="3" fill="#ef4444" opacity="0.9"/>
+            <line x1="0" y1="27" x2="160" y2="27" stroke="#f97316" stroke-width="0.5" stroke-opacity="0.3"/>
+            <text x="0" y="25" fill="#f97316" font-size="5" font-weight="900" opacity="0.7">Temp</text>
+            <line x1="0" y1="42" x2="160" y2="42" stroke="#3b82f6" stroke-width="0.5" stroke-opacity="0.3"/>
+            <text x="0" y="40" fill="#3b82f6" font-size="5" font-weight="900" opacity="0.7">Humid</text>
+            <circle cx="72" cy="42" r="3" fill="#3b82f6" opacity="0.9"/>
+            <line x1="0" y1="57" x2="160" y2="57" stroke="#22c55e" stroke-width="0.5" stroke-opacity="0.3"/>
+            <text x="0" y="55" fill="#22c55e" font-size="5" font-weight="900" opacity="0.7">Face</text>
+            <circle cx="24" cy="57" r="3" fill="#22c55e" opacity="0.9"/>
+            <circle cx="124" cy="57" r="3" fill="#22c55e" opacity="0.9"/>
+          </svg>
+          <div style="position:absolute;bottom:2px;left:0;right:0;display:flex;justify-content:space-between;padding:0 6px;font-size:6px;color:rgba(180,83,9,0.5);font-weight:700;"><span>-24h</span><span>-18h</span><span>-12h</span><span>-6h</span><span>Now</span></div>
+        </div>
+        <div style="display:flex;justify-content:center;gap:8px;">
+          <div style="display:flex;align-items:center;gap:2px;font-size:6.5px;color:rgba(253,230,138,0.6);"><div style="width:5px;height:5px;border-radius:50%;background:#ef4444;"></div>Sound</div>
+          <div style="display:flex;align-items:center;gap:2px;font-size:6.5px;color:rgba(253,230,138,0.6);"><div style="width:5px;height:5px;border-radius:50%;background:#f97316;"></div>Temp</div>
+          <div style="display:flex;align-items:center;gap:2px;font-size:6.5px;color:rgba(253,230,138,0.6);"><div style="width:5px;height:5px;border-radius:50%;background:#3b82f6;"></div>Humid</div>
+          <div style="display:flex;align-items:center;gap:2px;font-size:6.5px;color:rgba(253,230,138,0.6);"><div style="width:5px;height:5px;border-radius:50%;background:#22c55e;"></div>Face</div>
+        </div>
+      </div>
+      <div style="font-size:7.5px;font-weight:700;color:#f97316;letter-spacing:2px;margin-bottom:5px;">EVENT LOG</div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 8px;display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+        <div style="display:flex;align-items:center;gap:6px;"><div style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;background:rgba(127,29,29,0.4);border:1px dashed rgba(239,68,68,0.4);">👶</div><div><div style="font-size:8px;font-weight:700;color:#fde68a;">Face Lost</div><div style="font-size:7px;color:rgba(180,83,9,0.7);">3:24 AM</div></div></div>
+        <div style="text-align:right;"><div style="font-size:7px;color:rgba(253,230,138,0.8);">Baby face not detected</div></div>
+      </div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 8px;display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;">
+        <div style="display:flex;align-items:center;gap:6px;"><div style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;background:rgba(120,53,15,0.4);border:1px dashed rgba(249,115,22,0.4);">🔊</div><div><div style="font-size:8px;font-weight:700;color:#fde68a;">Crying Detected</div><div style="font-size:7px;color:rgba(180,83,9,0.7);">1:47 AM</div></div></div>
+        <div style="font-size:7px;color:rgba(253,230,138,0.8);">Baby crying detected!</div>
+      </div>
+      <div style="background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 8px;display:flex;align-items:center;justify-content:space-between;">
+        <div style="display:flex;align-items:center;gap:6px;"><div style="width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;background:rgba(120,83,15,0.4);border:1px dashed rgba(245,158,11,0.4);">🔔</div><div><div style="font-size:8px;font-weight:700;color:#fde68a;">Humidity Low</div><div style="font-size:7px;color:rgba(180,83,9,0.7);">11:12 PM</div></div></div>
+        <div style="text-align:right;"><div style="font-size:7px;color:rgba(253,230,138,0.8);">Room too dry!</div><div style="font-size:7px;color:#fbbf24;font-weight:700;">28%</div></div>
+      </div>
+    </div>
+    <div class="phone-caption">Detection Log tab</div>
+  </div>
+  <div class="ann-list">
+    <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">24-hour Timeline Chart</div><div class="ann-desc">Events from the past 24 hours are plotted as dots across 4 rows (Sound / Temp / Humidity / Face). See at a glance which time periods had issues.</div><div class="dc-tip"><div class="tip-dot"></div>More dots = more events in that time window</div></div></div>
+    <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">Event Log list</div><div class="ann-desc">Detected events are listed newest-first. Each entry shows type, time, and message. 15-second clips are auto-recorded on event detection and saved to the hub phone's <strong>Downloads folder</strong> — they cannot be viewed from this tab.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">Event type colors</div><div class="ann-desc">Icons and colors distinguish event types:</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+        <div style="display:flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;"><div style="width:24px;height:24px;border-radius:6px;background:rgba(254,226,226,1);border:1px solid #fca5a5;display:flex;align-items:center;justify-content:center;font-size:12px;">👶</div><div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">Sleep Safety</div><div style="font-size:10px;color:var(--muted);">Face lost</div></div></div>
+        <div style="display:flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;"><div style="width:24px;height:24px;border-radius:6px;background:rgba(255,237,213,1);border:1px solid #fdba74;display:flex;align-items:center;justify-content:center;font-size:12px;">🔊</div><div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">Sound</div><div style="font-size:10px;color:var(--muted);">Cry, scream</div></div></div>
+        <div style="display:flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;"><div style="width:24px;height:24px;border-radius:6px;background:rgba(254,249,195,1);border:1px solid #fde047;display:flex;align-items:center;justify-content:center;font-size:12px;">🔔</div><div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">System</div><div style="font-size:10px;color:var(--muted);">Temp, humidity</div></div></div>
+        <div style="display:flex;align-items:center;gap:6px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;"><div style="width:24px;height:24px;border-radius:6px;background:rgba(209,250,229,1);border:1px solid #6ee7b7;display:flex;align-items:center;justify-content:center;font-size:12px;">✦</div><div><div style="font-size:11px;font-weight:700;color:var(--b-deep);">Other</div><div style="font-size:10px;color:var(--muted);">System events</div></div></div>
+      </div>
+    </div></div>
+    <div class="tip-box"><strong>💡 72-hour limit</strong> The log shows the past 72 hours only. Older entries are automatically removed — screenshot anything important you want to keep.<br><br><strong>📹 15-second clips</strong> Auto-recorded clips on event detection are saved to the hub phone's <strong>Downloads folder</strong>. They cannot be viewed from this tab.</div>
+  </div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 07 / Detection Log &nbsp;|&nbsp; ← 06 · AI Alerts &nbsp;&nbsp; 08 · Baby Care Box →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page08" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">08 · Baby Care Box</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title"><span>Baby Care Box</span> — all your baby records in one place</h1>
+<p class="hero-sub">Tap the 🎁 icon in the bottom tab bar to open Baby Care. There are 5 features including feeding, sleep, medicine, and growth records.</p>
+<div class="layout">
+  <div>
+    <div style="width:220px;border:2.5px dashed var(--wire);border-radius:32px;background:#1a0902;position:relative;padding:40px 12px 16px;min-height:620px;">
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #2e1005;border-radius:6px;"></div>
+      <div style="background:rgba(46,16,5,0.8);border-bottom:1.5px dashed rgba(180,83,9,0.3);padding:8px 10px;margin:-2px -12px 10px;text-align:center;"><div style="font-size:24px;margin-bottom:3px;">🎁</div><div style="font-size:11px;font-weight:700;color:#fde68a;margin-bottom:1px;">Baby Care</div><div style="font-size:7.5px;color:rgba(253,230,138,0.6);">Owly&apos;s baby care tools</div><div style="font-size:8px;color:#fbbf24;margin-top:3px;">🦉 Lily · 3 months</div></div>
+      <div style="background:linear-gradient(135deg,rgba(69,26,3,0.4),rgba(46,16,5,0.8));border:1.5px dashed rgba(251,191,36,0.3);border-radius:14px;padding:10px;margin-bottom:8px;">
+        <div style="font-size:7.5px;font-weight:700;color:rgba(253,230,138,0.8);margin-bottom:8px;">📊 Today&apos;s Baby Overview</div>
+        <div style="display:flex;justify-content:center;margin-bottom:8px;">
+          <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="28" fill="none" stroke="rgba(180,83,9,0.15)" stroke-width="10"/><circle cx="40" cy="40" r="28" fill="none" stroke="#6366f1" stroke-width="10" stroke-dasharray="88 88" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"/><circle cx="40" cy="12" r="4" fill="#fbbf24"/><circle cx="62" cy="55" r="4" fill="#fbbf24"/><text x="40" y="37" text-anchor="middle" font-size="10" fill="#fde68a">🦉</text><text x="40" y="50" text-anchor="middle" font-size="9" font-weight="700" fill="#fde68a">6h</text></svg>
+        </div>
+        <div style="display:flex;justify-content:center;gap:12px;">
+          <div style="text-align:center;"><span style="font-size:6.5px;color:#818cf8;display:block;">Sleep</span><span style="font-size:9px;font-weight:700;color:#fde68a;">6h</span></div>
+          <div style="text-align:center;"><span style="font-size:6.5px;color:#f97316;display:block;">Feed</span><span style="font-size:9px;font-weight:700;color:#fde68a;">3x</span></div>
+          <div style="text-align:center;"><span style="font-size:6.5px;color:#34d399;display:block;">Med</span><span style="font-size:9px;font-weight:700;color:#fde68a;">1x</span></div>
+        </div>
+      </div>
+      <div style="background:rgba(88,28,135,0.25);border:1.5px dashed rgba(167,139,250,0.3);border-radius:12px;padding:9px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:8px;"><div style="font-size:16px;">🧙‍♂️</div><div><div style="font-size:9px;font-weight:700;color:#fde68a;">Fortune</div><div style="font-size:7px;color:rgba(253,230,138,0.5);">Today&apos;s fortune + lucky number</div></div></div><div style="font-size:10px;color:rgba(253,230,138,0.3);">›</div></div>
+      <div style="background:rgba(120,53,15,0.3);border:1.5px dashed rgba(251,191,36,0.3);border-radius:12px;padding:9px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:8px;"><div style="font-size:16px;">🍼</div><div><div style="font-size:9px;font-weight:700;color:#fde68a;">Feeding Log</div><div style="font-size:7px;color:rgba(253,230,138,0.5);">Last feeding: 2 hours ago</div></div></div><div style="font-size:10px;color:rgba(253,230,138,0.3);">›</div></div>
+      <div style="background:rgba(30,27,75,0.4);border:1.5px dashed rgba(129,140,248,0.3);border-radius:12px;padding:9px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:8px;"><div style="font-size:16px;">🌙</div><div><div style="font-size:9px;font-weight:700;color:#fde68a;">Sleep Log</div><div style="font-size:7px;color:#818cf8;">😴 Sleeping (1 hour ago)</div></div></div><div style="font-size:10px;color:rgba(253,230,138,0.3);">›</div></div>
+      <div style="background:rgba(6,78,59,0.25);border:1.5px dashed rgba(52,211,153,0.3);border-radius:12px;padding:9px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:8px;"><div style="font-size:16px;">💊</div><div><div style="font-size:9px;font-weight:700;color:#fde68a;">Medicine</div><div style="font-size:7px;color:rgba(253,230,138,0.5);">2 active medications</div></div></div><div style="font-size:10px;color:rgba(253,230,138,0.3);">›</div></div>
+      <div style="background:rgba(120,53,15,0.2);border:1.5px dashed rgba(251,191,36,0.2);border-radius:12px;padding:9px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;"><div style="display:flex;align-items:center;gap:8px;"><div style="font-size:16px;">🌟</div><div><div style="font-size:9px;font-weight:700;color:#fde68a;">Growth</div><div style="font-size:7px;color:rgba(253,230,138,0.5);">3 months · 3 milestones / 44</div></div></div><div style="font-size:10px;color:rgba(253,230,138,0.3);">›</div></div>
+      <div style="background:rgba(0,0,0,0.25);border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;margin-top:4px;"><div style="font-size:8px;font-weight:700;color:rgba(253,230,138,0.7);">⚙️ Data Management</div><div style="font-size:9px;color:rgba(253,230,138,0.3);">∨</div></div>
+    </div>
+    <div class="phone-caption">Baby Care Box main screen</div>
+  </div>
+  <div class="ann-list">
+    <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">Baby name &amp; age</div><div class="ann-desc">When you first open Baby Care, enter your baby's name (nickname is fine), birthday, and gender. Once entered, the header shows the name and current age in months automatically.</div></div></div>
+    <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">📊 Today&apos;s Baby Overview — Activity Donut</div><div class="ann-desc">Sleep, feeding, and medicine taken today are visualized in one donut chart. Sleep is shown as arcs, feeding as dots, and medicine as stars. Tap to see the detail view.</div><div class="dc-tip"><div class="tip-dot"></div>Shows an empty owl illustration if no records yet today</div></div></div>
+    <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">5 feature cards</div><div class="ann-desc">Tap a card to open that feature. Each card shows the latest status in real time.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;">
+        <div style="display:flex;align-items:flex-start;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;"><div style="font-size:18px;flex-shrink:0;">🧙‍♂️</div><div><div style="font-size:12px;font-weight:700;color:var(--b-deep);">Fortune</div><div style="font-size:11px;color:var(--muted);">Daily tarot card reading</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;"><div style="font-size:18px;flex-shrink:0;">🍼</div><div><div style="font-size:12px;font-weight:700;color:var(--b-deep);">Feeding Log</div><div style="font-size:11px;color:var(--muted);">Last feeding time shown</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;"><div style="font-size:18px;flex-shrink:0;">🌙</div><div><div style="font-size:12px;font-weight:700;color:var(--b-deep);">Sleep Log</div><div style="font-size:11px;color:var(--muted);">"Sleeping" shown when active</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;"><div style="font-size:18px;flex-shrink:0;">💊</div><div><div style="font-size:12px;font-weight:700;color:var(--b-deep);">Medicine</div><div style="font-size:11px;color:var(--muted);">Active medication count</div></div></div>
+        <div style="display:flex;align-items:flex-start;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;grid-column:1/-1;"><div style="font-size:18px;flex-shrink:0;">🌟</div><div><div style="font-size:12px;font-weight:700;color:var(--b-deep);">Growth</div><div style="font-size:11px;color:var(--muted);">Age in months · milestone footprints</div></div></div>
+      </div>
+    </div></div>
+    <div class="ann-item"><div class="ann-badge">D</div><div><div class="ann-title">⚙️ Data Management — enter baby info for best results</div><div class="ann-desc">Tap Data Management to enter baby info (name, birthday, gender). It's optional, but entering it enables automatic age calculation, milestone tracking, and growth records.</div><div class="dc-tip"><div class="tip-dot"></div>Also has Backup, Restore, and Reset options</div><div class="dc-tip"><div class="tip-dot"></div>Back up before uninstalling — all records will be lost otherwise</div></div></div>
+    <div class="tip-box"><strong>💡 Records are stored on this device only</strong> All feeding, sleep, and growth records are stored locally on the phone. They're lost if you uninstall the app or switch devices. Use Data Management → Backup to save a copy.</div>
+  </div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 08 / Baby Care Box &nbsp;|&nbsp; ← 07 · Detection Log &nbsp;&nbsp; 09 · Baby Care Features →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page09" class="manual-section">
+<div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">09 · Baby Care Features</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title">Explore the <span>4 recording features</span> in Baby Care</h1>
+<p class="hero-sub">Tap any card to open that feature. Tap the back button to return to the main screen anytime.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="font-size:13px;font-weight:700;color:var(--b-deep);">🍼 Feeding Log</div>
+    <div style="border:2.5px dashed var(--wire);border-radius:28px;background:#1a0902;position:relative;padding:36px 12px 16px;min-height:340px;">
+      <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:44px;height:11px;border:1.5px dashed #2e1005;border-radius:6px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;"><div style="font-size:9.5px;font-weight:700;color:#fde68a;">🍼 Feeding Log</div><div style="font-size:8px;color:rgba(253,230,138,0.4);">← Back</div></div>
+      <div style="background:rgba(69,26,3,0.4);border:1.5px dashed rgba(180,83,9,0.35);border-radius:10px;padding:8px 10px;margin-bottom:7px;text-align:center;"><div style="font-size:7px;color:rgba(180,83,9,0.7);font-weight:700;margin-bottom:3px;">Last Feeding</div><div style="font-size:11px;font-weight:700;color:#fde68a;">2 hours ago</div><div style="font-size:7.5px;color:rgba(253,230,138,0.5);">Next breast: Right</div></div>
+      <div style="display:flex;gap:5px;margin-bottom:7px;"><div style="flex:1;background:rgba(251,191,36,0.2);border:1.5px dashed rgba(251,191,36,0.4);border-radius:9px;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:#fde68a;">🤱 Left Breast</div><div style="flex:1;background:rgba(251,191,36,0.2);border:1.5px dashed rgba(251,191,36,0.4);border-radius:9px;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:#fde68a;">🤱 Right Breast</div></div>
+      <div style="background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:9px;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:#1a0902;margin-bottom:6px;">🍼 Formula</div>
+      <div style="background:rgba(69,26,3,0.4);border:1.5px dashed rgba(180,83,9,0.35);border-radius:10px;padding:8px 10px;">
+        <div style="font-size:7px;color:rgba(180,83,9,0.7);font-weight:700;margin-bottom:3px;">Today&apos;s Feedings (3x)</div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed rgba(180,83,9,0.2);"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">7:20 AM</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Left · 12 min</span></div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed rgba(180,83,9,0.2);"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">10:45 AM</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Formula · 120ml</span></div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">1:30 PM</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Right · 10 min</span></div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);text-align:center;">Breast (L/R) · Formula log</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="font-size:13px;font-weight:700;color:var(--b-deep);">🌙 Sleep Log</div>
+    <div style="border:2.5px dashed var(--wire);border-radius:28px;background:#1a0902;position:relative;padding:36px 12px 16px;min-height:340px;">
+      <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:44px;height:11px;border:1.5px dashed #2e1005;border-radius:6px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;"><div style="font-size:9.5px;font-weight:700;color:#fde68a;">🌙 Sleep Log</div><div style="font-size:8px;color:rgba(253,230,138,0.4);">← Back</div></div>
+      <div style="display:flex;justify-content:center;margin-bottom:7px;"><div style="padding:5px 16px;border-radius:20px;font-size:9px;font-weight:700;background:rgba(99,102,241,0.2);border:1.5px dashed rgba(99,102,241,0.5);color:#c7d2fe;">😴 Sleeping</div></div>
+      <div style="display:flex;justify-content:center;margin:4px 0 7px;">
+        <svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="28" fill="none" stroke="rgba(180,83,9,0.15)" stroke-width="10"/><circle cx="40" cy="40" r="28" fill="none" stroke="#6366f1" stroke-width="10" stroke-dasharray="88 88" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"/><circle cx="40" cy="40" r="28" fill="none" stroke="#818cf8" stroke-width="10" stroke-dasharray="26 150" stroke-dashoffset="-88" stroke-linecap="round" transform="rotate(-90 40 40)"/><text x="40" y="36" text-anchor="middle" font-size="10" fill="#fde68a">🌙</text><text x="40" y="50" text-anchor="middle" font-size="10" font-weight="700" fill="#fde68a">6h30m</text></svg>
+      </div>
+      <div style="background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:9px;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:#1a0902;margin-bottom:6px;">🌅 Just Woke Up</div>
+      <div style="background:rgba(69,26,3,0.4);border:1.5px dashed rgba(180,83,9,0.35);border-radius:10px;padding:8px 10px;">
+        <div style="font-size:7px;color:rgba(180,83,9,0.7);font-weight:700;margin-bottom:3px;">Today&apos;s Sleep</div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed rgba(180,83,9,0.2);"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">1:00–6:30 AM</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Night 5h30m</span></div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">1:20 PM –</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Nap ongoing</span></div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);text-align:center;">Sleep clock donut + nap/night</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="font-size:13px;font-weight:700;color:var(--b-deep);">💊 Medicine</div>
+    <div style="border:2.5px dashed var(--wire);border-radius:28px;background:#1a0902;position:relative;padding:36px 12px 16px;min-height:340px;">
+      <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:44px;height:11px;border:1.5px dashed #2e1005;border-radius:6px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;"><div style="font-size:9.5px;font-weight:700;color:#fde68a;">💊 Medicine</div><div style="font-size:8px;color:rgba(253,230,138,0.4);">← Back</div></div>
+      <div style="background:rgba(20,184,166,0.1);border:1.5px dashed rgba(20,184,166,0.3);border-radius:9px;padding:6px 9px;margin-bottom:5px;"><div style="font-size:8.5px;font-weight:700;color:#99f6e4;">Tylenol Syrup</div><div style="font-size:7.5px;color:rgba(153,246,228,0.5);">🔔 8:00 AM · 2:00 PM · 8:00 PM</div></div>
+      <div style="background:rgba(20,184,166,0.1);border:1.5px dashed rgba(20,184,166,0.3);border-radius:9px;padding:6px 9px;margin-bottom:6px;"><div style="font-size:8.5px;font-weight:700;color:#99f6e4;">Probiotics</div><div style="font-size:7.5px;color:rgba(153,246,228,0.5);">🔔 9:00 AM</div></div>
+      <div style="background:rgba(20,184,166,0.2);border:1.5px dashed rgba(20,184,166,0.4);border-radius:9px;padding:7px;text-align:center;font-size:8.5px;font-weight:700;color:#99f6e4;margin-bottom:6px;">+ Add New Medicine</div>
+      <div style="background:rgba(69,26,3,0.4);border:1.5px dashed rgba(180,83,9,0.35);border-radius:10px;padding:8px 10px;">
+        <div style="font-size:7px;color:rgba(180,83,9,0.7);font-weight:700;margin-bottom:3px;">Today&apos;s Log</div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px dashed rgba(180,83,9,0.2);"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">8:02 AM</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Tylenol Syrup ✓</span></div>
+        <div style="display:flex;justify-content:space-between;padding:4px 0;"><span style="font-size:7.5px;color:rgba(253,230,138,0.6);">9:10 AM</span><span style="font-size:7.5px;font-weight:700;color:#fbbf24;">Probiotics ✓</span></div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);text-align:center;">Register medicine → get alerts</div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    <div style="font-size:13px;font-weight:700;color:var(--b-deep);">🌟 Growth</div>
+    <div style="border:2.5px dashed var(--wire);border-radius:28px;background:#1a0902;position:relative;padding:36px 12px 16px;min-height:340px;">
+      <div style="position:absolute;top:11px;left:50%;transform:translateX(-50%);width:44px;height:11px;border:1.5px dashed #2e1005;border-radius:6px;"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;"><div style="font-size:9.5px;font-weight:700;color:#fde68a;">🌟 Growth</div><div style="font-size:8px;color:rgba(253,230,138,0.4);">← Back</div></div>
+      <div style="background:rgba(69,26,3,0.4);border:1.5px dashed rgba(180,83,9,0.35);border-radius:10px;padding:8px 10px;margin-bottom:8px;text-align:center;"><div style="font-size:10px;font-weight:700;color:#fbbf24;">Month 3 Magic</div><div style="font-size:7.5px;color:rgba(251,191,36,0.5);margin-top:2px;">3 footprints / 44</div><div style="height:4px;background:rgba(180,83,9,0.2);border-radius:2px;overflow:hidden;margin-top:6px;"><div style="height:4px;background:#fbbf24;border-radius:2px;width:7%;"></div></div></div>
+      <div style="background:rgba(69,26,3,0.3);border:1.5px dashed rgba(180,83,9,0.3);border-radius:9px;padding:7px 9px;">
+        <div style="font-size:8.5px;font-weight:700;color:#fbbf24;margin-bottom:5px;">This Month&apos;s Milestones</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:8px;color:rgba(253,230,138,0.7);"><div style="width:13px;height:13px;border-radius:50%;border:1.5px dashed #fbbf24;background:rgba(251,191,36,0.2);color:#fbbf24;display:flex;align-items:center;justify-content:center;font-size:8px;flex-shrink:0;">✓</div><span>Turns head toward sounds</span></div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:8px;color:rgba(253,230,138,0.7);"><div style="width:13px;height:13px;border-radius:50%;border:1.5px dashed #fbbf24;background:rgba(251,191,36,0.2);color:#fbbf24;display:flex;align-items:center;justify-content:center;font-size:8px;flex-shrink:0;">✓</div><span>Lifts head while on tummy</span></div>
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:8px;color:rgba(253,230,138,0.7);"><div style="width:13px;height:13px;border-radius:50%;border:1.5px dashed rgba(180,83,9,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;"></div><span>Laughs out loud</span></div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:8px;color:rgba(253,230,138,0.7);"><div style="width:13px;height:13px;border-radius:50%;border:1.5px dashed rgba(180,83,9,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;"></div><span>Smiles with eye contact</span></div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);text-align:center;">Monthly milestone checklist</div>
+  </div>
+</div>
+<div class="desc-grid">
+  <div class="desc-card"><div class="dc-title">🍼 Feeding Log</div><div class="dc-body">Log breast (left/right) and formula separately. Formula accepts ml quantity. Shows which breast to use next. Today, weekly, and monthly stats are available.</div></div>
+  <div class="desc-card"><div class="dc-title">🌙 Sleep Log</div><div class="dc-body">Tap "Going to sleep" to start, "Just woke up" to stop. A sleep clock donut visualizes night sleep and naps.</div><div class="dc-tip"><div class="tip-dot"></div>"Sleeping" shows on the main Baby Care card when active</div></div>
+  <div class="desc-card"><div class="dc-title">💊 Medicine</div><div class="dc-body">Register a medicine name and dosage times to receive alerts at the scheduled time. Log multiple medicines and track today's doses.</div><div class="dc-tip"><div class="tip-dot"></div>Notification permission must be enabled on the viewer phone</div></div>
+  <div class="desc-card"><div class="dc-title">🌟 Growth</div><div class="dc-body">A milestone checklist for each age in months. Enter birthday and the relevant milestones appear automatically. 44 footprints total.</div><div class="dc-tip"><div class="tip-dot"></div>Missing a milestone this month is fine — it carries over</div></div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 09 / Baby Care Features &nbsp;|&nbsp; ← 08 · Baby Care Box &nbsp;&nbsp; 10 · Nest Settings →</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div><section id="page10" class="manual-section">
+<style>
+.set-card{background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:14px;padding:8px 10px;margin-bottom:8px;}
+.set-head{display:flex;align-items:center;gap:4px;padding-bottom:6px;margin-bottom:6px;border-bottom:1px dashed rgba(180,83,9,0.3);}
+.toggle-on2{background:#f97316;justify-content:flex-end;}
+.toggle-off2{background:rgba(69,26,3,0.8);border:1px dashed rgba(180,83,9,0.4);justify-content:flex-start;}
+</style><div class="pg-header">
+  <div class="logo">🦉 <span>OWLY</span> VIEW</div>
+  <div class="badge-pill">10 · Nest Settings</div>
+</div>
+<div class="wrap">
+<h1 class="hero-title"><span>Nest Settings</span> — manage AI, alerts, and family</h1>
+<p class="hero-sub">Tap ⚙️ in the bottom tab bar. <strong>Only the host (the first parent who entered the code)</strong> can access this screen.</p>
+<div class="phones-row">
+  <div class="phone-block">
+    <div class="block-label">AI Detection &amp; Env Sensor</div>
+    <div style="width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 18px;min-height:520px;">
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;"></div>
+      <div style="display:flex;align-items:center;gap:8px;padding:0 2px;margin-bottom:10px;"><div style="width:26px;height:26px;background:rgba(69,26,3,0.8);border:1.5px dashed #5c2e0e;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(253,230,138,0.7);flex-shrink:0;">←</div><div><div style="font-size:10px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:3px;">⚙️ Nest Settings ✦</div><div style="font-size:7px;color:#f97316;letter-spacing:1px;margin-top:1px;">🛡️ PURE SENSE ADMIN</div></div></div>
+      <div class="set-card">
+        <div class="set-head"><span style="font-size:11px;">🧠</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;letter-spacing:1px;text-transform:uppercase;">AI SMART DETECTION</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 2px;margin-bottom:3px;"><div style="font-size:8px;font-weight:700;color:#fde68a;">🎙️ Cry Detection</div><div style="width:28px;height:15px;border-radius:8px;display:flex;align-items:center;padding:0 2px;flex-shrink:0;background:#f97316;justify-content:flex-end;"><div style="width:11px;height:11px;border-radius:50%;background:#fff;"></div></div></div>
+        <div style="padding:2px 2px 4px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;font-size:7px;margin-bottom:3px;"><span style="color:rgba(253,230,138,0.6);">Detection volume threshold</span><span style="font-weight:700;color:#fbbf24;">70 dB</span></div><div style="height:4px;background:rgba(69,26,3,0.8);border-radius:2px;position:relative;"><div style="height:4px;background:#f97316;width:55%;border-radius:2px;"></div><div style="position:absolute;top:-4px;left:53%;width:10px;height:10px;border-radius:50%;background:#fff;border:1.5px solid #f97316;"></div></div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 2px;margin-bottom:3px;"><div style="font-size:8px;font-weight:700;color:#fde68a;">👁️ Sleep Safety Detection</div><div style="width:28px;height:15px;border-radius:8px;display:flex;align-items:center;padding:0 2px;flex-shrink:0;background:rgba(69,26,3,0.8);border:1px dashed rgba(180,83,9,0.4);justify-content:flex-start;"><div style="width:11px;height:11px;border-radius:50%;background:#fff;"></div></div></div>
+        <div style="padding:2px 2px 4px;opacity:0.3;"><div style="display:flex;justify-content:space-between;font-size:7px;margin-bottom:3px;"><span style="color:rgba(253,230,138,0.6);">Alert delay when face not detected</span><span style="font-weight:700;">15s</span></div><div style="height:4px;background:rgba(69,26,3,0.8);border-radius:2px;"><div style="height:4px;background:#fbbf24;width:30%;border-radius:2px;"></div></div></div>
+      </div>
+      <div class="set-card" style="position:relative;min-height:100px;">
+        <div class="set-head"><span style="font-size:11px;">🌡️</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;letter-spacing:1px;text-transform:uppercase;">ENV SENSOR THRESHOLDS</span></div>
+        <div style="font-size:7px;color:rgba(180,83,9,0.7);margin-bottom:3px;">🌡️ Room Temp</div>
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;"><div style="flex:1;background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:4px;text-align:center;font-size:10px;font-weight:700;color:#93c5fd;">18</div><span style="font-size:10px;font-weight:700;color:#fbbf24;">~</span><div style="flex:1;background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:4px;text-align:center;font-size:10px;font-weight:700;color:#fca5a5;">28</div><span style="font-size:8px;color:rgba(180,83,9,0.5);">°C</span></div>
+        <div style="font-size:7px;color:rgba(180,83,9,0.7);margin-bottom:3px;">💧 Humidity</div>
+        <div style="display:flex;align-items:center;gap:5px;"><div style="flex:1;background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:4px;text-align:center;font-size:10px;font-weight:700;color:#93c5fd;">30</div><span style="font-size:10px;font-weight:700;color:#fbbf24;">~</span><div style="flex:1;background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:4px;text-align:center;font-size:10px;font-weight:700;color:#fca5a5;">70</div><span style="font-size:8px;color:rgba(180,83,9,0.5);">%</span></div>
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,0.6);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:8px;color:#fbbf24;text-align:center;line-height:1.5;">🌡️ Sensor required<br><span style="font-size:7px;opacity:0.6;">Connect Bluetooth sensor first</span></div>
+      </div>
+    </div>
+    <div class="phone-caption">AI detection · Env sensor (scroll)</div>
+  </div>
+  <div class="phone-block">
+    <div class="block-label">Alerts &amp; Security</div>
+    <div style="width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 18px;min-height:520px;">
+      <div style="position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;"></div>
+      <div style="display:flex;align-items:center;gap:8px;padding:0 2px;margin-bottom:10px;"><div style="width:26px;height:26px;background:rgba(69,26,3,0.8);border:1.5px dashed #5c2e0e;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(253,230,138,0.7);flex-shrink:0;">←</div><div><div style="font-size:10px;font-weight:700;color:#fde68a;">⚙️ Nest Settings ✦</div><div style="font-size:7px;color:#f97316;letter-spacing:1px;margin-top:1px;">🛡️ PURE SENSE ADMIN</div></div></div>
+      <div class="set-card">
+        <div class="set-head"><span style="font-size:11px;">🔔</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;letter-spacing:1px;text-transform:uppercase;">DEVICE ALERTS &amp; SOUND</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 2px;margin-bottom:3px;"><div><div style="font-size:8px;font-weight:700;color:#fde68a;">📱 Background Alerts</div><span style="font-size:7px;color:rgba(180,83,9,0.7);display:block;margin-top:1px;">Receive alerts when screen is off</span></div><div style="width:28px;height:15px;border-radius:8px;display:flex;align-items:center;padding:0 2px;flex-shrink:0;background:#059669;justify-content:flex-end;"><div style="width:11px;height:11px;border-radius:50%;background:#fff;"></div></div></div>
+        <div style="padding:2px 2px 4px;margin-top:4px;"><div style="display:flex;justify-content:space-between;font-size:7px;margin-bottom:3px;"><span style="color:rgba(253,230,138,0.6);">🔊 Alert Volume</span><span style="font-weight:700;color:#fbbf24;">70%</span></div><div style="height:4px;background:rgba(69,26,3,0.8);border-radius:2px;position:relative;"><div style="height:4px;background:#10b981;width:70%;border-radius:2px;"></div><div style="position:absolute;top:-4px;left:68%;width:10px;height:10px;border-radius:50%;background:#fff;border:1.5px solid #10b981;"></div></div></div>
+      </div>
+      <div class="set-card">
+        <div class="set-head"><span style="font-size:11px;">🔒</span><span style="font-size:7.5px;font-weight:700;color:#fde68a;letter-spacing:1px;text-transform:uppercase;">SECURITY &amp; CONNECTIONS</span></div>
+        <div style="background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:7px 9px;margin-bottom:6px;"><div style="font-size:9px;color:#fb923c;font-weight:700;margin-bottom:5px;">Access code: A3F7 - K9M2</div><div style="display:flex;gap:5px;"><div style="flex:1;background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);border-radius:7px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#fde68a;">🔗 Copy Link</div><div style="flex:1;background:linear-gradient(90deg,#ea580c,#d97706);border-radius:7px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#fff;">📤 Send Invite</div></div></div>
+        <div style="font-size:7px;color:rgba(180,83,9,0.7);margin-bottom:4px;letter-spacing:1px;">FAMILY (2/2)</div>
+        <div style="background:rgba(0,0,0,0.35);border:1px dashed rgba(255,255,255,0.05);border-radius:8px;padding:5px 7px;display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;"><div><div style="font-size:8px;font-weight:700;color:#fde68a;">Mom <span style="font-size:6.5px;padding:1px 5px;border-radius:4px;background:rgba(249,115,22,0.2);border:1px solid rgba(249,115,22,0.3);color:#fb923c;">Host</span></div></div><div style="width:22px;height:12px;border-radius:6px;background:#f97316;display:flex;align-items:center;justify-content:flex-end;padding:0 1.5px;"><div style="width:9px;height:9px;border-radius:50%;background:#fff;"></div></div></div>
+        <div style="background:rgba(0,0,0,0.35);border:1px dashed rgba(255,255,255,0.05);border-radius:8px;padding:5px 7px;display:flex;align-items:center;justify-content:space-between;"><div><div style="font-size:8px;font-weight:700;color:#fde68a;">Grandma <span style="font-size:6.5px;padding:1px 5px;border-radius:4px;background:rgba(69,26,3,0.6);border:1px solid rgba(180,83,9,0.3);color:#fbbf24;">Member</span></div></div><div style="width:22px;height:12px;border-radius:6px;background:rgba(69,26,3,0.8);border:1px dashed rgba(180,83,9,0.4);display:flex;align-items:center;justify-content:flex-start;padding:0 1.5px;"><div style="width:9px;height:9px;border-radius:50%;background:#fff;"></div></div></div>
+      </div>
+    </div>
+    <div class="phone-caption">Alerts · family management (scroll)</div>
+  </div>
+</div>
+<div class="desc-grid">
+  <div class="desc-card"><div class="dc-title">🧠 AI Smart Detection</div><div class="dc-body">Toggle cry detection and sleep safety (face) detection on/off separately. Cry detection has a dB threshold slider; sleep detection has a delay slider (seconds before alerting when face is lost). <strong>Turning the switch off means you won't receive that alert.</strong></div><div class="dc-tip"><div class="tip-dot"></div>If alerts fire too often, raise the dB threshold or increase the delay</div></div>
+  <div class="desc-card"><div class="dc-title">🌡️ Env Sensor Thresholds</div><div class="dc-body">Only available when a Bluetooth temperature/humidity sensor is connected. Set acceptable ranges for room temperature and humidity — alerts fire when the values go out of range. The panel appears blurred without a sensor.</div></div>
+  <div class="desc-card"><div class="dc-title">🔔 Device Alerts &amp; Sound</div><div class="dc-body">Turn on Background Alerts to receive cry and face alerts even when the viewer phone screen is off. The alert volume slider controls how loud alert sounds are.</div></div>
+  <div class="desc-card"><div class="dc-title">🔒 Security &amp; Connections</div><div class="dc-body">Copy or share the access code invite link with family. In the family list, toggle each member's alert notifications on/off, and edit their nickname (display name) directly.</div><div class="dc-tip"><div class="tip-dot"></div>Pending family entry requests can also be approved or declined here</div><div class="dc-tip"><div class="tip-dot"></div>A red dot on the Settings tab icon means there's a pending request</div></div>
+</div>
+</div>
+<div class="pg-footer">Owly View Manual · 10 / Nest Settings &nbsp;|&nbsp; ← 09 · Baby Care Features &nbsp;&nbsp; 🦉 End</div>
+
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ Table of Contents</a></div>
+</section>
+<div class="page-divider"></div>
+</body>
+</html>
