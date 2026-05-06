@@ -30,11 +30,6 @@ body { font-family: 'Gowun Dodum', sans-serif; background: #fdf6ee; color: #2a1a
 .nav-btn { display: inline-block; padding: 8px 20px; background: #fff; border: 1.5px solid #e8d5b7; border-radius: 20px; color: #9a7050; font-size: 13px; text-decoration: none; }
 .nav-btn:hover { background: #fef3d0; }
 
-/* ── 00 · 오울리뷰 소개 ── */
-#page00 {
-  display: block;
-}
-
 :root {
   --cream:#fdf6ee; --cream2:#f5e9d6; --border:#e8d5b7;
   --b-deep:#2e1005; --b-dark:#5c2e0e; --b-warm:#a0522d; --b-light:#c8845a;
@@ -42,20 +37,26 @@ body { font-family: 'Gowun Dodum', sans-serif; background: #fdf6ee; color: #2a1a
   --text:#2a1a0a; --text2:#5a3a1a; --muted:#9a7050;
   --wire:#b07040; --wire-lt:#ddb88a;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
+
 /* ── header ── */
-#page00 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
+.pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
 .logo{font-size:18px;font-weight:700;color:var(--b-deep);letter-spacing:1px;}
 .logo span{color:var(--b-warm);}
 .badge{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-/* ── content ── */
-#page00 .wrap{max-width:860px;margin:0 auto;padding:48px 40px 60px;}
-#page00 .hero-title{font-size:28px;color:var(--b-deep);margin-bottom:6px;}
-#page00 .hero-title span{color:var(--b-warm);}
-#page00 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
+.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
+
+/* ── content wrap ── */
+.wrap{max-width:860px;margin:0 auto;padding:48px 40px 60px;}
+.hero-title{font-size:28px;color:var(--b-deep);margin-bottom:6px;}
+.hero-title span{color:var(--b-warm);}
+.hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
+
 /* ── two-col ── */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+
+/* ── layout (폰 + 설명) ── */
+.layout{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;}
+
 /* ── phone wireframe ── */
 .phone-wrap{display:flex;flex-direction:column;align-items:center;gap:10px;}
 .phone{width:220px;border:2.5px dashed var(--wire);border-radius:34px;background:#fff;position:relative;padding:44px 14px 20px;min-height:420px;}
@@ -68,16 +69,20 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .ui-half{height:48px;flex:1;}
 .ui-btn{height:36px;flex:1;border-radius:18px;}
 .phone-label{font-size:12px;color:var(--muted);text-align:center;margin-top:4px;}
+.phone-caption{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;}
+
 /* ── callout list ── */
 .callout-list{list-style:none;display:flex;flex-direction:column;gap:16px;padding-top:4px;}
 .callout-list li{display:flex;gap:12px;align-items:flex-start;}
 .c-num{min-width:26px;height:26px;border-radius:50%;background:var(--amber-bg);color:var(--amber);font-size:12px;display:flex;align-items:center;justify-content:center;margin-top:2px;}
 .c-title{font-size:14px;font-weight:700;color:var(--b-dark);margin-bottom:2px;}
 .c-desc{font-size:13px;color:var(--text2);}
+
 /* ── info box ── */
 .info-box{margin-top:36px;background:var(--amber-bg);border:1.5px solid #f0c060;border-radius:12px;padding:20px 24px;}
 .info-box h3{font-size:14px;color:var(--amber);margin-bottom:10px;}
 .info-box ul{padding-left:18px;font-size:13px;color:var(--text2);line-height:2;}
+
 /* ── diagram ── */
 .diagram{margin-top:40px;display:flex;align-items:center;justify-content:center;gap:0;}
 .d-phone{display:flex;flex-direction:column;align-items:center;gap:6px;}
@@ -88,36 +93,42 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .d-arrow{display:flex;align-items:center;padding:0 12px;}
 .d-arrow svg{width:48px;}
 .d-note{font-size:11px;color:var(--muted);text-align:center;margin-top:4px;line-height:1.4;}
+
 /* ── footer ── */
-#page00 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
+.pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
 
-/* ── 01 · 역할 선택 ── */
-#page01 {
-  display: block;
-}
+/* ── ann-list (공통 설명 리스트) ── */
+.ann-list{display:flex;flex-direction:column;gap:18px;}
+.ann-item{display:flex;gap:14px;align-items:flex-start;}
+.ann-badge{min-width:28px;height:28px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.ann-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
+.ann-desc{font-size:13px;color:var(--text2);line-height:1.75;}
+.divider{height:1px;background:var(--border);margin:4px 0;}
+.tip{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:16px 20px;font-size:13px;color:var(--text2);margin-top:4px;line-height:1.8;}
+.tip strong{color:var(--amber);}
+.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:20px;line-height:1.8;}
+.tip-box strong{color:var(--amber);}
 
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page01 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);letter-spacing:1px;}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page01 .wrap{max-width:900px;margin:0 auto;padding:48px 40px 60px;}
-#page01 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page01 .hero-title span{color:var(--b-warm);}
-#page01 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:36px;}
-.layout{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+/* ── desc-grid ── */
+.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
+.dc-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
+.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:6px;font-size:11px;color:var(--muted);}
+.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
 
-/* ── 폰 프레임 (다크) ── */
-.phone{width:220px;border:2.5px dashed var(--wire);border-radius:34px;position:relative;padding:42px 13px 22px;min-height:460px;background:#0f1729;flex-shrink:0;}
-.notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:50px;height:13px;border:2px dashed #334155;border-radius:7px;}
+/* ── step ── */
+.step-num{min-width:24px;height:24px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
+.step-dot{min-width:22px;height:22px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
+
+/* ── page01 ── */
 .star{position:absolute;border-radius:50%;background:#fef08a;}
 .lang-btn{position:absolute;top:50px;right:11px;border:1.5px dashed #334155;border-radius:14px;padding:2px 7px;font-size:7px;color:#94a3b8;display:flex;align-items:center;gap:2px;}
 .moon-wrap{display:flex;justify-content:center;margin:6px 0 4px;}
 .moon-circle{width:36px;height:36px;border-radius:50%;border:1.5px dashed rgba(251,191,36,0.4);background:rgba(251,191,36,0.08);display:flex;align-items:center;justify-content:center;font-size:15px;}
 .s-title{font-size:9px;font-weight:700;color:#fef08a;text-align:center;margin-bottom:2px;}
 .s-sub{font-size:7.5px;color:#d97706;text-align:center;margin-bottom:12px;}
-
-/* ── 카드 버튼 ── */
 .mode-card{border-radius:14px;padding:10px 11px;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
 .hub-card{background:linear-gradient(135deg,rgba(69,26,3,0.85),rgba(15,23,42,0.9));border:1.5px dashed rgba(251,191,36,0.5);}
 .viewer-card{background:linear-gradient(135deg,rgba(30,27,75,0.85),rgba(15,23,42,0.9));border:1.5px dashed rgba(99,102,241,0.5);}
@@ -135,49 +146,13 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .hub-desc-c{color:rgba(251,191,36,0.75);}
 .viewer-desc-c{color:rgba(199,210,254,0.65);}
 .tagline{position:absolute;bottom:12px;left:0;right:0;text-align:center;font-size:6.5px;color:rgba(148,163,184,0.35);letter-spacing:1px;}
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;}
 
-/* ── 오른쪽 설명 ── */
-.ann-list{display:flex;flex-direction:column;gap:18px;}
-.ann-item{display:flex;gap:14px;align-items:flex-start;}
-.ann-badge{min-width:28px;height:28px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.ann-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
-.ann-desc{font-size:13px;color:var(--text2);line-height:1.75;}
-.divider{height:1px;background:var(--border);margin:4px 0;}
-.tip{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:16px 20px;font-size:13px;color:var(--text2);margin-top:4px;line-height:1.8;}
-.tip strong{color:var(--amber);}
-#page01 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 02 · 허브폰 권한 설정 ── */
-#page02 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--cream2:#f5e9d6;--border:#e8d5b7;--b-deep:#2e1005;--b-dark:#5c2e0e;--b-warm:#a0522d;--b-light:#c8845a;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page02 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);letter-spacing:1px;}.logo span{color:var(--b-warm);}
-.badge{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page02 .wrap{max-width:900px;margin:0 auto;padding:48px 40px 60px;}
-#page02 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page02 .hero-title span{color:var(--b-warm);}
-#page02 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-/* three phones */
+/* ── page02 ── */
 .three-phones{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-bottom:40px;}
 .phone-col{display:flex;flex-direction:column;align-items:center;gap:10px;}
-.phone{width:190px;border:2.5px dashed var(--wire);border-radius:30px;background:#fff;position:relative;padding:38px 14px 18px;min-height:320px;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed var(--wire-lt);border-radius:7px;}
-.ui-row{display:flex;gap:6px;margin-bottom:8px;}
-.ui-box{border:1.5px dashed var(--wire-lt);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--muted);text-align:center;line-height:1.3;padding:2px;}
-.ui-bar{height:28px;flex:1;}
 .ui-perm{height:54px;flex:1;flex-direction:column;gap:3px;}
-.ui-icon{font-size:16px;}
 .ui-small{height:24px;flex:1;}
 .ui-allow{height:32px;flex:1;border-radius:16px;background:var(--cream2);}
-.step-num{min-width:28px;height:28px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;}
-.phone-label{font-size:11px;color:var(--b-warm);font-weight:700;text-align:center;}
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;line-height:1.5;}
-/* bottom section */
 .bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:4px;}
 .info-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:18px 20px;}
 .info-card.warn{border-color:#f0c060;background:var(--amber-bg);}
@@ -186,206 +161,77 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .perm-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:6px;}
 .perm-list li{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text2);}
 .perm-dot{width:8px;height:8px;border-radius:50%;background:var(--b-warm);flex-shrink:0;}
-#page02 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
 
-/* ── 03 · 허브폰 설정 화면 ── */
-#page03 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page03 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);letter-spacing:1px;}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page03 .wrap{max-width:940px;margin:0 auto;padding:48px 40px 60px;}
-#page03 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page03 .hero-title span{color:var(--b-warm);}
-#page03 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-.layout{display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:start;}
-
-/* ── 폰 프레임 (스크롤 가능한 다크) ── */
-.phone{width:220px;border:2.5px dashed var(--wire);border-radius:34px;position:relative;padding:42px 12px 20px;background:#2e1005;flex-shrink:0;}
-.notch{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:50px;height:13px;border:2px dashed #5c2e0e;border-radius:7px;}
-
-/* ── 허브 설정 UI 요소들 ── */
+/* ── page03 hub UI ── */
 .hub-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;}
 .hub-title{font-size:10px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:4px;}
 .exit-btn{font-size:7px;color:rgba(253,230,138,0.6);border:1px dashed #5c2e0e;border-radius:6px;padding:2px 6px;}
-
-/* 가로 모드 권장 배너 */
 .landscape-banner{background:rgba(249,115,22,0.15);border:1.5px dashed rgba(249,115,22,0.4);border-radius:10px;padding:6px 8px;margin-bottom:7px;display:flex;align-items:center;gap:5px;}
 .landscape-icon{font-size:12px;}
 .landscape-text{font-size:7px;color:#fed7aa;font-weight:700;line-height:1.3;}
-
-/* 공통 섹션 카드 */
 .section-card{background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:12px;padding:8px 10px;margin-bottom:6px;}
 .sec-head{display:flex;align-items:center;gap:4px;margin-bottom:4px;}
 .sec-icon{font-size:10px;}
 .sec-title{font-size:7.5px;font-weight:700;color:#fde68a;}
-
-/* 단계 1: 토큰 */
 .token-row{display:flex;gap:4px;margin-bottom:4px;}
 .token-box{flex:1;background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px;text-align:center;font-size:11px;font-family:monospace;color:#fde68a;letter-spacing:2px;font-weight:700;}
 .refresh-btn{width:28px;height:28px;background:rgba(69,26,3,0.8);border:1.5px dashed #5c2e0e;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;}
 .token-note{font-size:6.5px;color:rgba(251,191,36,0.4);line-height:1.3;}
-
-/* 단계 2: 저장소 */
 .storage-bar-wrap{background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px 7px;margin-bottom:5px;}
 .storage-info{display:flex;justify-content:space-between;font-size:7px;color:#fde68a;margin-bottom:3px;}
 .storage-bar{height:5px;background:#1a0902;border-radius:3px;overflow:hidden;}
 .storage-fill{height:5px;background:linear-gradient(90deg,#f97316,#ef4444);width:35%;border-radius:3px;}
 .folder-btn{background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:6px;padding:5px;text-align:center;font-size:7.5px;color:#fde68a;}
-
-/* 단계 3: 화질 */
 .quality-row{display:flex;gap:4px;}
 .q-btn{flex:1;border-radius:6px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;}
 .q-selected{background:rgba(251,191,36,0.2);border:1.5px dashed #fbbf24;color:#fde68a;}
 .q-unsel{background:rgba(0,0,0,0.2);border:1.5px dashed #5c2e0e;color:rgba(180,83,9,0.6);}
 .q-alt{background:rgba(16,185,129,0.15);border:1.5px dashed rgba(16,185,129,0.4);color:#6ee7b7;}
-
-/* 단계 4: 센서 */
 .sensor-btn{background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:6px;text-align:center;font-size:7.5px;color:#f97316;display:flex;align-items:center;justify-content:center;gap:4px;}
-
-/* 완료 버튼 */
 .confirm-btn{background:linear-gradient(90deg,#f97316,#fbbf24);color:#1a0902;font-size:9px;font-weight:700;text-align:center;padding:9px;border-radius:10px;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:4px;}
 
-/* ── 오른쪽 설명 ── */
-.ann-list{display:flex;flex-direction:column;gap:14px;}
-.ann-item{display:flex;gap:12px;align-items:flex-start;}
-.ann-badge{min-width:26px;height:26px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.ann-title{font-size:13px;font-weight:700;color:var(--b-deep);margin-bottom:1px;}
-.ann-desc{font-size:12px;color:var(--text2);line-height:1.7;}
-.tip{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:8px;line-height:1.7;}
-.tip strong{color:var(--amber);}
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;}
-#page03 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 03b · ROI 설정 & 방송 ── */
-#page03b {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page03b .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);letter-spacing:1px;}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page03b .wrap{max-width:960px;margin:0 auto;padding:48px 40px 60px;}
-#page03b .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page03b .hero-title span{color:var(--b-warm);}
-#page03b .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-
-/* ── 가로 폰 두 개 나란히 레이아웃 ── */
+/* ── page03b ── */
 .phones-section{display:flex;gap:32px;align-items:flex-start;margin-bottom:40px;}
 .phone-block{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
-.phone-label-top{font-size:13px;font-weight:700;color:var(--b-dark, #5c2e0e);margin-bottom:4px;display:flex;align-items:center;gap:6px;}
-.step-dot{width:22px;height:22px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-
-/* ── 폰 프레임: 가로 방향 ── */
-/* 가로 폰: 넓고 낮음 */
+.phone-label-top{font-size:13px;font-weight:700;color:var(--b-dark,#5c2e0e);margin-bottom:4px;display:flex;align-items:center;gap:6px;}
 .phone-land{border:2.5px dashed var(--wire);border-radius:24px;background:#000;position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;}
 .land-notch{position:absolute;top:50%;transform:translateY(-50%);left:8px;width:10px;height:44px;border:1.5px dashed #334155;border-radius:6px;}
-
-/* ── ROI 화면 요소 ── */
-/* 카메라 배경 (회색 격자로 표현) */
 .cam-bg{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 19px,rgba(255,255,255,0.03) 20px),repeating-linear-gradient(90deg,transparent,transparent 19px,rgba(255,255,255,0.03) 20px);background-color:#1a1a1a;}
-
-/* 야간 모드 버튼 */
 .nv-btn{position:absolute;top:8px;left:20px;border:1.5px dashed rgba(16,185,129,0.5);background:rgba(6,78,59,0.7);border-radius:14px;padding:3px 8px;font-size:7px;color:#6ee7b7;display:flex;align-items:center;gap:3px;}
-
-/* 상단 우측 버튼들 */
 .top-right-btns{position:absolute;top:8px;right:10px;display:flex;gap:5px;}
 .icon-btn{width:26px;height:26px;background:rgba(26,9,2,0.7);border:1.5px dashed #5c2e0e;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:10px;}
-
-/* AI 상태 배지 (상단 중앙) */
 .ai-badge{position:absolute;top:8px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;padding:3px 10px;font-size:7px;color:#fde68a;white-space:nowrap;}
-
-/* ROI 박스 (amber 점선 + 코너 핸들) */
 .roi-box{position:absolute;border:2px dashed #fbbf24;border-radius:6px;background:rgba(251,191,36,0.06);box-shadow:0 0 12px rgba(251,191,36,0.2);}
 .roi-handle{position:absolute;width:8px;height:8px;background:#fff;border:2px solid #fbbf24;border-radius:50%;}
 .roi-guide{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.6);border:1px dashed rgba(251,191,36,0.3);border-radius:8px;padding:2px 8px;font-size:6.5px;color:#fde68a;white-space:nowrap;}
-
-/* 하단 버튼 영역 */
 .bottom-area{position:absolute;bottom:8px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:4px;}
 .focus-hint{font-size:7px;color:rgba(253,230,138,0.7);background:rgba(0,0,0,0.4);padding:2px 10px;border-radius:10px;}
 .start-btn{background:linear-gradient(90deg,#f97316,#fbbf24);color:#1a0902;font-size:8px;font-weight:700;padding:6px 28px;border-radius:10px;}
-
-/* ── 방송 중 HUD ── */
-/* 상단 좌측 배지들 */
 .hud-tl{position:absolute;top:8px;left:16px;display:flex;flex-direction:column;gap:3px;}
 .p2p-badge{font-size:6.5px;color:#fbbf24;display:flex;align-items:center;gap:2px;}
 .ai-gear-badge{font-size:6.5px;font-weight:700;padding:2px 7px;border-radius:10px;display:flex;align-items:center;gap:2px;width:fit-content;}
 .gear1{background:rgba(6,78,59,0.7);border:1px dashed rgba(16,185,129,0.4);color:#6ee7b7;}
 .quality-badge{font-size:6px;color:#fb923c;background:rgba(120,53,15,0.4);padding:1px 6px;border-radius:8px;border:1px dashed rgba(249,115,22,0.3);}
-
-/* 상단 우측: 종료 버튼 */
 .power-btn{position:absolute;top:8px;right:12px;width:26px;height:26px;background:rgba(255,255,255,0.1);border:1.5px dashed rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;}
-
-/* 중앙: 얼굴 이모티콘 */
 .face-ok{position:absolute;bottom:28px;left:0;right:0;text-align:center;font-size:16px;color:#fde68a;letter-spacing:2px;}
-.face-lost{position:absolute;bottom:22px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:2px;}
-.face-lost-emoji{font-size:14px;color:#f97316;letter-spacing:2px;}
-.rec-badge{background:rgba(127,29,29,0.7);border:1px dashed rgba(239,68,68,0.5);border-radius:10px;padding:2px 8px;font-size:6px;color:#fca5a5;}
 
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;}
-
-/* ── 하단 설명 그리드 ── */
-.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
-.dc-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
-.step-num{min-width:24px;height:24px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:6px;font-size:11px;color:var(--muted);}
-.dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:20px;line-height:1.7;}
-.tip-box strong{color:var(--amber);}
-#page03b .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 04 · 뷰어 연결하기 ── */
-#page04 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page04 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page04 .wrap{max-width:960px;margin:0 auto;padding:48px 40px 60px;}
-#page04 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page04 .hero-title span{color:var(--b-warm);}
-#page04 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-
-/* ── 두 폰 나란히 ── */
+/* ── page04 viewer ── */
 .phones-row{display:flex;gap:32px;align-items:flex-start;margin-bottom:44px;}
-.phone-block{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
-.block-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;}
-.step-dot{min-width:22px;height:22px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-
-/* ── 폰 프레임 (다크 브라운) ── */
-.phone{width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 13px 18px;min-height:440px;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;}
+.block-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;align-self:flex-start;}
 .back-btn-ui{position:absolute;top:18px;left:12px;width:28px;height:28px;background:rgba(0,0,0,0.2);border:1.5px dashed rgba(255,255,255,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;color:rgba(253,230,138,0.6);}
-
-/* ── ViewerSetup 요소 ── */
 .owl-mini{text-align:center;font-size:26px;margin-bottom:4px;opacity:0.85;}
 .vs-title{text-align:center;font-size:10px;font-weight:700;color:#fde68a;margin-bottom:2px;}
 .vs-desc{text-align:center;font-size:7.5px;color:rgba(253,230,138,0.6);margin-bottom:10px;line-height:1.5;}
-
 .vs-card{background:rgba(69,26,3,0.6);border:1.5px dashed rgba(180,83,9,0.5);border-radius:16px;padding:10px 10px;}
 .vs-card-head{display:flex;flex-direction:column;align-items:center;margin-bottom:8px;}
 .vs-card-icon{font-size:14px;margin-bottom:2px;opacity:0.8;}
 .vs-card-title{font-size:9px;font-weight:700;color:#fde68a;}
 .vs-card-sub{font-size:7px;color:rgba(253,230,138,0.5);}
-
 .code-row{display:flex;align-items:center;gap:5px;margin-bottom:7px;}
 .code-input{flex:1;background:#fef3c7;border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:7px 4px;text-align:center;font-family:monospace;font-size:13px;font-weight:700;color:#78350f;letter-spacing:2px;}
 .code-dash{font-size:12px;font-weight:700;color:#fbbf24;}
 .name-input{width:100%;background:#fef3c7;border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:7px 8px;text-align:center;font-size:8px;color:rgba(120,53,15,0.5);margin-bottom:8px;}
 .connect-btn{background:linear-gradient(90deg,#f97316,#fbbf24);border-radius:10px;padding:8px;text-align:center;font-size:8.5px;font-weight:700;color:#2e1005;display:flex;align-items:center;justify-content:center;gap:4px;}
-
-/* ── ViewerWaitingRoom 요소 ── */
 .vwr-bg{background:#3e1e04;}
 .owl-float{text-align:center;font-size:30px;margin-bottom:6px;}
 .vwr-card{background:rgba(26,9,2,0.8);border:1.5px dashed rgba(180,83,9,0.3);border-radius:18px;padding:10px 12px;margin-bottom:8px;}
@@ -394,54 +240,15 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .vwr-divider{height:1px;background:rgba(180,83,9,0.3);margin:6px 0;}
 .vwr-en-title{font-size:8.5px;font-weight:700;color:rgba(212,212,216,0.85);text-align:center;margin-bottom:2px;}
 .vwr-en-sub{font-size:7px;color:rgba(113,113,122,0.6);text-align:center;}
-
 .knock-bar{background:rgba(26,9,2,0.6);border:1.5px dashed rgba(180,83,9,0.3);border-radius:12px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
 .knock-text{font-size:8px;font-weight:700;color:rgba(253,230,138,0.7);}
 .knock-dots{display:flex;gap:3px;}
 .knock-dot{width:6px;height:6px;border-radius:50%;background:#fb923c;}
 .back-link{text-align:center;font-size:7.5px;color:rgba(180,83,9,0.6);display:flex;align-items:center;justify-content:center;gap:3px;}
-
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;}
-
-/* ── 설명 그리드 ── */
-.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
-.dc-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
-.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:6px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
 .warn-card{border-color:#f0c060;background:var(--amber-bg);}
-.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:20px;line-height:1.8;}
-.tip-box strong{color:var(--amber);}
-#page04 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
+.tip-dot2{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
 
-/* ── 05 · 마법 거울 & 가족 승인 ── */
-#page05 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page05 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page05 .wrap{max-width:960px;margin:0 auto;padding:48px 40px 60px;}
-#page05 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page05 .hero-title span{color:var(--b-warm);}
-#page05 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-
-/* ── 두 폰 나란히 ── */
-.phones-row{display:flex;gap:28px;align-items:flex-start;margin-bottom:44px;}
-.phone-block{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
-.block-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;align-self:flex-start;}
-.step-dot{min-width:22px;height:22px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-
-/* ── 폰 프레임 ── */
-.phone{width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 8px;min-height:520px;overflow:hidden;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;}
-
-/* ── ViewerView 요소 ── */
-/* 헤더 */
+/* ── page05 viewer UI ── */
 .vv-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
 .vv-title{font-size:10px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:3px;}
 .vv-badges{display:flex;gap:3px;}
@@ -449,8 +256,6 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .badge-battery{background:rgba(69,26,3,0.8);border-color:rgba(180,83,9,0.5);color:#fcd34d;}
 .badge-signal{background:rgba(6,78,59,0.5);border-color:rgba(16,185,129,0.4);color:#6ee7b7;}
 .badge-alarm{background:rgba(69,26,3,0.8);border-color:rgba(180,83,9,0.5);color:#fde68a;}
-
-/* AI 패널 */
 .panels-row{display:flex;gap:5px;margin-bottom:8px;}
 .ai-panel{flex:1.3;background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 7px;}
 .env-panel{flex:1;background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 7px;position:relative;overflow:hidden;}
@@ -462,54 +267,28 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .val-alert{color:#f87171;}
 .val-normal{color:#fef3c7;}
 .env-blur{position:absolute;inset:0;background:rgba(26,9,2,0.85);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:7px;color:#fbbf24;text-align:center;line-height:1.4;}
-
-/* 영상 */
 .video-box{border:2.5px dashed #7c2d12;border-radius:14px;background:#0a0f16;height:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:8px;position:relative;}
-.video-box.alert-mode{border-color:#ef4444;box-shadow:0 0 14px rgba(239,68,68,0.3);}
 .video-icon{font-size:18px;color:rgba(255,255,255,0.15);}
 .video-label{font-size:7px;color:rgba(255,255,255,0.2);}
 .video-overlay{position:absolute;top:5px;left:5px;font-size:7px;color:rgba(253,230,138,0.5);}
-
-/* 채팅 바 */
 .chat-bar{background:#170801;border:1px dashed rgba(180,83,9,0.3);border-radius:12px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
 .chat-icon{font-size:10px;color:rgba(180,83,9,0.5);}
 .chat-label{font-size:7.5px;font-weight:700;letter-spacing:1px;color:rgba(180,83,9,0.6);}
 .chat-arrow{font-size:9px;color:rgba(180,83,9,0.5);}
-
-/* 탭 바 */
 .tab-bar{display:flex;border-top:1.5px dashed rgba(180,83,9,0.3);padding-top:5px;}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:6.5px;color:rgba(180,83,9,0.5);position:relative;}
 .tab.active{color:#fbbf24;}
 .tab-icon{font-size:11px;}
 .tab-badge{position:absolute;top:-1px;right:10%;width:7px;height:7px;border-radius:50%;background:#ef4444;}
-
-/* ── 승인 배너 폰 ── */
-/* 배너 자체 */
 .approval-banner{position:absolute;top:48px;left:10px;right:10px;z-index:20;background:rgba(24,24,27,0.92);border:1.5px dashed rgba(113,113,122,0.5);border-radius:14px;padding:10px 12px;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
 .banner-top{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
 .banner-avatar{width:26px;height:26px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
-.banner-info{}
 .banner-label{font-size:7px;color:rgba(161,161,170,0.8);font-weight:700;letter-spacing:1px;}
 .banner-name{font-size:10px;font-weight:700;color:#fff;}
 .banner-btns{display:flex;gap:5px;}
 .btn-reject{flex:1;background:#3f3f46;border-radius:8px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#d4d4d8;}
-.btn-accept{flex:1;background:#059669;border-radius:8px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#fff;box-shadow:0 0 10px rgba(16,185,129,0.3);}
-
-/* 배너 뒤 흐릿한 뷰어 화면 */
+.btn-accept{flex:1;background:#059669;border-radius:8px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;color:#fff;}
 .bg-blur{opacity:0.35;}
-
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;}
-
-/* ── 설명 그리드 ── */
-.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
-.desc-card.highlight{border-color:#6ee7b7;background:#f0fff8;}
-.dc-title{font-size:13px;font-weight:700;color:var(--b-deep);margin-bottom:7px;display:flex;align-items:center;gap:8px;}
-.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:5px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-
-/* 탭 설명 */
 .tab-desc{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 20px;margin-top:18px;}
 .tab-desc h3{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:12px;}
 .tab-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
@@ -518,47 +297,20 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .tab-name{font-size:11px;font-weight:700;color:var(--b-deep);}
 .tab-desc-text{font-size:10px;color:var(--muted);line-height:1.4;}
 .tab-item.active-tab .tab-name{color:var(--b-warm);}
+.desc-card.highlight{border-color:#6ee7b7;background:#f0fff8;}
 
-.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:18px;line-height:1.8;}
-.tip-box strong{color:var(--amber);}
-#page05 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 06 · AI 감지 알림 ── */
-#page06 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page06 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page06 .wrap{max-width:960px;margin:0 auto;padding:48px 40px 60px;}
-#page06 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page06 .hero-title span{color:var(--b-warm);}
-#page06 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-
-/* ── 폰 두 개 나란히 ── */
-.phones-row{display:flex;gap:28px;align-items:flex-start;margin-bottom:44px;}
-.phone-block{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
-.block-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;align-self:flex-start;}
-.step-dot{min-width:22px;height:22px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;}
-
-/* ── 폰 프레임 (다크 포레스트) ── */
-.phone{width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#0f1712;position:relative;padding:40px 12px 20px;min-height:500px;overflow:hidden;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #1a2e1a;border-radius:6px;}
-
-/* 배경 광원 */
+/* ── page06 alarm ── */
+.alarm-types{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+.alarm-type-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;}
+.at-icon{font-size:20px;margin-bottom:4px;}
+.at-name{font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
+.at-desc{font-size:11px;color:var(--muted);line-height:1.5;}
 .glow{position:absolute;border-radius:50%;filter:blur(40px);pointer-events:none;}
-
-/* ── 세로 알람 UI ── */
 .alarm-tag{font-size:7px;font-weight:700;letter-spacing:2px;color:#b4c4b2;text-transform:uppercase;display:flex;align-items:center;gap:4px;justify-content:center;margin-bottom:8px;}
 .bell-wrap{display:flex;justify-content:center;margin-bottom:10px;}
 .bell-circle{width:54px;height:54px;border-radius:50%;background:linear-gradient(180deg,#4a5c48,#2e4032);border:2px dashed #6b8265;display:flex;align-items:center;justify-content:center;font-size:22px;position:relative;}
 .bell-sparkle{position:absolute;top:-4px;right:-4px;font-size:10px;}
 .alarm-title{font-size:14px;font-weight:700;color:#f1f3e6;text-align:center;margin-bottom:12px;line-height:1.4;}
-
-/* 상태 카드 */
 .status-card{background:rgba(46,64,50,0.6);border:1px dashed rgba(90,107,84,0.5);border-radius:16px;padding:12px 14px;margin-bottom:12px;}
 .status-top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:8px;margin-bottom:8px;border-bottom:1px dashed rgba(90,107,84,0.5);}
 .status-label{font-size:7px;font-weight:700;color:#98a896;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
@@ -568,15 +320,9 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .threshold-row{display:flex;justify-content:space-between;align-items:center;background:rgba(28,38,30,0.4);border:1px dashed #3a4d3e;border-radius:8px;padding:5px 8px;}
 .threshold-label{font-size:7px;color:#7e8f7c;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
 .threshold-value{font-size:11px;font-weight:700;color:#e9c46a;}
-
-/* 확인 버튼 */
 .dismiss-btn{background:linear-gradient(90deg,#ffd166,#f4a261);border-radius:12px;padding:10px;text-align:center;}
 .dismiss-main{font-size:9px;font-weight:700;color:#1c261e;letter-spacing:1px;}
 .dismiss-sub{font-size:7px;color:rgba(28,38,30,0.6);letter-spacing:1px;margin-top:1px;}
-
-/* ── 가로 알람 UI (가로폰) ── */
-.phone-land{width:100%;border:2.5px dashed var(--wire);border-radius:24px;background:#0f1712;position:relative;padding:20px 16px;aspect-ratio:16/9;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.land-notch{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:10px;height:40px;border:1.5px dashed #1a2e1a;border-radius:5px;}
 .land-inner{display:flex;align-items:center;gap:14px;z-index:10;position:relative;}
 .land-left{display:flex;flex-direction:column;align-items:center;gap:6px;width:80px;}
 .land-bell{width:36px;height:36px;border-radius:50%;background:linear-gradient(180deg,#4a5c48,#2e4032);border:1.5px dashed #6b8265;display:flex;align-items:center;justify-content:center;font-size:15px;}
@@ -588,71 +334,22 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .land-btn{background:linear-gradient(90deg,#ffd166,#f4a261);border-radius:10px;padding:8px 10px;text-align:center;width:90px;}
 .land-btn-main{font-size:8px;font-weight:700;color:#1c261e;}
 .land-btn-sub{font-size:6px;color:rgba(28,38,30,0.6);margin-top:1px;}
-
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;}
-
-/* ── 알람 유형 표 ── */
-.alarm-types{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
-.alarm-type-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;padding:12px 10px;text-align:center;}
-.at-icon{font-size:20px;margin-bottom:4px;}
-.at-name{font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
-.at-desc{font-size:11px;color:var(--muted);line-height:1.5;}
-
-/* ── 설명 그리드 ── */
-.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
-.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;}
-.dc-title{font-size:13px;font-weight:700;color:var(--b-deep);margin-bottom:6px;display:flex;align-items:center;gap:7px;}
-.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:5px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-
-.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);line-height:1.8;}
-.tip-box strong{color:var(--amber);}
 .section-label{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:12px;}
-#page06 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
 
-/* ── 07 · 감지 기록 ── */
-#page07 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page07 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page07 .wrap{max-width:920px;margin:0 auto;padding:48px 40px 60px;}
-#page07 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page07 .hero-title span{color:var(--b-warm);}
-#page07 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-.layout{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;}
-
-/* ── 폰 프레임 ── */
-.phone{width:220px;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 18px;min-height:560px;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;}
-
-/* ── 타이틀 ── */
+/* ── page07 history ── */
 .hv-title{font-size:11px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:4px;margin-bottom:10px;}
-
-/* ── 트렌드 차트 박스 ── */
 .chart-card{background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:14px;padding:8px 10px;margin-bottom:8px;}
 .chart-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
 .chart-head-left{font-size:7px;font-weight:700;color:#f97316;letter-spacing:1px;display:flex;align-items:center;gap:3px;}
 .chart-head-right{font-size:7px;color:#92400e;background:rgba(26,9,2,0.6);border:1px dashed rgba(180,83,9,0.4);border-radius:8px;padding:1px 6px;}
-
-/* SVG 차트 영역 */
 .chart-area{background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;height:72px;position:relative;overflow:hidden;margin-bottom:6px;padding:4px 6px 14px;}
 .timeline-row{position:absolute;left:6px;right:6px;height:1px;background:rgba(180,83,9,0.15);}
 .timeline-dot{position:absolute;width:6px;height:6px;border-radius:50%;transform:translateY(-3px);}
 .timeline-label{position:absolute;left:0;font-size:6px;color:rgba(180,83,9,0.5);font-weight:700;}
 .chart-time{position:absolute;bottom:2px;left:0;right:0;display:flex;justify-content:space-between;padding:0 6px;font-size:6px;color:rgba(180,83,9,0.5);font-weight:700;}
-
-/* 범례 */
 .chart-legend{display:flex;justify-content:center;gap:8px;}
 .legend-item{display:flex;align-items:center;gap:2px;font-size:6.5px;color:rgba(253,230,138,0.6);}
 .legend-dot{width:5px;height:5px;border-radius:50%;}
-
-/* ── 이벤트 로그 ── */
 .log-label{font-size:7.5px;font-weight:700;color:#f97316;letter-spacing:2px;margin-bottom:5px;}
 .log-item{background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:6px 8px;display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
 .log-left{display:flex;align-items:center;gap:6px;}
@@ -664,20 +361,6 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .log-time{font-size:7px;color:rgba(180,83,9,0.7);}
 .log-right{text-align:right;}
 .log-msg{font-size:7px;color:rgba(253,230,138,0.8);max-width:80px;line-height:1.3;}
-.log-vod{background:rgba(127,29,29,0.4);border:1px dashed rgba(239,68,68,0.4);border-radius:5px;padding:2px 5px;font-size:6.5px;color:#fca5a5;margin-top:2px;display:inline-block;}
-
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;}
-
-/* ── 오른쪽 설명 ── */
-.ann-list{display:flex;flex-direction:column;gap:16px;}
-.ann-item{display:flex;gap:12px;align-items:flex-start;}
-.ann-badge{min-width:26px;height:26px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.ann-title{font-size:13px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
-.ann-desc{font-size:12px;color:var(--text2);line-height:1.75;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:4px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-
-/* 이벤트 유형 표 */
 .event-types{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
 .et-item{display:flex;align-items:center;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;}
 .et-icon{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
@@ -688,38 +371,12 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .et-name{font-size:11px;font-weight:700;color:var(--b-deep);}
 .et-desc{font-size:10px;color:var(--muted);}
 
-.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:16px;line-height:1.8;}
-.tip-box strong{color:var(--amber);}
-#page07 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 08 · 육아 상자 ── */
-#page08 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page08 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page08 .wrap{max-width:920px;margin:0 auto;padding:48px 40px 60px;}
-#page08 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page08 .hero-title span{color:var(--b-warm);}
-#page08 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-.layout{display:grid;grid-template-columns:220px 1fr;gap:44px;align-items:start;}
-
-/* ── 폰 프레임 ── */
-.phone{width:220px;border:2.5px dashed var(--wire);border-radius:32px;background:#1a0902;position:relative;padding:40px 12px 16px;min-height:620px;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #2e1005;border-radius:6px;}
-
-/* ── MagicBox 헤더 ── */
+/* ── page08 magicbox ── */
 .mb-header{background:rgba(46,16,5,0.8);border-bottom:1.5px dashed rgba(180,83,9,0.3);padding:8px 10px;margin:-2px -12px 10px;text-align:center;}
 .mb-header-icon{font-size:24px;margin-bottom:3px;}
 .mb-header-title{font-size:11px;font-weight:700;color:#fde68a;margin-bottom:1px;}
 .mb-header-sub{font-size:7.5px;color:rgba(253,230,138,0.6);}
 .mb-header-baby{font-size:8px;color:#fbbf24;margin-top:3px;}
-
-/* ── 통합 도넛 카드 ── */
 .overview-card{background:linear-gradient(135deg,rgba(69,26,3,0.4),rgba(46,16,5,0.8));border:1.5px dashed rgba(251,191,36,0.3);border-radius:14px;padding:10px;margin-bottom:8px;}
 .ov-label{font-size:7.5px;font-weight:700;color:rgba(253,230,138,0.8);margin-bottom:8px;}
 .donut-area{display:flex;justify-content:center;margin-bottom:8px;}
@@ -727,8 +384,6 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .ov-stat{text-align:center;}
 .ov-stat-label{font-size:6.5px;color:rgba(180,83,9,0.7);display:block;}
 .ov-stat-val{font-size:9px;font-weight:700;color:#fde68a;}
-
-/* ── 5개 기능 카드 ── */
 .feat-card{border-radius:12px;padding:9px 12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;border:1.5px dashed;}
 .fc-wizard{background:rgba(88,28,135,0.25);border-color:rgba(167,139,250,0.3);}
 .fc-bottle{background:rgba(120,53,15,0.3);border-color:rgba(251,191,36,0.3);}
@@ -740,63 +395,22 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .fc-title{font-size:9px;font-weight:700;color:#fde68a;}
 .fc-sub{font-size:7px;color:rgba(253,230,138,0.5);margin-top:1px;}
 .fc-arrow{font-size:10px;color:rgba(253,230,138,0.3);}
-
-/* ── 데이터 관리 버튼 ── */
 .data-btn{background:rgba(0,0,0,0.25);border:1.5px dashed rgba(180,83,9,0.3);border-radius:8px;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;margin-top:4px;}
 .data-btn-label{font-size:8px;font-weight:700;color:rgba(253,230,138,0.7);}
 .data-btn-arr{font-size:9px;color:rgba(253,230,138,0.3);}
-
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;}
-
-/* ── 오른쪽 설명 ── */
-.ann-list{display:flex;flex-direction:column;gap:16px;}
-.ann-item{display:flex;gap:12px;align-items:flex-start;}
-.ann-badge{min-width:26px;height:26px;border-radius:50%;background:var(--b-warm);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-.ann-title{font-size:13px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
-.ann-desc{font-size:12px;color:var(--text2);line-height:1.75;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:4px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-
-/* 5카드 표 */
 .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
 .card-item{display:flex;align-items:flex-start;gap:8px;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;}
 .card-icon{font-size:18px;flex-shrink:0;}
 .card-name{font-size:12px;font-weight:700;color:var(--b-deep);margin-bottom:2px;}
 .card-desc{font-size:11px;color:var(--muted);line-height:1.4;}
 
-.tip-box{background:var(--amber-bg);border:1px solid #f0c060;border-radius:10px;padding:14px 18px;font-size:12px;color:var(--text2);margin-top:16px;line-height:1.8;}
-.tip-box strong{color:var(--amber);}
-#page08 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 09 · 육아 상자 기능 상세 ── */
-#page09 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page09 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page09 .wrap{max-width:940px;margin:0 auto;padding:48px 40px 60px;}
-#page09 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page09 .hero-title span{color:var(--b-warm);}
-#page09 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-
-/* ── 2×2 그리드 ── */
+/* ── page09 feat detail ── */
 .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:32px;}
 .feat-col{display:flex;flex-direction:column;gap:10px;}
 .feat-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;}
-
-/* ── 공통 폰 프레임 ── */
-.phone{border:2.5px dashed var(--wire);border-radius:28px;background:#1a0902;position:relative;padding:36px 12px 16px;min-height:340px;}
-.notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:44px;height:11px;border:1.5px dashed #2e1005;border-radius:5px;}
 .feat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;}
 .feat-title-ui{font-size:9.5px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:3px;}
 .back-ui{font-size:8px;color:rgba(253,230,138,0.4);}
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;}
-
-/* ── 공통 UI ── */
 .ui-card{background:rgba(69,26,3,0.4);border:1.5px dashed rgba(180,83,9,0.35);border-radius:10px;padding:8px 10px;margin-bottom:7px;}
 .ui-label{font-size:7px;color:rgba(180,83,9,0.7);font-weight:700;margin-bottom:3px;}
 .ui-val{font-size:11px;font-weight:700;color:#fde68a;}
@@ -809,18 +423,12 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .log-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px dashed rgba(180,83,9,0.2);}
 .log-t{font-size:7.5px;color:rgba(253,230,138,0.6);}
 .log-v{font-size:7.5px;font-weight:700;color:#fbbf24;}
-
-/* ── 수면 ── */
 .sleep-status{display:flex;justify-content:center;margin-bottom:7px;}
 .sleep-badge{padding:5px 16px;border-radius:20px;font-size:9px;font-weight:700;background:rgba(99,102,241,0.2);border:1.5px dashed rgba(99,102,241,0.5);color:#c7d2fe;}
 .donut-mini{display:flex;justify-content:center;margin:4px 0 7px;}
-
-/* ── 약 ── */
 .med-item{background:rgba(20,184,166,0.1);border:1.5px dashed rgba(20,184,166,0.3);border-radius:9px;padding:6px 9px;margin-bottom:5px;}
 .med-name{font-size:8.5px;font-weight:700;color:#99f6e4;}
 .med-time{font-size:7.5px;color:rgba(153,246,228,0.5);}
-
-/* ── 성장 ── */
 .milestone-section{background:rgba(69,26,3,0.3);border:1.5px dashed rgba(180,83,9,0.3);border-radius:9px;padding:7px 9px;margin-bottom:6px;}
 .ms-title{font-size:8.5px;font-weight:700;color:#fbbf24;margin-bottom:5px;}
 .ms-item{display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:8px;color:rgba(253,230,138,0.7);}
@@ -830,52 +438,12 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .progress-bar{height:4px;background:rgba(180,83,9,0.2);border-radius:2px;overflow:hidden;margin-top:5px;}
 .progress-fill{height:4px;background:#fbbf24;border-radius:2px;}
 
-/* ── 설명 그리드 ── */
-.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;}
-.dc-title{font-size:14px;font-weight:700;color:var(--b-deep);margin-bottom:7px;}
-.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
-.dc-tip{display:flex;gap:6px;align-items:flex-start;margin-top:5px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-#page09 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
-
-/* ── 10 · 둥지 설정 ── */
-#page10 {
-  display: block;
-}
-
-:root{--cream:#fdf6ee;--border:#e8d5b7;--b-deep:#2e1005;--b-warm:#a0522d;--amber:#d4890a;--amber-bg:#fef3d0;--text:#2a1a0a;--text2:#5a3a1a;--muted:#9a7050;--wire:#b07040;--wire-lt:#ddb88a;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.8;}
-#page10 .pg-header{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1.5px solid var(--border);background:#fff;}
-.logo{font-size:18px;font-weight:700;color:var(--b-deep);}.logo span{color:var(--b-warm);}
-.badge-pill{font-size:12px;color:var(--muted);border:1px solid var(--border);border-radius:20px;padding:3px 14px;}
-#page10 .wrap{max-width:940px;margin:0 auto;padding:48px 40px 60px;}
-#page10 .hero-title{font-size:26px;color:var(--b-deep);margin-bottom:6px;}#page10 .hero-title span{color:var(--b-warm);}
-#page10 .hero-sub{font-size:15px;color:var(--text2);margin-bottom:40px;}
-
-/* ── 폰 두 개 + 설명 ── */
-.phones-row{display:flex;gap:28px;align-items:flex-start;margin-bottom:40px;}
-.phone-block{display:flex;flex-direction:column;align-items:center;gap:10px;flex:1;}
-.block-label{font-size:13px;font-weight:700;color:var(--b-deep);display:flex;align-items:center;gap:6px;align-self:flex-start;}
-
-/* ── 폰 프레임 ── */
-.phone{width:100%;border:2.5px dashed var(--wire);border-radius:32px;background:#2e1005;position:relative;padding:40px 12px 18px;min-height:520px;}
-.notch{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:48px;height:12px;border:2px dashed #5c2e0e;border-radius:6px;}
-
-/* ── 설정 헤더 ── */
+/* ── page10 settings ── */
 .set-header{display:flex;align-items:center;gap:8px;padding:0 2px;margin-bottom:10px;}
 .back-btn{width:26px;height:26px;background:rgba(69,26,3,0.8);border:1.5px dashed #5c2e0e;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;color:rgba(253,230,138,0.7);flex-shrink:0;}
 .set-title{font-size:10px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:3px;}
 .set-subtitle{font-size:7px;color:#f97316;letter-spacing:1px;margin-top:1px;}
-
-/* ── 섹션 카드 ── */
 .sec-card{background:rgba(69,26,3,0.5);border:1.5px dashed rgba(180,83,9,0.4);border-radius:14px;padding:8px 10px;margin-bottom:8px;}
-.sec-head{display:flex;align-items:center;gap:4px;padding-bottom:6px;margin-bottom:6px;border-bottom:1px dashed rgba(180,83,9,0.3);}
-.sec-icon{font-size:11px;}
-.sec-title{font-size:7.5px;font-weight:700;color:#fde68a;letter-spacing:1px;text-transform:uppercase;}
-
-/* ── 토글 행 ── */
 .toggle-row{display:flex;align-items:center;justify-content:space-between;padding:4px 2px;margin-bottom:3px;}
 .toggle-label{font-size:8px;font-weight:700;color:#fde68a;display:flex;align-items:center;gap:4px;}
 .toggle-sub{font-size:7px;color:rgba(180,83,9,0.7);display:block;margin-top:1px;}
@@ -883,8 +451,6 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .toggle-on{background:#f97316;justify-content:flex-end;}
 .toggle-off{background:rgba(69,26,3,0.8);border:1px dashed rgba(180,83,9,0.4);justify-content:flex-start;}
 .toggle-dot{width:11px;height:11px;border-radius:50%;background:#fff;}
-
-/* ── 슬라이더 ── */
 .slider-row{padding:2px 2px 4px;margin-bottom:4px;}
 .slider-head{display:flex;justify-content:space-between;font-size:7px;margin-bottom:3px;}
 .slider-label{color:rgba(253,230,138,0.6);}
@@ -898,24 +464,18 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .thumb-orange{border-color:#f97316;left:53%;}
 .thumb-amber{border-color:#fbbf24;left:28%;}
 .thumb-vol{border-color:#10b981;left:68%;}
-
-/* ── 온도/습도 입력 ── */
 .env-row{display:flex;align-items:center;gap:5px;margin-bottom:5px;}
 .env-input{flex:1;background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);border-radius:6px;padding:4px;text-align:center;font-size:10px;font-weight:700;color:#93c5fd;}
 .env-tilde{font-size:10px;font-weight:700;color:#fbbf24;}
 .env-unit{font-size:8px;color:rgba(180,83,9,0.5);}
 .env-input-red{color:#fca5a5;}
 .env-blur-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:8px;color:#fbbf24;text-align:center;line-height:1.5;}
-
-/* ── 가족 초대 ── */
 .invite-card{background:rgba(26,9,2,0.7);border:1.5px dashed rgba(180,83,9,0.4);border-radius:10px;padding:7px 9px;margin-bottom:6px;}
 .invite-code{font-size:9px;color:#fb923c;font-weight:700;margin-bottom:5px;}
 .invite-btns{display:flex;gap:5px;}
 .inv-btn{flex:1;border-radius:7px;padding:5px;text-align:center;font-size:7.5px;font-weight:700;}
 .inv-copy{background:rgba(0,0,0,0.4);border:1.5px dashed rgba(180,83,9,0.4);color:#fde68a;}
 .inv-share{background:linear-gradient(90deg,#ea580c,#d97706);color:#fff;}
-
-/* ── 가족 명단 ── */
 .fam-item{background:rgba(0,0,0,0.35);border:1px dashed rgba(255,255,255,0.05);border-radius:8px;padding:5px 7px;display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;}
 .fam-name{font-size:8px;font-weight:700;color:#fde68a;}
 .fam-badge{font-size:6.5px;padding:1px 5px;border-radius:4px;}
@@ -925,16 +485,43 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
 .fam-toggle{width:22px;height:12px;border-radius:6px;background:#f97316;display:flex;align-items:center;justify-content:flex-end;padding:0 1.5px;}
 .fam-toggle-dot{width:9px;height:9px;border-radius:50%;background:#fff;}
 
-.phone-caption{font-size:11px;color:var(--muted);text-align:center;}
-
-/* ── 설명 그리드 ── */
-.desc-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-.desc-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;}
-.dc-title{font-size:13px;font-weight:700;color:var(--b-deep);margin-bottom:6px;}
-.dc-body{font-size:12px;color:var(--text2);line-height:1.8;}
-.dc-tip{display:flex;gap:5px;align-items:flex-start;margin-top:4px;font-size:11px;color:var(--muted);}
-.tip-dot{width:5px;height:5px;border-radius:50%;background:var(--b-warm);flex-shrink:0;margin-top:7px;}
-#page10 .pg-footer{text-align:center;padding:20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);margin-top:60px;}
+/* ============================================================
+   모바일 반응형 (max-width: 700px)
+   ============================================================ */
+@media (max-width: 700px) {
+  .wrap, #page00 .wrap, #page01 .wrap, #page02 .wrap,
+  #page03 .wrap, #page03b .wrap, #page04 .wrap, #page05 .wrap,
+  #page06 .wrap, #page07 .wrap, #page08 .wrap, #page09 .wrap,
+  #page10 .wrap { padding: 24px 16px 40px; max-width: 100%; }
+  .pg-header { padding: 14px 16px; }
+  .hero-title { font-size: 20px !important; }
+  .hero-sub { font-size: 13px !important; }
+  .toc-section { padding: 40px 20px; }
+  .toc-title { font-size: 24px; }
+  .two-col { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .layout { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .layout .phone { width: 100% !important; max-width: 320px; margin: 0 auto; }
+  .three-phones { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .three-phones .phone { max-width: 300px; margin: 0 auto; }
+  .feat-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .phones-row { flex-direction: column !important; gap: 24px !important; }
+  .phones-row .phone-block { width: 100% !important; }
+  .phones-row .phone { max-width: 320px; margin: 0 auto; }
+  .phones-section { flex-direction: column !important; gap: 24px !important; }
+  .phones-section .phone-block { width: 100% !important; }
+  .desc-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .bottom-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .card-grid { grid-template-columns: 1fr !important; }
+  .event-types { grid-template-columns: 1fr !important; }
+  .alarm-types { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .tab-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 8px !important; }
+  .phone { width: 100% !important; max-width: 320px !important; }
+  .phone-land { width: 100% !important; }
+  .diagram { flex-direction: column !important; align-items: center !important; }
+  .d-arrow { transform: rotate(90deg); }
+  div[style*="sticky"] { padding: 8px 16px !important; }
+  .ann-list { gap: 14px !important; }
+}
 
 </style>
 </head>
@@ -951,45 +538,39 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
     <p class="toc-sub">사용 설명서</p>
   </div>
   <ol class="toc-list">
-<li><a href="#page00" class="toc-link">00 · 오울리뷰 소개</a></li>
-<li><a href="#page01" class="toc-link">01 · 역할 선택</a></li>
-<li><a href="#page02" class="toc-link">02 · 허브폰 권한 설정</a></li>
-<li><a href="#page03" class="toc-link">03 · 허브폰 설정 화면</a></li>
-<li><a href="#page03b" class="toc-link">03b · ROI 설정 & 방송</a></li>
-<li><a href="#page04" class="toc-link">04 · 뷰어 연결하기</a></li>
-<li><a href="#page05" class="toc-link">05 · 마법 거울 & 가족 승인</a></li>
-<li><a href="#page06" class="toc-link">06 · AI 감지 알림</a></li>
-<li><a href="#page07" class="toc-link">07 · 감지 기록</a></li>
-<li><a href="#page08" class="toc-link">08 · 육아 상자</a></li>
-<li><a href="#page09" class="toc-link">09 · 육아 상자 기능 상세</a></li>
-<li><a href="#page10" class="toc-link">10 · 둥지 설정</a></li>
+    <li><a href="#page00" class="toc-link">00 · 오울리뷰 소개</a></li>
+    <li><a href="#page01" class="toc-link">01 · 역할 선택</a></li>
+    <li><a href="#page02" class="toc-link">02 · 허브폰 권한 설정</a></li>
+    <li><a href="#page03" class="toc-link">03 · 허브폰 설정 화면</a></li>
+    <li><a href="#page03b" class="toc-link">03b · ROI 설정 &amp; 방송</a></li>
+    <li><a href="#page04" class="toc-link">04 · 뷰어 연결하기</a></li>
+    <li><a href="#page05" class="toc-link">05 · 마법 거울 &amp; 가족 승인</a></li>
+    <li><a href="#page06" class="toc-link">06 · AI 감지 알림</a></li>
+    <li><a href="#page07" class="toc-link">07 · 감지 기록</a></li>
+    <li><a href="#page08" class="toc-link">08 · 육아 상자</a></li>
+    <li><a href="#page09" class="toc-link">09 · 육아 상자 기능 상세</a></li>
+    <li><a href="#page10" class="toc-link">10 · 둥지 설정</a></li>
   </ol>
 </section>
 <div class="page-divider"></div>
 
+<!-- ══════════════════════════════════════════════════════════
+     00 · 오울리뷰 소개
+════════════════════════════════════════════════════════════ -->
 <section id="page00" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge">00 · 오울리뷰 소개</div>
 </div>
-
 <div class="wrap">
-
   <h1 class="hero-title">아기 곁의 <span>수호 부엉이</span>에 오신 걸 환영해요</h1>
-  <p class="hero-sub">오울리뷰는 스마트폰 두 대만 있으면 바로 쓸 수 있는 무료 AI 아기 모니터 앱입니다.</p>
-
+  <p class="hero-sub">스마트폰 두 대만 있으면 바로 쓸 수 있는 무료 AI 아기 모니터 앱이에요.</p>
   <div class="two-col">
-
-    <!-- 왼쪽: 두 폰 다이어그램 -->
     <div>
       <div class="phone-wrap">
-        <!-- 허브폰 -->
         <div class="diagram">
           <div class="d-phone">
-            <div class="d-box">
-              <div class="icon">📷</div>
-              <div class="label">허브폰<br>(카메라)</div>
-            </div>
+            <div class="d-box"><div class="icon">📷</div><div class="label">허브폰<br>(카메라)</div></div>
             <div class="d-tag">허브폰</div>
             <div class="d-note">아기 옆에 두는 폰<br>카메라·마이크 역할</div>
           </div>
@@ -1001,42 +582,35 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
             </svg>
           </div>
           <div class="d-phone">
-            <div class="d-box">
-              <div class="icon">👁️</div>
-              <div class="label">뷰어폰<br>(시청)</div>
-            </div>
+            <div class="d-box"><div class="icon">👁️</div><div class="label">뷰어폰<br>(시청)</div></div>
             <div class="d-tag">뷰어폰</div>
             <div class="d-note">부모님이 들고 계신 폰<br>영상·알림 수신</div>
           </div>
         </div>
-
-        <!-- 아래 준비물 박스 -->
         <div class="info-box" style="margin-top:28px;width:100%;">
           <h3>📋 준비물</h3>
           <ul>
-            <li>안드로이드 스마트폰 <strong>2대</strong> (서로 다른 기종 가능)</li>
+            <li>안드로이드 스마트폰 <strong>2대</strong> (서로 다른 기종도 가능)</li>
             <li>두 폰이 <strong>같은 Wi-Fi</strong>에 연결되어 있어야 해요</li>
             <li>Google Play에서 <strong>Owly View</strong> 검색 후 설치</li>
           </ul>
         </div>
       </div>
     </div>
-
-    <!-- 오른쪽: 주요 기능 소개 -->
     <div>
       <ul class="callout-list">
         <li>
           <div class="c-num">1</div>
           <div>
             <div class="c-title">📡 실시간 영상 모니터링</div>
-            <div class="c-desc">Wi-Fi를 통해 허브폰의 카메라 영상을 뷰어폰으로 실시간 전송합니다. 별도 서버 없이 기기끼리 직접 연결돼요 (P2P).</div>
+            <div class="c-desc">Wi-Fi를 통해 허브폰의 카메라 영상을 뷰어폰으로 실시간 전송해요. 별도 서버 없이 기기끼리 직접 연결돼요 (P2P).</div>
           </div>
         </li>
         <li>
           <div class="c-num">2</div>
           <div>
             <div class="c-title">😢 AI 울음 감지</div>
-            <div class="c-desc">아기 울음소리를 AI가 실시간으로 감지해 뷰어폰에 알림을 보냅니다. 모든 분석은 기기 안에서만 이루어져요.</div>
+            <div class="c-desc">아기 울음소리를 AI가 실시간으로 감지해 뷰어폰에 알림을 보내요. 모든 분석은 기기 안에서만 이루어져요.</div>
           </div>
         </li>
         <li>
@@ -1056,41 +630,33 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
         <li>
           <div class="c-num">5</div>
           <div>
-            <div class="c-title">🔒 완전 무료 & 개인 정보 보호</div>
-            <div class="c-desc">모든 기능이 무료예요. 영상·음성은 외부 서버를 거치지 않아 개인 정보가 유출되지 않습니다.</div>
+            <div class="c-title">🔒 완전 무료 &amp; 개인 정보 보호</div>
+            <div class="c-desc">모든 기능이 무료예요. 영상·음성은 외부 서버를 거치지 않아 개인 정보가 유출되지 않아요.</div>
           </div>
         </li>
       </ul>
     </div>
-
-  </div><!-- /two-col -->
-</div><!-- /wrap -->
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 00 / 오울리뷰 소개 &nbsp;|&nbsp; 다음: 01 · 역할 선택 →
+  </div>
 </div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 00 / 오울리뷰 소개 &nbsp;|&nbsp; 다음: 01 · 역할 선택 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     01 · 역할 선택
+════════════════════════════════════════════════════════════ -->
 <section id="page01" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">01 · 역할 선택</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:900px;">
   <h1 class="hero-title">앱을 열면 <span>역할 선택</span> 화면이 나타나요</h1>
   <p class="hero-sub">허브폰과 뷰어폰, 두 폰 모두에서 각각 역할을 골라야 해요.</p>
-
   <div class="layout">
-
-    <!-- 폰 와이어프레임 (하나만) -->
     <div>
-      <div class="phone">
+      <div class="phone" style="background:#0f1729;min-height:460px;">
         <div class="notch"></div>
         <div class="star" style="width:5px;height:5px;top:56px;left:26px;opacity:.7;"></div>
         <div class="star" style="width:3px;height:3px;top:86px;right:22px;opacity:.5;"></div>
@@ -1102,20 +668,14 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
         <div class="mode-card hub-card">
           <div class="card-icon hub-icon-bg">📷</div>
           <div style="flex:1;">
-            <div class="card-name-row">
-              <span class="card-name hub-name">📷 허브 폰</span>
-              <span class="card-bdg hub-bdg">아기 카메라용</span>
-            </div>
+            <div class="card-name-row"><span class="card-name hub-name">📷 허브 폰</span><span class="card-bdg hub-bdg">아기 카메라용</span></div>
             <div class="card-desc hub-desc-c">"아기 방에 두고 촬영해요.<br>눈은 감겨도... 지켜볼게요..." ☕</div>
           </div>
         </div>
         <div class="mode-card viewer-card">
           <div class="card-icon viewer-icon-bg">📱</div>
           <div style="flex:1;">
-            <div class="card-name-row">
-              <span class="card-name viewer-name">📱 뷰어 폰</span>
-              <span class="card-bdg viewer-bdg">부모님용</span>
-            </div>
+            <div class="card-name-row"><span class="card-name viewer-name">📱 뷰어 폰</span><span class="card-bdg viewer-bdg">부모님용</span></div>
             <div class="card-desc viewer-desc-c">"다른 방에서 편하게 확인해요.<br>이제야 좀 눕네요... 육아 퇴근!" 🛏️</div>
           </div>
         </div>
@@ -1123,26 +683,21 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
       </div>
       <div class="phone-caption">역할 선택 화면</div>
     </div>
-
-    <!-- 오른쪽 설명 -->
     <div class="ann-list">
-
       <div class="ann-item">
         <div class="ann-badge">A</div>
         <div>
           <div class="ann-title">야간 테마 배경</div>
-          <div class="ann-desc">앱 전체가 어두운 배경이에요. 밤에 눈이 부시지 않도록 설계됐어요. 상단에 별이 반짝이는 애니메이션이 있어요.</div>
+          <div class="ann-desc">앱 전체가 어두운 배경이에요. 밤에 눈이 부시지 않도록 설계됐고, 상단에 별이 반짝이는 애니메이션이 있어요.</div>
         </div>
       </div>
-
       <div class="ann-item">
         <div class="ann-badge">B</div>
         <div>
           <div class="ann-title">🌐 언어 전환 버튼 (우측 상단)</div>
-          <div class="ann-desc">KO ↔ EN 버튼으로 앱 전체 언어를 바꿀 수 있어요. 역할 선택부터 허브 설정 화면까지 한국어/영어 모두 지원해요.</div>
+          <div class="ann-desc">KO ↔ EN 버튼으로 앱 전체 언어를 바꿀 수 있어요. 역할 선택부터 허브 설정까지 한국어·영어 모두 지원해요.</div>
         </div>
       </div>
-
       <div class="ann-item">
         <div class="ann-badge">C</div>
         <div>
@@ -1150,149 +705,81 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
           <div class="ann-desc">아기 방에 고정해두는 카메라 역할의 폰이에요. 카드를 누르면 안내 팝업이 먼저 뜨고, 확인하면 허브 설정 화면으로 넘어가요.</div>
         </div>
       </div>
-
       <div class="ann-item">
         <div class="ann-badge">D</div>
         <div>
           <div class="ann-title">📱 뷰어 폰 카드</div>
-          <div class="ann-desc">부모님이 들고 다니며 영상을 보는 폰이에요. 카드를 누르면 팝업 없이 바로 뷰어 화면으로 진입해요.</div>
+          <div class="ann-desc">부모님이 들고 다니며 영상을 보는 폰이에요. 카드를 누르면 팝업 없이 바로 뷰어 화면으로 이동해요.</div>
         </div>
       </div>
-
       <div class="divider"></div>
-
       <div class="ann-item">
         <div class="ann-badge">!</div>
         <div>
           <div class="ann-title">두 폰 모두 같은 Wi-Fi에 연결해야 해요</div>
-          <div class="ann-desc">허브폰과 뷰어폰이 동일한 Wi-Fi 네트워크에 연결되어 있어야 영상이 전송돼요. 한 쪽이 모바일 데이터를 사용 중이면 연결이 되지 않아요.</div>
+          <div class="ann-desc">허브폰과 뷰어폰이 동일한 Wi-Fi 네트워크에 연결되어 있어야 영상이 전송돼요. 한 쪽이 모바일 데이터를 사용 중이면 연결이 안 돼요.</div>
         </div>
       </div>
-
       <div class="tip">
         <strong>💡 처음 사용 순서</strong><br>
         허브폰: 허브 폰 카드 탭 → 팝업 확인 → 허브 설정 화면으로 이동<br>
         뷰어폰: 뷰어 폰 카드 탭 → 바로 뷰어 화면으로 이동
       </div>
-
     </div>
-
   </div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 01 / 역할 선택 &nbsp;|&nbsp; ← 00 · 소개 &nbsp;&nbsp; 02 · 허브폰 권한 설정 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 01 / 역할 선택 &nbsp;|&nbsp; ← 00 · 소개 &nbsp;&nbsp; 02 · 허브폰 권한 설정 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     02 · 허브폰 권한 설정
+════════════════════════════════════════════════════════════ -->
 <section id="page02" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge">02 · 허브폰 설정</div>
 </div>
-
-<div class="wrap">
-
+<div class="wrap" style="max-width:900px;">
   <h1 class="hero-title"><span>허브폰</span>에서 처음 한 번만 권한을 허용해 주세요</h1>
-  <p class="hero-sub">앱이 카메라·마이크·알림을 사용하려면 기기 권한이 필요합니다. 처음 실행 시 차례로 팝업이 뜨면 모두 '허용'을 눌러 주세요.</p>
-
-  <!-- 3개 폰 나열: 권한 요청 흐름 -->
+  <p class="hero-sub">앱이 카메라·마이크·알림을 쓰려면 기기 권한이 필요해요. 처음 실행하면 차례로 팝업이 뜨는데, 모두 '허용'을 눌러주세요.</p>
   <div class="three-phones">
-
-    <!-- STEP 1: 카메라 권한 -->
     <div class="phone-col">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div class="step-num">1</div>
-        <div class="phone-label">카메라 권한</div>
-      </div>
-      <div class="phone">
+      <div style="display:flex;align-items:center;gap:8px;"><div class="step-num">1</div><div class="phone-label">카메라 권한</div></div>
+      <div class="phone" style="min-height:320px;">
         <div class="notch"></div>
-        <div class="ui-row">
-          <div class="ui-box ui-bar" style="background:var(--cream2);">OWLY VIEW</div>
-        </div>
-        <div class="ui-row">
-          <div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;">
-            <div style="font-size:16px;">📷</div>
-            <div>카메라 권한 요청</div>
-          </div>
-        </div>
-        <div class="ui-row">
-          <div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">"Owly View"에서 카메라에<br>접근하려고 합니다</div>
-        </div>
-        <div class="ui-row" style="gap:8px;margin-top:4px;">
-          <div class="ui-box ui-small">거부</div>
-          <div class="ui-box ui-small" style="background:var(--cream2);color:var(--b-warm);">허용</div>
-        </div>
+        <div class="ui-row"><div class="ui-box ui-bar" style="background:var(--cream2);">OWLY VIEW</div></div>
+        <div class="ui-row"><div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;"><div style="font-size:16px;">📷</div><div>카메라 권한 요청</div></div></div>
+        <div class="ui-row"><div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">"Owly View"에서 카메라에<br>접근하려고 합니다</div></div>
+        <div class="ui-row" style="gap:8px;margin-top:4px;"><div class="ui-box ui-small">거부</div><div class="ui-box ui-small" style="background:var(--cream2);color:var(--b-warm);">허용</div></div>
       </div>
       <div class="phone-caption">👆 <strong>허용</strong>을 눌러 주세요<br>카메라 촬영에 필요해요</div>
     </div>
-
-    <!-- STEP 2: 마이크 권한 -->
     <div class="phone-col">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div class="step-num">2</div>
-        <div class="phone-label">마이크 권한</div>
-      </div>
-      <div class="phone">
+      <div style="display:flex;align-items:center;gap:8px;"><div class="step-num">2</div><div class="phone-label">마이크 권한</div></div>
+      <div class="phone" style="min-height:320px;">
         <div class="notch"></div>
-        <div class="ui-row">
-          <div class="ui-box ui-bar" style="background:var(--cream2);">OWLY VIEW</div>
-        </div>
-        <div class="ui-row">
-          <div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;">
-            <div style="font-size:16px;">🎙️</div>
-            <div>마이크 권한 요청</div>
-          </div>
-        </div>
-        <div class="ui-row">
-          <div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">"Owly View"에서 마이크에<br>접근하려고 합니다</div>
-        </div>
-        <div class="ui-row" style="gap:8px;margin-top:4px;">
-          <div class="ui-box ui-small">거부</div>
-          <div class="ui-box ui-small" style="background:var(--cream2);color:var(--b-warm);">허용</div>
-        </div>
+        <div class="ui-row"><div class="ui-box ui-bar" style="background:var(--cream2);">OWLY VIEW</div></div>
+        <div class="ui-row"><div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;"><div style="font-size:16px;">🎙️</div><div>마이크 권한 요청</div></div></div>
+        <div class="ui-row"><div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">"Owly View"에서 마이크에<br>접근하려고 합니다</div></div>
+        <div class="ui-row" style="gap:8px;margin-top:4px;"><div class="ui-box ui-small">거부</div><div class="ui-box ui-small" style="background:var(--cream2);color:var(--b-warm);">허용</div></div>
       </div>
       <div class="phone-caption">👆 <strong>허용</strong>을 눌러 주세요<br>울음 감지에 필요해요</div>
     </div>
-
-    <!-- STEP 3: 알림 권한 -->
     <div class="phone-col">
-      <div style="display:flex;align-items:center;gap:8px;">
-        <div class="step-num">3</div>
-        <div class="phone-label">알림 권한</div>
-      </div>
-      <div class="phone">
+      <div style="display:flex;align-items:center;gap:8px;"><div class="step-num">3</div><div class="phone-label">알림 권한</div></div>
+      <div class="phone" style="min-height:320px;">
         <div class="notch"></div>
-        <div class="ui-row">
-          <div class="ui-box ui-bar" style="background:var(--cream2);">OWLY VIEW</div>
-        </div>
-        <div class="ui-row">
-          <div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;">
-            <div style="font-size:16px;">🔔</div>
-            <div>알림 권한 요청</div>
-          </div>
-        </div>
-        <div class="ui-row">
-          <div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">알림을 허용하면 아기 울음을<br>바로 알려 드릴 수 있어요</div>
-        </div>
-        <div class="ui-row" style="gap:8px;margin-top:4px;">
-          <div class="ui-box ui-small">나중에</div>
-          <div class="ui-box ui-small" style="background:var(--cream2);color:var(--b-warm);">허용</div>
-        </div>
+        <div class="ui-row"><div class="ui-box ui-bar" style="background:var(--cream2);">OWLY VIEW</div></div>
+        <div class="ui-row"><div class="ui-box" style="height:60px;flex:1;flex-direction:column;gap:4px;"><div style="font-size:16px;">🔔</div><div>알림 권한 요청</div></div></div>
+        <div class="ui-row"><div class="ui-box" style="height:40px;flex:1;font-size:9px;padding:4px;">알림을 허용하면 아기 울음을<br>바로 알려 드릴 수 있어요</div></div>
+        <div class="ui-row" style="gap:8px;margin-top:4px;"><div class="ui-box ui-small">나중에</div><div class="ui-box ui-small" style="background:var(--cream2);color:var(--b-warm);">허용</div></div>
       </div>
       <div class="phone-caption">👆 <strong>허용</strong>을 눌러 주세요<br>백그라운드 알림에 필요해요</div>
     </div>
-
-  </div><!-- /three-phones -->
-
-  <!-- 하단 보충 정보 -->
+  </div>
   <div class="bottom-grid">
-
     <div class="info-card">
       <div class="card-title">✅ 허용해야 하는 권한 목록</div>
       <ul class="perm-list">
@@ -1302,214 +789,96 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
         <li><div class="perm-dot"></div>화면 켜짐 유지 — 모니터링 중단 방지</li>
       </ul>
     </div>
-
     <div class="info-card warn">
       <div class="card-title">⚠️ 권한을 거부했다면</div>
-      <div class="card-body">
-        권한을 거부하면 해당 기능이 작동하지 않아요. 이럴 땐 스마트폰의 <strong>설정 → 앱 → Owly View → 권한</strong>에서 직접 허용해 주세요.
-      </div>
+      <div class="card-body">권한을 거부하면 해당 기능이 작동하지 않아요. 이럴 땐 스마트폰 <strong>설정 → 앱 → Owly View → 권한</strong>에서 직접 켜주세요.</div>
     </div>
-
   </div>
-
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 02 / 허브폰 설정 &nbsp;|&nbsp; ← 01 · 역할 선택 &nbsp;&nbsp; 03 · 허브폰 화면 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 02 / 허브폰 설정 &nbsp;|&nbsp; ← 01 · 역할 선택 &nbsp;&nbsp; 03 · 허브폰 화면 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     03 · 허브폰 설정 화면
+════════════════════════════════════════════════════════════ -->
 <section id="page03" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">03a · 허브폰 설정 화면</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:940px;">
   <h1 class="hero-title"><span>허브폰 설정 화면</span> — 방송 시작 전 4단계를 확인해요</h1>
   <p class="hero-sub">역할 선택에서 허브폰을 고르면 이 화면이 나타나요. 아래로 스크롤하면서 단계별로 설정해요. 배경색은 다크 브라운이에요.</p>
-
   <div class="layout">
-
-    <!-- 폰 와이어프레임 -->
     <div>
-      <div class="phone">
+      <div class="phone" style="background:#2e1005;min-height:460px;">
         <div class="notch"></div>
-
-        <!-- 헤더 -->
-        <div class="hub-header">
-          <div class="hub-title">🌙 허브 폰 설정</div>
-          <div class="exit-btn">나가기</div>
-        </div>
-
-        <!-- 가로 모드 권장 배너 -->
-        <div class="landscape-banner">
-          <div class="landscape-icon">📱</div>
-          <div class="landscape-text">허브 폰을 가로로 놓고 아기를 향하게 고정해주세요</div>
-        </div>
-
-        <!-- 1단계: 연결 토큰 -->
+        <div class="hub-header"><div class="hub-title">🌙 허브 폰 설정</div><div class="exit-btn">나가기</div></div>
+        <div class="landscape-banner"><div class="landscape-icon">📱</div><div class="landscape-text">허브 폰을 가로로 놓고 아기를 향하게 고정해주세요</div></div>
         <div class="section-card">
           <div class="sec-head"><span class="sec-icon">🔑</span><span class="sec-title">1단계. 기기 연결 토큰</span></div>
-          <div class="token-row">
-            <div class="token-box">A3F7</div>
-            <div class="token-box">K9M2</div>
-            <div class="refresh-btn">🔄</div>
-          </div>
+          <div class="token-row"><div class="token-box">A3F7</div><div class="token-box">K9M2</div><div class="refresh-btn">🔄</div></div>
           <div class="token-note">🦉 토큰은 마지막 방송 후 72시간 내 방송하지 않으면 자동 만료됩니다.</div>
         </div>
-
-        <!-- 2단계: 녹화 저장소 -->
         <div class="section-card">
           <div class="sec-head"><span class="sec-icon">💾</span><span class="sec-title">2단계. 녹화 영상 보관</span></div>
           <div style="font-size:6.5px;color:rgba(253,230,138,0.5);margin-bottom:4px;line-height:1.4;">이벤트 감지 시 15초 영상이 기기에 자동 저장됩니다.</div>
-          <div class="storage-bar-wrap">
-            <div class="storage-info"><span>사용 중: <span style="color:#f97316;">1.2GB</span></span><span>여유: <span style="color:#6ee7b7;">14.8GB</span></span></div>
-            <div class="storage-bar"><div class="storage-fill"></div></div>
-          </div>
+          <div class="storage-bar-wrap"><div class="storage-info"><span>사용 중: <span style="color:#f97316;">1.2GB</span></span><span>여유: <span style="color:#6ee7b7;">14.8GB</span></span></div><div class="storage-bar"><div class="storage-fill"></div></div></div>
           <div class="folder-btn">📂 이벤트 영상(15초) 폴더</div>
         </div>
-
-        <!-- 3단계: 화질 설정 -->
         <div class="section-card">
           <div class="sec-head"><span class="sec-icon">📷</span><span class="sec-title">3단계. 화질 설정</span></div>
           <div style="font-size:6.5px;color:rgba(253,230,138,0.5);margin-bottom:5px;line-height:1.4;">구형 폰이나 발열이 심하면 절전 모드를 추천합니다.</div>
-          <div class="quality-row">
-            <div class="q-btn q-unsel">고화질 (1080p)</div>
-            <div class="q-btn q-alt">절전 모드 (720p)</div>
-          </div>
+          <div class="quality-row"><div class="q-btn q-unsel">고화질 (1080p)</div><div class="q-btn q-alt">절전 모드 (720p)</div></div>
         </div>
-
-        <!-- 4단계: 마법 센서 -->
         <div class="section-card">
           <div class="sec-head"><span class="sec-icon">🌡️</span><span class="sec-title">4단계. 마법 센서 (선택)</span></div>
           <div style="font-size:6.5px;color:rgba(253,230,138,0.5);margin-bottom:5px;line-height:1.4;">오울리 센서가 있다면 연결해주세요. (나중에 해도 됩니다!)</div>
           <div class="sensor-btn">📡 블루투스 스캔</div>
         </div>
-
-        <!-- 완료 버튼 -->
         <div class="confirm-btn">✨ 설정 완료 (관심 영역 설정으로 이동)</div>
-
       </div>
       <div class="phone-caption">허브 설정 화면 (스크롤 가능)</div>
     </div>
-
-    <!-- 오른쪽 설명 -->
     <div class="ann-list">
-
-      <div class="ann-item">
-        <div class="ann-badge">A</div>
-        <div>
-          <div class="ann-title">화면 배경 & 헤더</div>
-          <div class="ann-desc">어두운 갈색 배경이에요. 상단에 "🌙 허브 폰 설정" 제목과 우측에 "나가기" 버튼이 있어요. 나가기를 누르면 역할 선택 화면으로 돌아가요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">B</div>
-        <div>
-          <div class="ann-title">가로 모드 권장 배너 (주황색)</div>
-          <div class="ann-desc">허브폰은 가로 모드로 사용해야 해요. 주황색 배너로 가로로 놓으라는 안내가 표시돼요. 세로 모드에서 방송 시작 시 회전 경고 오버레이가 뜨고 작동이 안 돼요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">C</div>
-        <div>
-          <div class="ann-title">1단계. 기기 연결 토큰</div>
-          <div class="ann-desc">두 개의 코드 박스(A코드 + B코드)가 표시돼요. 이 코드를 뷰어폰에 입력해 연결해요. 옆의 🔄 버튼으로 코드를 새로 발급받을 수 있어요. 코드는 72시간 동안 방송이 없으면 만료돼요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">D</div>
-        <div>
-          <div class="ann-title">2단계. 녹화 영상 보관</div>
-          <div class="ann-desc">이벤트(울음·얼굴 이탈) 감지 시 15초 영상이 기기에 자동 저장돼요. 저장소 사용량 바가 표시되고, 📂 버튼으로 저장된 클립을 바로 볼 수 있어요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">E</div>
-        <div>
-          <div class="ann-title">3단계. 화질 설정</div>
-          <div class="ann-desc">고화질(1080p)과 절전 모드(720p) 중 선택해요. 기본값은 절전 모드예요. 기기가 뜨거워지거나 구형이면 절전 모드를 권장해요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">F</div>
-        <div>
-          <div class="ann-title">4단계. 마법 센서 (선택)</div>
-          <div class="ann-desc">오울리 블루투스 온습도 센서(LYWSD03MMC)를 연결할 수 있어요. 선택 사항이에요 — 없어도 앱 사용에 지장 없어요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">G</div>
-        <div>
-          <div class="ann-title">설정 완료 버튼 (주황-황금 그라디언트)</div>
-          <div class="ann-desc">모든 설정 확인 후 이 버튼을 눌러야 다음 단계(ROI 관심 영역 설정)로 넘어가요. 03b페이지에서 이어서 설명해요.</div>
-        </div>
-      </div>
-
-      <div class="tip">
-        <strong>💡 Tip</strong>&nbsp; 코드는 한 번 발급받으면 뷰어폰에 등록해두면 돼요. 매번 새로 입력할 필요 없이, 허브폰이 켜져 있으면 자동으로 연결을 시도해요.
-      </div>
-
+      <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">화면 배경 &amp; 헤더</div><div class="ann-desc">어두운 갈색 배경이에요. 상단에 "🌙 허브 폰 설정" 제목과 우측에 "나가기" 버튼이 있어요. 나가기를 누르면 역할 선택 화면으로 돌아가요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">가로 모드 권장 배너 (주황색)</div><div class="ann-desc">허브폰은 가로 모드로 사용해야 해요. 세로 모드에서 방송을 시작하면 회전 경고 오버레이가 뜨고 작동하지 않아요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">1단계. 기기 연결 토큰</div><div class="ann-desc">A코드·B코드 두 개가 표시돼요. 이 코드를 뷰어폰에 입력하면 연결돼요. 옆의 🔄 버튼으로 새 코드를 발급받을 수 있고, 72시간 동안 방송이 없으면 자동 만료돼요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">D</div><div><div class="ann-title">2단계. 녹화 영상 보관</div><div class="ann-desc">이벤트(울음·얼굴 이탈) 감지 시 15초 영상이 기기에 자동 저장돼요. 저장소 사용량 바가 표시되고, 📂 버튼으로 저장된 클립을 바로 볼 수 있어요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">E</div><div><div class="ann-title">3단계. 화질 설정</div><div class="ann-desc">고화질(1080p)과 절전 모드(720p) 중 선택해요. 기본값은 절전 모드예요. 기기가 뜨거워지거나 구형이면 절전 모드를 권장해요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">F</div><div><div class="ann-title">4단계. 마법 센서 (선택)</div><div class="ann-desc">오울리 블루투스 온습도 센서(LYWSD03MMC)를 연결할 수 있어요. 선택 사항이라 없어도 앱 사용에 지장 없어요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">G</div><div><div class="ann-title">설정 완료 버튼</div><div class="ann-desc">모든 설정을 확인한 후 이 버튼을 눌러야 다음 단계(ROI 관심 영역 설정)로 넘어가요. 03b 페이지에서 이어서 설명해요.</div></div></div>
+      <div class="tip"><strong>💡 Tip</strong>&nbsp; 코드는 한 번 발급받으면 뷰어폰에 등록해두면 돼요. 허브폰이 켜져 있으면 자동으로 연결을 시도해요.</div>
     </div>
-
   </div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 03a / 허브폰 설정 화면 &nbsp;|&nbsp; ← 02 · 권한 설정 &nbsp;&nbsp; 03b · ROI 설정 & 방송 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 03a / 허브폰 설정 화면 &nbsp;|&nbsp; ← 02 · 권한 설정 &nbsp;&nbsp; 03b · ROI 설정 &amp; 방송 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     03b · ROI 설정 & 방송
+════════════════════════════════════════════════════════════ -->
 <section id="page03b" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
-  <div class="badge-pill">03b · ROI 설정 & 방송 중 화면</div>
+  <div class="badge-pill">03b · ROI 설정 &amp; 방송 중 화면</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:960px;">
   <h1 class="hero-title">설정 완료 후 <span>관심 영역 설정</span>과 <span>방송 중 화면</span>이에요</h1>
   <p class="hero-sub">허브폰은 반드시 가로 모드(landscape)여야 해요. 세로 모드에서는 회전 경고가 뜨고 이 화면들이 표시되지 않아요.</p>
-
-  <!-- 두 화면 나란히 -->
   <div class="phones-section">
-
-    <!-- ROI 설정 화면 -->
     <div class="phone-block">
       <div class="phone-label-top"><div class="step-dot">1</div> ROI 관심 영역 설정</div>
       <div class="phone-land">
         <div class="land-notch"></div>
         <div class="cam-bg"></div>
-
-        <!-- 야간 모드 버튼 (좌상단) -->
         <div class="nv-btn">🌙 AI 야간 모드 켜짐</div>
-
-        <!-- 상단 우측 버튼 -->
-        <div class="top-right-btns">
-          <div class="icon-btn">✕</div>
-          <div class="icon-btn">📷</div>
-        </div>
-
-        <!-- AI 상태 배지 (상단 중앙) -->
+        <div class="top-right-btns"><div class="icon-btn">✕</div><div class="icon-btn">📷</div></div>
         <div class="ai-badge">☀️ 충분히 밝습니다. [1단계: 정밀 추적]</div>
-
-        <!-- ROI 박스 (중앙) -->
         <div class="roi-box" style="left:22%;top:15%;width:54%;height:65%;">
           <div class="roi-guide">박스를 드래그하여 아기 위치에 맞추세요</div>
           <div class="roi-handle" style="top:-4px;left:-4px;"></div>
@@ -1517,8 +886,6 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
           <div class="roi-handle" style="bottom:-4px;left:-4px;"></div>
           <div class="roi-handle" style="bottom:-4px;right:-4px;"></div>
         </div>
-
-        <!-- 하단 -->
         <div class="bottom-area">
           <div class="focus-hint">화면을 터치하여 초점을 맞추세요</div>
           <div class="start-btn">방송 시작</div>
@@ -1526,156 +893,80 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
       </div>
       <div class="phone-caption">ROI 설정 화면 (가로 모드)</div>
     </div>
-
-    <!-- 방송 중 HUD -->
     <div class="phone-block">
       <div class="phone-label-top"><div class="step-dot">2</div> 방송 중 HUD</div>
       <div class="phone-land" style="position:relative;">
         <div class="land-notch"></div>
         <div class="cam-bg" style="background-color:#111;"></div>
-
-        <!-- 상단 좌측 배지들 -->
         <div class="hud-tl">
-          <div class="p2p-badge">✦ P2P & 블랙박스 활성화됨</div>
+          <div class="p2p-badge">✦ P2P &amp; 블랙박스 활성화됨</div>
           <div class="ai-gear-badge gear1">✦ AI 정밀 추적</div>
           <div class="quality-badge">🌡️ 절전 모드 (480p)</div>
         </div>
-
-        <!-- 상단 우측: 종료 버튼 -->
         <div class="power-btn">⏻</div>
-
-        <!-- 중앙: 얼굴 감지 상태 이모티콘 -->
-        <!-- 얼굴 감지됨 버전 -->
         <div class="face-ok">( ᴗ ˕ ᴗ )  ☕</div>
-
-        <!-- 영상 클립 배지 (우측) -->
         <div style="position:absolute;top:32px;right:12px;background:rgba(127,29,29,0.8);border:1px dashed rgba(239,68,68,0.5);border-radius:8px;padding:3px 7px;font-size:6.5px;color:#fca5a5;display:flex;align-items:center;gap:3px;">📹 3건</div>
       </div>
       <div class="phone-caption">방송 중 화면 — 얼굴 감지 정상 시</div>
-
-      <!-- 얼굴 놓침 버전 별도 -->
       <div style="margin-top:14px;width:100%;">
         <div class="phone-land" style="aspect-ratio:16/5;position:relative;">
           <div class="cam-bg" style="background-color:#150a00;"></div>
           <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;">
-            <div style="font-size:12px;color:#f97316;letter-spacing:2px;">( > ﹏ < )  💦</div>
+            <div style="font-size:12px;color:#f97316;letter-spacing:2px;">( > ﹏ &lt; )  💦</div>
             <div style="background:rgba(127,29,29,0.7);border:1px dashed rgba(239,68,68,0.5);border-radius:8px;padding:2px 8px;font-size:6.5px;color:#fca5a5;">🔴 블랙박스 녹화 중...</div>
           </div>
         </div>
         <div class="phone-caption" style="font-size:10px;">얼굴 놓침 / 이벤트 감지 시</div>
       </div>
     </div>
-
   </div>
-
-  <!-- 하단 설명 카드들 -->
   <div class="desc-grid">
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-num">A</div> ROI (관심 영역) 박스</div>
-      <div class="dc-body">점선 테두리 박스예요. 4개의 코너 핸들을 드래그해 크기를 조절하고, 박스 안을 드래그해 위치를 옮길 수 있어요. 아기가 있는 영역을 박스로 덮어 맞춰주세요.</div>
-      <div class="dc-tip"><div class="dot"></div>AI가 이 영역을 집중 분석해요</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-num">B</div> 야간 모드 & 카메라 전환</div>
-      <div class="dc-body">좌상단 야간 모드 버튼으로 AI 야간 모드를 켜고 끌 수 있어요. 우상단에는 ✕(설정으로 돌아가기)와 📷(전후면 카메라 전환) 버튼이 있어요.</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-num">C</div> AI 기어 상태 (방송 중)</div>
-      <div class="dc-body">밝기에 따라 AI가 자동으로 3단계로 전환돼요:
-        <br>☀️ 1단계 (밝음): AI 정밀 추적 — 초록색
-        <br>🌥️ 2단계 (어두움): AI 실루엣 보호 — 황금색
-        <br>🌙 3단계 (아주 어두움): AI 스마트 오디오 — 보라색
-      </div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-num">D</div> 중앙 이모티콘 & 블랙박스</div>
-      <div class="dc-body">얼굴 감지 시: ( ᴗ ˕ ᴗ ) ☕ 이모티콘이 표시돼요. 얼굴 놓침 / 이벤트 감지 시: ( > ﹏ < ) 💦 이모티콘으로 바뀌고 "🔴 블랙박스 녹화 중..." 배지가 나타나요.</div>
-      <div class="dc-tip"><div class="dot"></div>이벤트 감지 시 15초 영상이 자동 녹화돼요</div>
-      <div class="dc-tip"><div class="dot"></div>우측 상단 📹 배지로 녹화 클립 수 확인 가능</div>
-    </div>
-
+    <div class="desc-card"><div class="dc-title"><div class="step-num">A</div> ROI (관심 영역) 박스</div><div class="dc-body">점선 테두리 박스예요. 4개의 코너 핸들을 드래그해 크기를 조절하고, 박스 안을 드래그해 위치를 옮길 수 있어요. 아기가 있는 영역을 박스로 덮어주세요.</div><div class="dc-tip"><div class="dot"></div>AI가 이 영역을 집중 분석해요</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-num">B</div> 야간 모드 &amp; 카메라 전환</div><div class="dc-body">좌상단 야간 모드 버튼으로 AI 야간 모드를 켜고 끌 수 있어요. 우상단에는 ✕(설정으로 돌아가기)와 📷(전후면 카메라 전환) 버튼이 있어요.</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-num">C</div> AI 기어 상태 (방송 중)</div><div class="dc-body">밝기에 따라 AI가 자동으로 3단계 모드로 바뀌어요:<br>☀️ 1단계 (밝음): AI 정밀 추적 — 초록색<br>🌥️ 2단계 (어두움): AI 실루엣 보호 — 황금색<br>🌙 3단계 (아주 어두움): AI 스마트 오디오 — 보라색</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-num">D</div> 중앙 이모티콘 &amp; 블랙박스</div><div class="dc-body">얼굴 감지 시: ( ᴗ ˕ ᴗ ) ☕ 이모티콘이 표시돼요. 얼굴 놓침·이벤트 감지 시: ( > ﹏ &lt; ) 💦 로 바뀌고 "🔴 블랙박스 녹화 중..." 배지가 나타나요.</div><div class="dc-tip"><div class="dot"></div>이벤트 감지 시 15초 영상이 자동 녹화돼요</div><div class="dc-tip"><div class="dot"></div>우측 상단 📹 배지로 녹화 클립 수 확인 가능</div></div>
   </div>
-
-  <div class="tip-box">
-    <strong>💡 방송 중 화면 터치하면?</strong>&nbsp; 화면을 터치하면 HUD가 잠시 나타났다가 사라져요 (wakeUpDisplay). 오랫동안 터치 없으면 화면이 어두워지고 HUD가 숨어서 배터리를 절약해요. 방송은 계속 유지돼요.
-  </div>
-
+  <div class="tip-box"><strong>💡 방송 중 화면 터치하면?</strong>&nbsp; 화면을 터치하면 HUD가 잠시 나타났다가 사라져요. 오랫동안 터치 없으면 화면이 어두워지고 HUD가 숨어서 배터리를 절약해요. 방송은 계속 유지돼요.</div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 03b / ROI 설정 & 방송 중 화면 &nbsp;|&nbsp; ← 03a · 허브폰 설정 &nbsp;&nbsp; 04 · 뷰어폰 연결 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 03b / ROI 설정 &amp; 방송 중 화면 &nbsp;|&nbsp; ← 03a · 허브폰 설정 &nbsp;&nbsp; 04 · 뷰어폰 연결 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     04 · 뷰어 연결하기
+════════════════════════════════════════════════════════════ -->
 <section id="page04" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">04 · 뷰어 연결하기</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:960px;">
   <h1 class="hero-title">뷰어폰에서 <span>코드를 입력</span>해 연결해요</h1>
-  <p class="hero-sub">코드를 처음 입력한 사람이 방장이에요. 방장은 대기실 없이 바로 입장하고, 이후에 접속하는 가족은 방장의 승인을 기다려요.</p>
-
-  <!-- 두 화면 나란히 -->
+  <p class="hero-sub">코드를 처음 입력한 사람이 방장이에요. 방장은 대기실 없이 바로 입장하고, 이후 접속하는 가족은 방장의 승인을 기다려요.</p>
   <div class="phones-row">
-
-    <!-- ViewerSetup -->
     <div class="phone-block">
       <div class="block-label"><div class="step-dot">1</div> 코드 입력 화면 (공통)</div>
-      <div class="phone">
+      <div class="phone" style="background:#2e1005;min-height:440px;">
         <div class="notch"></div>
         <div class="back-btn-ui">‹</div>
-
-        <!-- 부엉이 + 타이틀 -->
         <div class="owl-mini">🦉</div>
         <div class="vs-title">오울리 뷰 ✦</div>
         <div class="vs-desc">"수호 부엉이가 보내주는 마법 거울.<br>이제 마음 편히 쉬세요."</div>
-
-        <!-- 연결 카드 -->
         <div class="vs-card">
-          <div class="vs-card-head">
-            <div class="vs-card-icon">🔥</div>
-            <div class="vs-card-title">마법 거울 연결</div>
-            <div class="vs-card-sub">오울리가 알려준 2개의 암호를 입력하세요.</div>
-          </div>
-
-          <!-- 코드 입력 -->
-          <div class="code-row">
-            <div class="code-input">ABCD</div>
-            <div class="code-dash">-</div>
-            <div class="code-input">1234</div>
-          </div>
-
-          <!-- 이름 입력 -->
+          <div class="vs-card-head"><div class="vs-card-icon">🔥</div><div class="vs-card-title">마법 거울 연결</div><div class="vs-card-sub">오울리가 알려준 2개의 암호를 입력하세요.</div></div>
+          <div class="code-row"><div class="code-input">ABCD</div><div class="code-dash">-</div><div class="code-input">1234</div></div>
           <div class="name-input">입장할 이름 (예: 할머니, 삼촌)</div>
-
-          <!-- 연결 버튼 -->
           <div class="connect-btn">✦ 마법 거울 연결하기 →</div>
         </div>
       </div>
       <div class="phone-caption">ViewerSetup — 코드 + 이름 입력</div>
     </div>
-
-    <!-- ViewerWaitingRoom -->
     <div class="phone-block">
       <div class="block-label"><div class="step-dot">2</div> 대기실 화면 (가족만 해당)</div>
-      <div class="phone vwr-bg">
+      <div class="phone vwr-bg" style="min-height:440px;">
         <div class="notch"></div>
-
-        <!-- 부엉이 -->
         <div class="owl-float">🦉</div>
-
-        <!-- 텍스트 카드 (한+영) -->
         <div class="vwr-card">
           <div class="vwr-title">수호 부엉이가<br>잠시 숨을 고르고 있어요.</div>
           <div class="vwr-sub">방장님이 문을 열어줄 때까지<br>따뜻하게 기다려 주세요 ☕</div>
@@ -1683,139 +974,48 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
           <div class="vwr-en-title">Our Guardian Owl is taking a short rest.</div>
           <div class="vwr-en-sub">Please wait until the host grants access ☕</div>
         </div>
-
-        <!-- 노크 중 바 -->
-        <div class="knock-bar">
-          <div class="knock-text">노크하는 중...</div>
-          <div class="knock-dots">
-            <div class="knock-dot" style="opacity:.5;"></div>
-            <div class="knock-dot" style="opacity:.75;"></div>
-            <div class="knock-dot"></div>
-          </div>
-        </div>
-
-        <!-- 뒤로가기 -->
+        <div class="knock-bar"><div class="knock-text">노크하는 중...</div><div class="knock-dots"><div class="knock-dot" style="opacity:.5;"></div><div class="knock-dot" style="opacity:.75;"></div><div class="knock-dot"></div></div></div>
         <div class="back-link">‹ 기다리다 지쳤어요</div>
       </div>
       <div class="phone-caption">ViewerWaitingRoom — 승인 대기</div>
     </div>
-
   </div>
-
-  <!-- 설명 카드 -->
   <div class="desc-grid">
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">A</div> 코드 2개 + 이름 입력</div>
-      <div class="dc-body">허브폰 설정 화면에 표시된 코드 2개(각 4자리)를 순서대로 입력해요. 이름은 방장이 누가 접속하는지 알 수 있도록 입력하는 거예요 (예: 할머니, 삼촌).</div>
-      <div class="dc-tip"><div class="tip-dot"></div>이전에 연결한 적 있으면 코드가 자동으로 채워져요</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">B</div> 방장 vs 가족 — 진입 방식이 달라요</div>
-      <div class="dc-body">코드를 <strong>처음 입력한 사람이 방장</strong>이에요. 방장은 대기실 없이 바로 뷰어 화면으로 입장해요. 이후에 같은 코드로 접속하는 가족은 대기실에서 방장의 승인을 받아야 입장할 수 있어요.</div>
-    </div>
-
-    <div class="desc-card warn-card">
-      <div class="dc-title"><div class="step-dot">C</div> 코드를 여러 번 틀리면?</div>
-      <div class="dc-body">틀린 횟수에 따라 접속이 일시 제한돼요. 3단계까지 있어요: 1단계(일시 제한) → 2단계(24시간 차단) → 3단계(30일 차단). 정확한 코드를 허브폰에서 확인하고 입력해 주세요.</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">D</div> 거절되면?</div>
-      <div class="dc-body">방장이 요청을 거절하면 "입장이 거절되었어요" 메시지와 함께 "다시 노크하기" 버튼이 나타나요. 다시 누르면 재요청을 보낼 수 있어요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>"기다리다 지쳤어요" 버튼으로 코드 입력 화면으로 돌아갈 수 있어요</div>
-    </div>
-
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">A</div> 코드 2개 + 이름 입력</div><div class="dc-body">허브폰 설정 화면에 표시된 코드 2개(각 4자리)를 순서대로 입력해요. 이름은 방장이 누가 접속하는지 알 수 있도록 입력하는 거예요 (예: 할머니, 삼촌).</div><div class="dc-tip"><div class="tip-dot"></div>이전에 연결한 적 있으면 코드가 자동으로 채워져요</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">B</div> 방장 vs 가족 — 진입 방식이 달라요</div><div class="dc-body">코드를 <strong>처음 입력한 사람이 방장</strong>이에요. 방장은 대기실 없이 바로 뷰어 화면으로 입장해요. 이후에 같은 코드로 접속하는 가족은 대기실에서 방장의 승인을 받아야 입장할 수 있어요.</div></div>
+    <div class="desc-card warn-card"><div class="dc-title"><div class="step-dot">C</div> 코드를 여러 번 틀리면?</div><div class="dc-body">틀린 횟수에 따라 접속이 일시 제한돼요. 정확한 코드를 허브폰에서 확인하고 입력해 주세요.</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">D</div> 거절되면?</div><div class="dc-body">방장이 요청을 거절하면 "입장이 거절되었어요" 메시지와 함께 "다시 노크하기" 버튼이 나타나요. 다시 누르면 재요청을 보낼 수 있어요.</div><div class="dc-tip"><div class="tip-dot"></div>"기다리다 지쳤어요" 버튼으로 코드 입력 화면으로 돌아갈 수 있어요</div></div>
   </div>
-
-  <div class="tip-box">
-    <strong>💡 방장과 가족의 차이</strong><br>
-    방장(첫 번째 접속자)은 코드 입력 후 바로 뷰어 화면으로 들어가요. 이후 같은 코드로 접속하는 가족은 대기실에서 방장의 승인을 받아야 해요. 방장이 앱을 켜두고 있어야 가족의 입장 요청을 승인할 수 있어요.
-  </div>
-
+  <div class="tip-box"><strong>💡 방장과 가족의 차이</strong><br>방장(첫 번째 접속자)은 코드 입력 후 바로 뷰어 화면으로 들어가요. 이후 같은 코드로 접속하는 가족은 대기실에서 방장의 승인을 받아야 해요. 방장이 앱을 켜두고 있어야 가족의 입장 요청을 받을 수 있어요.</div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 04 / 뷰어 연결하기 &nbsp;|&nbsp; ← 03b · ROI 설정 & 방송 &nbsp;&nbsp; 05 · 뷰어 화면 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 04 / 뷰어 연결하기 &nbsp;|&nbsp; ← 03b · ROI 설정 &amp; 방송 &nbsp;&nbsp; 05 · 뷰어 화면 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     05 · 마법 거울 & 가족 승인
+════════════════════════════════════════════════════════════ -->
 <section id="page05" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
-  <div class="badge-pill">05 · 마법 거울 & 가족 승인</div>
+  <div class="badge-pill">05 · 마법 거울 &amp; 가족 승인</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:960px;">
   <h1 class="hero-title"><span>마법 거울</span>로 아기를 보고, 가족 입장도 승인해요</h1>
-  <p class="hero-sub">코드를 처음 입력한 사람이 방장이에요. 방장이 입장하면 마법 거울(라이브 영상) 화면이 나타나요. 이후 다른 가족이 노크하면 방장 화면 상단에 승인 배너가 떠요.</p>
-
+  <p class="hero-sub">코드를 처음 입력한 사람이 방장이에요. 방장으로 입장하면 마법 거울(라이브 영상)이 바로 열리고, 이후 다른 가족이 노크하면 화면 상단에 승인 배너가 떠요.</p>
   <div class="phones-row">
-
-    <!-- 마법 거울 메인 화면 -->
     <div class="phone-block">
       <div class="block-label"><div class="step-dot">A</div> 마법 거울 (방장 기본 화면)</div>
-      <div class="phone">
+      <div class="phone" style="background:#2e1005;min-height:520px;overflow:hidden;">
         <div class="notch"></div>
-
-        <!-- 헤더 -->
-        <div class="vv-header">
-          <div class="vv-title">🦉 Owly View 🛡️</div>
-          <div class="vv-badges">
-            <div class="vv-badge badge-battery">🔋 85%</div>
-            <div class="vv-badge badge-signal">● 연결 양호</div>
-            <div class="vv-badge badge-alarm">🔔 알람</div>
-          </div>
-        </div>
-
-        <!-- AI + 환경 패널 -->
+        <div class="vv-header"><div class="vv-title">🦉 Owly View 🛡️</div><div class="vv-badges"><div class="vv-badge badge-battery">🔋 85%</div><div class="vv-badge badge-signal">● 연결 양호</div><div class="vv-badge badge-alarm">🔔 알람</div></div></div>
         <div class="panels-row">
-          <div class="ai-panel">
-            <div class="panel-head">🧠 AI 스마트 감지</div>
-            <div class="panel-row">
-              <span class="panel-label">👁️ 수면 안전</span>
-              <span class="panel-val val-ok">🟢 트래킹 중</span>
-            </div>
-            <div class="panel-row">
-              <span class="panel-label">🎙️ 소리 분석</span>
-              <span class="panel-val val-normal">💤 조용함</span>
-            </div>
-          </div>
-          <div class="env-panel">
-            <div class="panel-head">🌡️ 환경 센서</div>
-            <div class="panel-row">
-              <span class="panel-label">🔥 방 온도</span>
-              <span class="panel-val val-normal">24.5°C</span>
-            </div>
-            <div class="panel-row">
-              <span class="panel-label">💧 방 습도</span>
-              <span class="panel-val val-normal">52%</span>
-            </div>
-            <div class="env-blur">🌡️ 센서<br>연결 필요</div>
-          </div>
+          <div class="ai-panel"><div class="panel-head">🧠 AI 스마트 감지</div><div class="panel-row"><span class="panel-label">👁️ 수면 안전</span><span class="panel-val val-ok">🟢 트래킹 중</span></div><div class="panel-row"><span class="panel-label">🎙️ 소리 분석</span><span class="panel-val val-normal">💤 조용함</span></div></div>
+          <div class="env-panel"><div class="panel-head">🌡️ 환경 센서</div><div class="panel-row"><span class="panel-label">🔥 방 온도</span><span class="panel-val val-normal">24.5°C</span></div><div class="panel-row"><span class="panel-label">💧 방 습도</span><span class="panel-val val-normal">52%</span></div><div class="env-blur">🌡️ 센서<br>연결 필요</div></div>
         </div>
-
-        <!-- 영상 -->
-        <div class="video-box">
-          <div class="video-icon">📺</div>
-          <div class="video-label">실시간 영상 (3:2)</div>
-          <div class="video-overlay">Wi-Fi 직결</div>
-        </div>
-
-        <!-- 채팅 바 -->
-        <div class="chat-bar">
-          <div class="chat-icon">💬</div>
-          <div class="chat-label">가족 채팅방</div>
-          <div class="chat-arrow">∧</div>
-        </div>
-
-        <!-- 탭 바 -->
+        <div class="video-box"><div class="video-icon">📺</div><div class="video-label">실시간 영상 (3:2)</div><div class="video-overlay">Wi-Fi 직결</div></div>
+        <div class="chat-bar"><div class="chat-icon">💬</div><div class="chat-label">가족 채팅방</div><div class="chat-arrow">∧</div></div>
         <div class="tab-bar">
           <div class="tab active"><div class="tab-icon">📷</div><span>마법 거울</span></div>
           <div class="tab"><div class="tab-icon">📋</div><span>감지 기록</span></div>
@@ -1826,44 +1026,19 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
       </div>
       <div class="phone-caption">마법 거울 탭 (기본 화면)</div>
     </div>
-
-    <!-- 가족 승인 배너 -->
     <div class="phone-block">
       <div class="block-label"><div class="step-dot">B</div> 가족 노크 시 — 방장 화면</div>
-      <div class="phone" style="position:relative;">
+      <div class="phone" style="background:#2e1005;min-height:520px;overflow:hidden;position:relative;">
         <div class="notch"></div>
-
-        <!-- 배경: 흐릿한 뷰어 화면 -->
         <div class="bg-blur">
-          <div class="vv-header">
-            <div class="vv-title">🦉 Owly View 🛡️</div>
-            <div class="vv-badges">
-              <div class="vv-badge badge-battery">🔋 85%</div>
-            </div>
-          </div>
-          <div class="panels-row">
-            <div class="ai-panel" style="height:52px;"></div>
-            <div class="env-panel" style="height:52px;"></div>
-          </div>
+          <div class="vv-header"><div class="vv-title">🦉 Owly View 🛡️</div><div class="vv-badges"><div class="vv-badge badge-battery">🔋 85%</div></div></div>
+          <div class="panels-row"><div class="ai-panel" style="height:52px;"></div><div class="env-panel" style="height:52px;"></div></div>
           <div class="video-box" style="height:100px;"></div>
         </div>
-
-        <!-- 승인 배너 (위에서 슬라이드) -->
         <div class="approval-banner">
-          <div class="banner-top">
-            <div class="banner-avatar">🌐</div>
-            <div class="banner-info">
-              <div class="banner-label">새로운 가족 입장 요청</div>
-              <div class="banner-name">할머니</div>
-            </div>
-          </div>
-          <div class="banner-btns">
-            <div class="btn-reject">거절</div>
-            <div class="btn-accept">입장 허용</div>
-          </div>
+          <div class="banner-top"><div class="banner-avatar">🌐</div><div><div class="banner-label">새로운 가족 입장 요청</div><div class="banner-name">할머니</div></div></div>
+          <div class="banner-btns"><div class="btn-reject">거절</div><div class="btn-accept">입장 허용</div></div>
         </div>
-
-        <!-- 탭 바 (배너 뒤) -->
         <div class="tab-bar" style="position:absolute;bottom:8px;left:12px;right:12px;opacity:0.3;">
           <div class="tab active"><div class="tab-icon">📷</div><span>마법 거울</span></div>
           <div class="tab"><div class="tab-icon">📋</div><span>감지 기록</span></div>
@@ -1874,304 +1049,127 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
       </div>
       <div class="phone-caption">가족 노크 시 배너 (방장만 보임)</div>
     </div>
-
-  </div><!-- /phones-row -->
-
-  <!-- 설명 카드 -->
-  <div class="desc-grid">
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">1</div> AI 스마트 감지 패널</div>
-      <div class="dc-body">수면 안전(얼굴 감지)과 소리 분석(울음 감지) 상태를 실시간으로 보여줘요. 이상 감지 시 해당 항목이 빨간색으로 바뀌어요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>설정에서 각 감지 기능을 켜고 끌 수 있어요</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">2</div> 환경 센서 패널</div>
-      <div class="dc-body">별도의 블루투스 온습도 센서를 연결하면 방 온도와 습도를 실시간으로 확인할 수 있어요. 센서가 없으면 패널이 흐릿하게 표시돼요.</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">3</div> 실시간 영상 (마법 거울)</div>
-      <div class="dc-body">허브폰 카메라 영상이 실시간으로 표시돼요. 얼굴이 감지되지 않으면 영상 테두리가 빨간색으로 변하고 알람이 울려요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>폰을 가로로 돌리면 영상이 더 크게 보여요</div>
-      <div class="dc-tip"><div class="tip-dot"></div>핀치(두 손가락)로 확대/축소도 가능해요</div>
-    </div>
-
-    <div class="desc-card highlight">
-      <div class="dc-title"><div class="step-dot">4</div> 가족 입장 승인 배너</div>
-      <div class="dc-body">다른 가족이 코드를 입력하고 노크하면 방장 화면 상단에 배너가 슬라이드로 내려와요. 이름을 확인하고 <strong>입장 허용</strong> 또는 <strong>거절</strong>을 선택해요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>배너는 방장만 볼 수 있어요</div>
-      <div class="dc-tip"><div class="tip-dot"></div>설정 탭에 빨간 점이 생겨 요청이 있다는 걸 알려줘요</div>
-    </div>
-
   </div>
-
-  <!-- 탭 설명 -->
+  <div class="desc-grid">
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">1</div> AI 스마트 감지 패널</div><div class="dc-body">수면 안전(얼굴 감지)과 소리 분석(울음 감지) 상태를 실시간으로 보여줘요. 이상 감지 시 해당 항목이 빨간색으로 바뀌어요.</div><div class="dc-tip"><div class="tip-dot"></div>설정에서 각 감지 기능을 켜고 끌 수 있어요</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">2</div> 환경 센서 패널</div><div class="dc-body">별도의 블루투스 온습도 센서를 연결하면 방 온도와 습도를 실시간으로 확인할 수 있어요. 센서가 없으면 패널이 흐릿하게 표시돼요.</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">3</div> 실시간 영상 (마법 거울)</div><div class="dc-body">허브폰 카메라 영상이 실시간으로 표시돼요. 얼굴이 감지되지 않으면 영상 테두리가 빨간색으로 변하고 알람이 울려요.</div><div class="dc-tip"><div class="tip-dot"></div>폰을 가로로 돌리면 영상이 더 크게 보여요</div><div class="dc-tip"><div class="tip-dot"></div>핀치(두 손가락)로 확대/축소도 가능해요</div></div>
+    <div class="desc-card highlight"><div class="dc-title"><div class="step-dot">4</div> 가족 입장 승인 배너</div><div class="dc-body">다른 가족이 코드를 입력해 노크하면 방장 화면 상단에 배너가 슬라이드로 내려와요. 이름을 확인하고 <strong>입장 허용</strong> 또는 <strong>거절</strong>을 선택하면 돼요.</div><div class="dc-tip"><div class="tip-dot"></div>배너는 방장만 볼 수 있어요</div><div class="dc-tip"><div class="tip-dot"></div>설정 탭에 빨간 점이 생겨 요청이 있다는 걸 알려줘요</div></div>
+  </div>
   <div class="tab-desc">
     <h3>하단 탭 구성</h3>
     <div class="tab-grid">
-      <div class="tab-item active-tab">
-        <div class="tab-emoji">📷</div>
-        <div class="tab-name">마법 거울</div>
-        <div class="tab-desc-text">라이브 영상 + AI 상태</div>
-      </div>
-      <div class="tab-item">
-        <div class="tab-emoji">📋</div>
-        <div class="tab-name">감지 기록</div>
-        <div class="tab-desc-text">24시간 이벤트 타임라인</div>
-      </div>
-      <div class="tab-item">
-        <div class="tab-emoji">🌲</div>
-        <div class="tab-name">숲속 톡</div>
-        <div class="tab-desc-text">가족·유저 커뮤니티</div>
-      </div>
-      <div class="tab-item">
-        <div class="tab-emoji">🎁</div>
-        <div class="tab-name">육아 상자</div>
-        <div class="tab-desc-text">운수 보기·핫딜</div>
-      </div>
-      <div class="tab-item">
-        <div class="tab-emoji">⚙️</div>
-        <div class="tab-name">둥지 설정</div>
-        <div class="tab-desc-text">AI·알림·가족 관리</div>
-      </div>
+      <div class="tab-item active-tab"><div class="tab-emoji">📷</div><div class="tab-name">마법 거울</div><div class="tab-desc-text">라이브 영상 + AI 상태</div></div>
+      <div class="tab-item"><div class="tab-emoji">📋</div><div class="tab-name">감지 기록</div><div class="tab-desc-text">24시간 이벤트 타임라인</div></div>
+      <div class="tab-item"><div class="tab-emoji">🌲</div><div class="tab-name">숲속 톡</div><div class="tab-desc-text">가족·유저 커뮤니티</div></div>
+      <div class="tab-item"><div class="tab-emoji">🎁</div><div class="tab-name">육아 상자</div><div class="tab-desc-text">수유·수면·약·성장 기록</div></div>
+      <div class="tab-item"><div class="tab-emoji">⚙️</div><div class="tab-name">둥지 설정</div><div class="tab-desc-text">AI·알림·가족 관리</div></div>
     </div>
   </div>
-
-  <div class="tip-box">
-    <strong>💡 채팅 바</strong>&nbsp; 하단의 "가족 채팅방" 바를 탭하면 채팅 창이 위로 펼쳐져요. 허브폰과 뷰어폰이 연결된 가족끼리 실시간으로 메시지를 주고받을 수 있어요.
-  </div>
-
+  <div class="tip-box"><strong>💡 채팅 바</strong>&nbsp; 하단의 "가족 채팅방" 바를 탭하면 채팅 창이 위로 펼쳐져요. 허브폰과 뷰어폰이 연결된 가족끼리 실시간으로 메시지를 주고받을 수 있어요.</div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 05 / 마법 거울 & 가족 승인 &nbsp;|&nbsp; ← 04 · 뷰어 연결 &nbsp;&nbsp; 06 · AI 감지 알림 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 05 / 마법 거울 &amp; 가족 승인 &nbsp;|&nbsp; ← 04 · 뷰어 연결 &nbsp;&nbsp; 06 · AI 감지 알림 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     06 · AI 감지 알림
+════════════════════════════════════════════════════════════ -->
 <section id="page06" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">06 · AI 감지 알림</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:960px;">
   <h1 class="hero-title">이상이 감지되면 <span>전체 화면 알림</span>이 울려요</h1>
   <p class="hero-sub">뷰어폰 화면 전체를 덮는 알림 화면이에요. 울음, 얼굴 이탈, 온습도 이상 등 다양한 상황에서 알려줘요.</p>
-
-  <!-- 알람 유형 -->
   <div class="section-label">알림 종류</div>
   <div class="alarm-types">
-    <div class="alarm-type-card">
-      <div class="at-icon">😭</div>
-      <div class="at-name">울음 감지</div>
-      <div class="at-desc">아기 울음·비명·기침 소리 감지</div>
-    </div>
-    <div class="alarm-type-card">
-      <div class="at-icon">👶</div>
-      <div class="at-name">수면 안전</div>
-      <div class="at-desc">얼굴 이탈·뒤척임 등 감지</div>
-    </div>
-    <div class="alarm-type-card">
-      <div class="at-icon">🌡️</div>
-      <div class="at-name">온도 이상</div>
-      <div class="at-desc">설정 범위 벗어난 방 온도</div>
-    </div>
-    <div class="alarm-type-card">
-      <div class="at-icon">💧</div>
-      <div class="at-name">습도 이상</div>
-      <div class="at-desc">설정 범위 벗어난 방 습도</div>
-    </div>
+    <div class="alarm-type-card"><div class="at-icon">😭</div><div class="at-name">울음 감지</div><div class="at-desc">아기 울음·비명·기침 소리 감지</div></div>
+    <div class="alarm-type-card"><div class="at-icon">👶</div><div class="at-name">수면 안전</div><div class="at-desc">얼굴 이탈·뒤척임 등 감지</div></div>
+    <div class="alarm-type-card"><div class="at-icon">🌡️</div><div class="at-name">온도 이상</div><div class="at-desc">설정 범위 벗어난 방 온도</div></div>
+    <div class="alarm-type-card"><div class="at-icon">💧</div><div class="at-name">습도 이상</div><div class="at-desc">설정 범위 벗어난 방 습도</div></div>
   </div>
-
-  <!-- 세로/가로 화면 -->
   <div class="phones-row">
-
-    <!-- 세로 모드 -->
     <div class="phone-block">
       <div class="block-label"><div class="step-dot">A</div> 세로 모드 알림 화면</div>
-      <div class="phone">
+      <div class="phone" style="background:#0f1712;min-height:500px;overflow:hidden;">
         <div class="notch"></div>
         <div class="glow" style="top:5%;left:15%;width:60%;height:50%;background:rgba(16,185,129,0.07);"></div>
-        <div class="glow" style="bottom:15%;right:10%;width:50%;height:40%;background:rgba(245,158,11,0.07);"></div>
-
         <div class="alarm-tag">🍃 숲속 둥지 알림</div>
-
-        <div class="bell-wrap">
-          <div class="bell-circle">
-            🔔
-            <div class="bell-sparkle">✦</div>
-          </div>
-        </div>
-
+        <div class="bell-wrap"><div class="bell-circle">🔔<div class="bell-sparkle">✦</div></div></div>
         <div class="alarm-title">아기가 뒤척이고 있어요!</div>
-
         <div class="status-card">
-          <div class="status-top">
-            <div>
-              <div class="status-label">현재 둥지 상태</div>
-              <div class="status-value">수면 안전<span class="status-unit"></span></div>
-            </div>
-            <div class="status-icon">📊</div>
-          </div>
-          <div class="threshold-row">
-            <span class="threshold-label">정령이 지키는 기준</span>
-            <span class="threshold-value">15s</span>
-          </div>
+          <div class="status-top"><div><div class="status-label">현재 둥지 상태</div><div class="status-value">수면 안전</div></div><div class="status-icon">📊</div></div>
+          <div class="threshold-row"><span class="threshold-label">정령이 지키는 기준</span><span class="threshold-value">15s</span></div>
         </div>
-
-        <div class="dismiss-btn">
-          <div class="dismiss-main">확인했어요</div>
-          <div class="dismiss-sub">3분간 알림 요정 쉬기</div>
-        </div>
+        <div class="dismiss-btn"><div class="dismiss-main">확인했어요</div><div class="dismiss-sub">3분간 알림 요정 쉬기</div></div>
       </div>
       <div class="phone-caption">세로 모드 — 화면 전체 덮는 알림</div>
     </div>
-
-    <!-- 가로 모드 -->
     <div class="phone-block">
       <div class="block-label"><div class="step-dot">B</div> 가로 모드 알림 화면</div>
       <div style="width:100%;">
         <div class="phone-land">
           <div class="land-notch"></div>
           <div class="glow" style="top:10%;left:10%;width:50%;height:60%;background:rgba(16,185,129,0.07);"></div>
-          <div class="glow" style="bottom:10%;right:10%;width:40%;height:50%;background:rgba(245,158,11,0.07);"></div>
-
           <div class="land-inner">
-            <!-- 좌: 종 + 제목 -->
             <div class="land-left">
               <div class="land-bell">🔔</div>
               <div class="land-tag">🍃 숲속 둥지 알림</div>
               <div class="land-title">아기가 뒤척이고<br>있어요!</div>
             </div>
-
-            <!-- 중: 상태 카드 -->
             <div class="land-card">
               <div style="font-size:7px;color:#98a896;margin-bottom:2px;">현재 둥지 상태</div>
               <div class="land-val">수면 안전</div>
-              <div class="land-thresh">
-                <span style="color:#7e8f7c;">기준</span>
-                <span style="color:#e9c46a;font-weight:700;">15s</span>
-              </div>
+              <div class="land-thresh"><span style="color:#7e8f7c;">기준</span><span style="color:#e9c46a;font-weight:700;">15s</span></div>
             </div>
-
-            <!-- 우: 버튼 -->
-            <div class="land-btn">
-              <div class="land-btn-main">확인했어요</div>
-              <div class="land-btn-sub">3분간 요정 쉬기</div>
-            </div>
+            <div class="land-btn"><div class="land-btn-main">확인했어요</div><div class="land-btn-sub">3분간 요정 쉬기</div></div>
           </div>
         </div>
         <div class="phone-caption" style="margin-top:10px;">가로 모드 — 한 줄로 콤팩트하게</div>
       </div>
     </div>
-
   </div>
-
-  <!-- 설명 카드 -->
   <div class="desc-grid">
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">1</div> 종 아이콘 + 알림 제목</div>
-      <div class="dc-body">어두운 숲 느낌의 배경에 초록 원형 종 아이콘이 표시돼요. 어떤 상황인지 한 줄로 바로 알 수 있어요. 알림음도 함께 울려요.</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">2</div> 상태 카드</div>
-      <div class="dc-body">현재 감지된 값과 설정된 기준(임계값)을 함께 보여줘요. 예를 들어 온도 알림이면 현재 온도와 설정 범위가 표시돼요.</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">3</div> 확인했어요 버튼</div>
-      <div class="dc-body">눌러서 알림을 종료해요. 버튼 아래에 "3분간 알림 요정 쉬기"라고 표시되는데, 확인 후 3분간 같은 알림이 반복되지 않아요.</div>
-    </div>
-
-    <div class="desc-card">
-      <div class="dc-title"><div class="step-dot">4</div> 세로 vs 가로 레이아웃</div>
-      <div class="dc-body">뷰어폰 방향에 따라 레이아웃이 자동으로 바뀌어요. 세로면 위에서 아래로, 가로면 종·상태카드·버튼이 한 줄로 배치돼요.</div>
-    </div>
-
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">1</div> 종 아이콘 + 알림 제목</div><div class="dc-body">어두운 숲 배경에 초록 원형 종 아이콘이 표시돼요. 어떤 상황인지 한 줄로 바로 알 수 있고, 알림음도 함께 울려요.</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">2</div> 상태 카드</div><div class="dc-body">현재 감지된 값과 설정된 기준(임계값)을 함께 보여줘요. 예를 들어 온도 알림이면 현재 온도와 설정 범위가 표시돼요.</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">3</div> 확인했어요 버튼</div><div class="dc-body">눌러서 알림을 종료해요. 확인 후 3분간 같은 알림이 반복되지 않아요 ("3분간 알림 요정 쉬기" 표시).</div></div>
+    <div class="desc-card"><div class="dc-title"><div class="step-dot">4</div> 세로 vs 가로 레이아웃</div><div class="dc-body">뷰어폰 방향에 따라 레이아웃이 자동으로 바뀌어요. 세로면 위에서 아래로, 가로면 종·상태카드·버튼이 한 줄로 배치돼요.</div></div>
   </div>
-
-  <div class="tip-box">
-    <strong>💡 알림을 받으려면</strong>&nbsp; 뷰어폰의 오울리뷰 알림이 허용되어 있어야 해요. 앱이 백그라운드 상태여도 전체 화면 알림이 울려요. 알림이 안 온다면 스마트폰 설정 → 앱 → Owly View → 알림에서 허용해 주세요.
-  </div>
-
+  <div class="tip-box"><strong>💡 알림을 받으려면</strong>&nbsp; 뷰어폰의 오울리뷰 알림이 허용되어 있어야 해요. 앱이 백그라운드 상태여도 전체 화면 알림이 울려요. 알림이 안 온다면 스마트폰 설정 → 앱 → Owly View → 알림에서 허용해 주세요.</div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 06 / AI 감지 알림 &nbsp;|&nbsp; ← 05 · 마법 거울 &nbsp;&nbsp; 07 · 감지 기록 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 06 / AI 감지 알림 &nbsp;|&nbsp; ← 05 · 마법 거울 &nbsp;&nbsp; 07 · 감지 기록 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     07 · 감지 기록
+════════════════════════════════════════════════════════════ -->
 <section id="page07" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">07 · 감지 기록</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:920px;">
   <h1 class="hero-title"><span>감지 기록</span> 탭에서 지난 24시간을 돌아봐요</h1>
   <p class="hero-sub">마법 일기장이라고도 불러요. 24시간 타임라인 차트와 이벤트 목록으로 밤사이 어떤 일이 있었는지 한눈에 확인할 수 있어요.</p>
-
   <div class="layout">
-
-    <!-- 폰 와이어프레임 -->
     <div>
-      <div class="phone">
+      <div class="phone" style="background:#2e1005;min-height:560px;">
         <div class="notch"></div>
-
-        <!-- 타이틀 -->
         <div class="hv-title">📖 마법 일기장 ★</div>
-
-        <!-- 트렌드 차트 카드 -->
         <div class="chart-card">
-          <div class="chart-card-head">
-            <div class="chart-head-left">🕐 Daily Trend</div>
-            <div class="chart-head-right">오늘의 기록</div>
-          </div>
-
-          <!-- 차트 영역 -->
+          <div class="chart-card-head"><div class="chart-head-left">🕐 Daily Trend</div><div class="chart-head-right">오늘의 기록</div></div>
           <div class="chart-area">
-            <!-- 소음 행 -->
-            <div class="timeline-row" style="top:18px;">
-              <div class="timeline-label" style="top:-8px;">소음</div>
-              <div class="timeline-dot" style="background:#ef4444;left:28%;top:0;"></div>
-              <div class="timeline-dot" style="background:#ef4444;left:61%;top:0;"></div>
-            </div>
-            <!-- 온도 행 -->
-            <div class="timeline-row" style="top:33px;">
-              <div class="timeline-label" style="top:-8px;">온도</div>
-            </div>
-            <!-- 습도 행 -->
-            <div class="timeline-row" style="top:48px;">
-              <div class="timeline-label" style="top:-8px;">습도</div>
-              <div class="timeline-dot" style="background:#3b82f6;left:45%;top:0;"></div>
-            </div>
-            <!-- 얼굴 행 -->
-            <div class="timeline-row" style="top:63px;">
-              <div class="timeline-label" style="top:-8px;">얼굴</div>
-              <div class="timeline-dot" style="background:#22c55e;left:15%;top:0;"></div>
-              <div class="timeline-dot" style="background:#22c55e;left:78%;top:0;"></div>
-            </div>
-            <!-- 시간 축 -->
-            <div class="chart-time">
-              <span>-24h</span><span>-18h</span><span>-12h</span><span>-6h</span><span>현재</span>
-            </div>
+            <div class="timeline-row" style="top:18px;"><div class="timeline-label" style="top:-8px;">소음</div><div class="timeline-dot" style="background:#ef4444;left:28%;top:0;"></div><div class="timeline-dot" style="background:#ef4444;left:61%;top:0;"></div></div>
+            <div class="timeline-row" style="top:33px;"><div class="timeline-label" style="top:-8px;">온도</div></div>
+            <div class="timeline-row" style="top:48px;"><div class="timeline-label" style="top:-8px;">습도</div><div class="timeline-dot" style="background:#3b82f6;left:45%;top:0;"></div></div>
+            <div class="timeline-row" style="top:63px;"><div class="timeline-label" style="top:-8px;">얼굴</div><div class="timeline-dot" style="background:#22c55e;left:15%;top:0;"></div><div class="timeline-dot" style="background:#22c55e;left:78%;top:0;"></div></div>
+            <div class="chart-time"><span>-24h</span><span>-18h</span><span>-12h</span><span>-6h</span><span>현재</span></div>
           </div>
-
-          <!-- 범례 -->
           <div class="chart-legend">
             <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div>소음</div>
             <div class="legend-item"><div class="legend-dot" style="background:#f97316;"></div>온도</div>
@@ -2179,710 +1177,248 @@ body{font-family:'Gowun Dodum',sans-serif;background:var(--cream);color:var(--te
             <div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div>얼굴</div>
           </div>
         </div>
-
-        <!-- 이벤트 로그 -->
         <div class="log-label">EVENT LOG</div>
-
-        <div class="log-item">
-          <div class="log-left">
-            <div class="log-icon-wrap log-icon-emergency">👶</div>
-            <div>
-              <div class="log-type">얼굴 놓침</div>
-              <div class="log-time">오전 3:24</div>
-            </div>
-          </div>
-          <div class="log-right">
-            <div class="log-msg">아기 얼굴이 감지되지 않습니다</div>
-          </div>
-        </div>
-
-        <div class="log-item">
-          <div class="log-left">
-            <div class="log-icon-wrap log-icon-sound">🔊</div>
-            <div>
-              <div class="log-type">울음 감지</div>
-              <div class="log-time">오전 1:47</div>
-            </div>
-          </div>
-          <div class="log-right">
-            <div class="log-msg">아기 울음소리가 감지되었습니다</div>
-          </div>
-        </div>
-
-        <div class="log-item">
-          <div class="log-left">
-            <div class="log-icon-wrap log-icon-system">🔔</div>
-            <div>
-              <div class="log-type">습도 낮음</div>
-              <div class="log-time">오후 11:12</div>
-            </div>
-          </div>
-          <div class="log-right">
-            <div class="log-msg">방이 너무 건조합니다</div>
-            <div style="font-size:7px;color:#fbbf24;font-weight:700;">28%</div>
-          </div>
-        </div>
-
+        <div class="log-item"><div class="log-left"><div class="log-icon-wrap log-icon-emergency">👶</div><div><div class="log-type">얼굴 놓침</div><div class="log-time">오전 3:24</div></div></div><div class="log-right"><div class="log-msg">아기 얼굴이 감지되지 않습니다</div></div></div>
+        <div class="log-item"><div class="log-left"><div class="log-icon-wrap log-icon-sound">🔊</div><div><div class="log-type">울음 감지</div><div class="log-time">오전 1:47</div></div></div><div class="log-right"><div class="log-msg">아기 울음소리가 감지되었습니다</div></div></div>
+        <div class="log-item"><div class="log-left"><div class="log-icon-wrap log-icon-system">🔔</div><div><div class="log-type">습도 낮음</div><div class="log-time">오후 11:12</div></div></div><div class="log-right"><div class="log-msg">방이 너무 건조합니다</div><div style="font-size:7px;color:#fbbf24;font-weight:700;">28%</div></div></div>
       </div>
       <div class="phone-caption">감지 기록 탭 화면</div>
     </div>
-
-    <!-- 오른쪽 설명 -->
     <div class="ann-list">
-
-      <div class="ann-item">
-        <div class="ann-badge">A</div>
-        <div>
-          <div class="ann-title">24시간 타임라인 차트</div>
-          <div class="ann-desc">지난 24시간 동안 이벤트가 발생한 시각을 4개 행(소음·온도·습도·얼굴)으로 나눠 점으로 표시해요. 어느 시간대에 어떤 이상이 있었는지 한눈에 파악할 수 있어요.</div>
-          <div class="dc-tip"><div class="tip-dot"></div>점이 많을수록 해당 시간대에 이벤트가 자주 발생한 거예요</div>
+      <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">24시간 타임라인 차트</div><div class="ann-desc">지난 24시간 동안 이벤트가 발생한 시각을 4개 행(소음·온도·습도·얼굴)으로 나눠 점으로 표시해요. 어느 시간대에 어떤 이상이 있었는지 한눈에 파악할 수 있어요.</div><div class="dc-tip"><div class="tip-dot"></div>점이 많을수록 해당 시간대에 이벤트가 자주 발생한 거예요</div></div></div>
+      <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">이벤트 로그 목록</div><div class="ann-desc">감지된 이벤트가 최신순으로 목록에 쌓여요. 각 항목에는 유형, 시각, 메시지가 표시돼요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">이벤트 유형별 색상</div><div class="ann-desc">아이콘과 색상으로 이벤트 종류를 구분해요.</div>
+        <div class="event-types">
+          <div class="et-item"><div class="et-icon et-emergency">👶</div><div><div class="et-name">수면 안전</div><div class="et-desc">얼굴 이탈·뒤척임</div></div></div>
+          <div class="et-item"><div class="et-icon et-sound">🔊</div><div><div class="et-name">소리 감지</div><div class="et-desc">울음·비명·기침</div></div></div>
+          <div class="et-item"><div class="et-icon et-system">🔔</div><div><div class="et-name">시스템 알림</div><div class="et-desc">온도·습도 이상</div></div></div>
+          <div class="et-item"><div class="et-icon et-normal">✦</div><div><div class="et-name">기타</div><div class="et-desc">녹화 완료 등</div></div></div>
         </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">B</div>
-        <div>
-          <div class="ann-title">이벤트 로그 목록</div>
-          <div class="ann-desc">감지된 이벤트가 최신순으로 목록에 쌓여요. 각 항목에는 유형, 시각, 메시지가 표시돼요.</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">C</div>
-        <div>
-          <div class="ann-title">이벤트 유형별 색상</div>
-          <div class="ann-desc">아이콘과 색상으로 이벤트 종류를 구분해요.</div>
-          <div class="event-types">
-            <div class="et-item">
-              <div class="et-icon et-emergency">👶</div>
-              <div><div class="et-name">수면 안전</div><div class="et-desc">얼굴 이탈·뒤척임</div></div>
-            </div>
-            <div class="et-item">
-              <div class="et-icon et-sound">🔊</div>
-              <div><div class="et-name">소리 감지</div><div class="et-desc">울음·비명·기침</div></div>
-            </div>
-            <div class="et-item">
-              <div class="et-icon et-system">🔔</div>
-              <div><div class="et-name">시스템 알림</div><div class="et-desc">온도·습도 이상</div></div>
-            </div>
-            <div class="et-item">
-              <div class="et-icon et-normal">✦</div>
-              <div><div class="et-name">기타</div><div class="et-desc">녹화 완료 등</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 기록은 최대 72시간</strong>&nbsp; 감지 기록은 최근 72시간치만 보여줘요. 오래된 기록은 자동으로 사라지니, 중요한 내용은 스크린샷으로 따로 저장해 두세요.<br><br>
-        <strong>📹 15초 영상은 어디서 봐요?</strong>&nbsp; 이벤트 감지 시 자동 녹화된 15초 영상은 허브폰의 <strong>다운로드 폴더</strong>에 자동 저장돼요. 감지 기록 탭에서는 볼 수 없어요.
-      </div>
-
+      </div></div>
+      <div class="tip-box"><strong>💡 기록은 최대 72시간</strong>&nbsp; 감지 기록은 최근 72시간치만 보여줘요. 오래된 기록은 자동으로 사라지니, 중요한 기록은 스크린샷으로 남겨두세요.<br><br><strong>📹 15초 영상은 어디서 봐요?</strong>&nbsp; 이벤트 감지 시 자동 녹화된 15초 영상은 허브폰의 <strong>다운로드 폴더</strong>에 자동 저장돼요.</div>
     </div>
-
   </div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 07 / 감지 기록 &nbsp;|&nbsp; ← 06 · AI 감지 알림 &nbsp;&nbsp; 08 · 둥지 설정 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 07 / 감지 기록 &nbsp;|&nbsp; ← 06 · AI 감지 알림 &nbsp;&nbsp; 08 · 육아 상자 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     08 · 육아 상자
+════════════════════════════════════════════════════════════ -->
 <section id="page08" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">08 · 육아 상자</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:920px;">
   <h1 class="hero-title"><span>육아 상자</span>에서 아기 기록을 한 곳에 모아요</h1>
   <p class="hero-sub">하단 탭의 🎁 아이콘을 누르면 육아 상자가 열려요. 수유·수면·약·성장 기록과 운세 보기까지 5가지 기능이 있어요.</p>
-
   <div class="layout">
-
-    <!-- 폰 와이어프레임 -->
     <div>
-      <div class="phone">
+      <div class="phone" style="background:#1a0902;min-height:620px;">
         <div class="notch"></div>
-
-        <!-- 헤더 -->
-        <div class="mb-header">
-          <div class="mb-header-icon">🎁</div>
-          <div class="mb-header-title">육아 상자</div>
-          <div class="mb-header-sub">오울리가 도와주는 육아 도구</div>
-          <div class="mb-header-baby">🦉 지서연 · 3개월</div>
-        </div>
-
-        <!-- 통합 도넛 카드 -->
+        <div class="mb-header"><div class="mb-header-icon">🎁</div><div class="mb-header-title">육아 상자</div><div class="mb-header-sub">오울리가 도와주는 육아 도구</div><div class="mb-header-baby">🦉 지서연 · 3개월</div></div>
         <div class="overview-card">
           <div class="ov-label">📊 오늘의 우리 아기</div>
           <div class="donut-area">
             <svg width="80" height="80" viewBox="0 0 80 80">
-              <!-- 배경 원 -->
               <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(180,83,9,0.15)" stroke-width="10"/>
-              <!-- 수면 호 (남색) -->
-              <circle cx="40" cy="40" r="30" fill="none" stroke="#6366f1" stroke-width="10"
-                stroke-dasharray="94 94" stroke-dashoffset="0" stroke-linecap="round"
-                transform="rotate(-90 40 40)"/>
-              <!-- 수유 점 (호박색) -->
+              <circle cx="40" cy="40" r="30" fill="none" stroke="#6366f1" stroke-width="10" stroke-dasharray="94 94" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"/>
               <circle cx="40" cy="10" r="4" fill="#fbbf24"/>
               <circle cx="62" cy="55" r="4" fill="#fbbf24"/>
-              <!-- 약 별 (청록) -->
               <text x="18" y="58" font-size="8" fill="#34d399" text-anchor="middle">★</text>
-              <!-- 중앙 -->
               <text x="40" y="37" text-anchor="middle" font-size="10" fill="#fde68a">🦉</text>
               <text x="40" y="52" text-anchor="middle" font-size="9" font-weight="700" fill="#fde68a">6h</text>
             </svg>
           </div>
           <div class="ov-stats">
-            <div class="ov-stat">
-              <span class="ov-stat-label" style="color:#818cf8;">수면</span>
-              <span class="ov-stat-val">6h</span>
-            </div>
-            <div class="ov-stat">
-              <span class="ov-stat-label" style="color:#f97316;">수유</span>
-              <span class="ov-stat-val">3회</span>
-            </div>
-            <div class="ov-stat">
-              <span class="ov-stat-label" style="color:#34d399;">약</span>
-              <span class="ov-stat-val">1회</span>
-            </div>
+            <div class="ov-stat"><span class="ov-stat-label" style="color:#818cf8;">수면</span><span class="ov-stat-val">6h</span></div>
+            <div class="ov-stat"><span class="ov-stat-label" style="color:#f97316;">수유</span><span class="ov-stat-val">3회</span></div>
+            <div class="ov-stat"><span class="ov-stat-label" style="color:#34d399;">약</span><span class="ov-stat-val">1회</span></div>
           </div>
         </div>
-
-        <!-- 5개 기능 카드 -->
-        <div class="feat-card fc-wizard">
-          <div class="fc-left">
-            <div class="fc-emoji">🧙‍♂️</div>
-            <div>
-              <div class="fc-title">운세 보기</div>
-              <div class="fc-sub">오늘의 운세 + 행운 번호</div>
-            </div>
-          </div>
-          <div class="fc-arrow">›</div>
-        </div>
-
-        <div class="feat-card fc-bottle">
-          <div class="fc-left">
-            <div class="fc-emoji">🍼</div>
-            <div>
-              <div class="fc-title">수유 기록</div>
-              <div class="fc-sub">마지막 수유: 2시간 전</div>
-            </div>
-          </div>
-          <div class="fc-arrow">›</div>
-        </div>
-
-        <div class="feat-card fc-sleep">
-          <div class="fc-left">
-            <div class="fc-emoji">🌙</div>
-            <div>
-              <div class="fc-title">수면 기록</div>
-              <div class="fc-sub" style="color:#818cf8;">😴 자는 중 (1시간 전)</div>
-            </div>
-          </div>
-          <div class="fc-arrow">›</div>
-        </div>
-
-        <div class="feat-card fc-medicine">
-          <div class="fc-left">
-            <div class="fc-emoji">💊</div>
-            <div>
-              <div class="fc-title">약 알림</div>
-              <div class="fc-sub">복용 중인 약 2개</div>
-            </div>
-          </div>
-          <div class="fc-arrow">›</div>
-        </div>
-
-        <div class="feat-card fc-growth">
-          <div class="fc-left">
-            <div class="fc-emoji">🌟</div>
-            <div>
-              <div class="fc-title">성장 기록</div>
-              <div class="fc-sub">3개월 · 3 발자국 / 44</div>
-            </div>
-          </div>
-          <div class="fc-arrow">›</div>
-        </div>
-
-        <!-- 데이터 관리 -->
-        <div class="data-btn">
-          <div class="data-btn-label">⚙️ 데이터 관리</div>
-          <div class="data-btn-arr">∨</div>
-        </div>
-
+        <div class="feat-card fc-wizard"><div class="fc-left"><div class="fc-emoji">🧙‍♂️</div><div><div class="fc-title">운세 보기</div><div class="fc-sub">오늘의 운세 + 행운 번호</div></div></div><div class="fc-arrow">›</div></div>
+        <div class="feat-card fc-bottle"><div class="fc-left"><div class="fc-emoji">🍼</div><div><div class="fc-title">수유 기록</div><div class="fc-sub">마지막 수유: 2시간 전</div></div></div><div class="fc-arrow">›</div></div>
+        <div class="feat-card fc-sleep"><div class="fc-left"><div class="fc-emoji">🌙</div><div><div class="fc-title">수면 기록</div><div class="fc-sub" style="color:#818cf8;">😴 자는 중 (1시간 전)</div></div></div><div class="fc-arrow">›</div></div>
+        <div class="feat-card fc-medicine"><div class="fc-left"><div class="fc-emoji">💊</div><div><div class="fc-title">약 알림</div><div class="fc-sub">복용 중인 약 2개</div></div></div><div class="fc-arrow">›</div></div>
+        <div class="feat-card fc-growth"><div class="fc-left"><div class="fc-emoji">🌟</div><div><div class="fc-title">성장 기록</div><div class="fc-sub">3개월 · 3 발자국 / 50</div></div></div><div class="fc-arrow">›</div></div>
+        <div class="data-btn"><div class="data-btn-label">⚙️ 데이터 관리</div><div class="data-btn-arr">∨</div></div>
       </div>
       <div class="phone-caption">육아 상자 메인 화면</div>
     </div>
-
-    <!-- 설명 -->
     <div class="ann-list">
-
-      <div class="ann-item">
-        <div class="ann-badge">A</div>
-        <div>
-          <div class="ann-title">아기 이름 & 개월수</div>
-          <div class="ann-desc">처음 육아 상자를 열면 아기 이름과 생일을 입력해요. 이후 헤더에 아기 이름과 현재 개월수가 자동으로 표시돼요.</div>
+      <div class="ann-item"><div class="ann-badge">A</div><div><div class="ann-title">아기 이름 &amp; 개월수</div><div class="ann-desc">처음 육아 상자를 열면 아기 이름과 생일을 입력해요. 이후 헤더에 아기 이름과 현재 개월수가 자동으로 표시돼요.</div></div></div>
+      <div class="ann-item"><div class="ann-badge">B</div><div><div class="ann-title">📊 오늘의 우리 아기 — 통합 도넛</div><div class="ann-desc">오늘 기록된 수면·수유·약 복용을 도넛 그래프 하나로 한눈에 보여줘요. 수면은 호(arc), 수유는 점, 약은 별로 표시돼요. 탭하면 상세 보기로 이동해요.</div><div class="dc-tip"><div class="tip-dot"></div>기록이 없으면 부엉이 빈 화면이 표시돼요</div></div></div>
+      <div class="ann-item"><div class="ann-badge">C</div><div><div class="ann-title">5개 기능 카드</div><div class="ann-desc">카드를 탭하면 해당 기능 화면으로 이동해요. 각 카드에 최근 상태가 실시간으로 표시돼요.</div>
+        <div class="card-grid">
+          <div class="card-item"><div class="card-icon">🧙‍♂️</div><div><div class="card-name">운세 보기</div><div class="card-desc">타로카드 스타일 오늘의 운세</div></div></div>
+          <div class="card-item"><div class="card-icon">🍼</div><div><div class="card-name">수유 기록</div><div class="card-desc">마지막 수유 시간 표시</div></div></div>
+          <div class="card-item"><div class="card-icon">🌙</div><div><div class="card-name">수면 기록</div><div class="card-desc">진행 중이면 "자는 중" 표시</div></div></div>
+          <div class="card-item"><div class="card-icon">💊</div><div><div class="card-name">약 알림</div><div class="card-desc">복용 중인 약 개수 표시</div></div></div>
+          <div class="card-item"><div class="card-icon">🌟</div><div><div class="card-name">성장 기록</div><div class="card-desc">개월수 · 발달 발자국 수</div></div></div>
         </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">B</div>
-        <div>
-          <div class="ann-title">📊 오늘의 우리 아기 — 통합 도넛</div>
-          <div class="ann-desc">오늘 기록된 수면·수유·약 복용을 도넛 그래프 하나로 한눈에 보여줘요. 수면은 호(arc), 수유는 점, 약은 별로 표시돼요. 탭하면 상세 보기로 이동해요.</div>
-          <div class="dc-tip"><div class="tip-dot"></div>기록이 없으면 부엉이 빈 화면이 표시돼요</div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">C</div>
-        <div>
-          <div class="ann-title">5개 기능 카드</div>
-          <div class="ann-desc">카드를 탭하면 해당 기능 화면으로 이동해요. 각 카드에 최근 상태가 실시간으로 표시돼요.</div>
-          <div class="card-grid">
-            <div class="card-item"><div class="card-icon">🧙‍♂️</div><div><div class="card-name">운세 보기</div><div class="card-desc">타로카드 스타일 오늘의 운세</div></div></div>
-            <div class="card-item"><div class="card-icon">🍼</div><div><div class="card-name">수유 기록</div><div class="card-desc">마지막 수유 시간 표시</div></div></div>
-            <div class="card-item"><div class="card-icon">🌙</div><div><div class="card-name">수면 기록</div><div class="card-desc">진행 중이면 "자는 중" 표시</div></div></div>
-            <div class="card-item"><div class="card-icon">💊</div><div><div class="card-name">약 알림</div><div class="card-desc">복용 중인 약 개수 표시</div></div></div>
-            <div class="card-item"><div class="card-icon">🌟</div><div><div class="card-name">성장 기록</div><div class="card-desc">개월수 · 발달 발자국 수</div></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ann-item">
-        <div class="ann-badge">D</div>
-        <div>
-          <div class="ann-title">⚙️ 데이터 관리 — 아기 정보를 입력하면 더 잘 써요</div>
-          <div class="ann-desc">데이터 관리 버튼을 탭하면 "아기 정보 수정" 항목에서 이름(애칭도 OK)·생일·성별을 입력할 수 있어요. 필수는 아니지만 입력해 두면 개월수 자동 계산, 발달 발자국, 성장 기록이 훨씬 유용해져요.</div>
-          <div class="dc-tip"><div class="tip-dot"></div>백업(클립보드 저장), 복원, 전체 초기화 기능도 여기에 있어요</div>
-          <div class="dc-tip"><div class="tip-dot"></div>앱 삭제 전 꼭 백업해 두세요 — 삭제하면 기록이 사라져요</div>
-        </div>
-      </div>
-
-      <div class="tip-box">
-        <strong>💡 아기 정보를 입력하면 더 좋아요</strong>&nbsp; 데이터 관리 → 아기 정보 수정에서 이름(애칭도 OK)·생일·성별을 입력할 수 있어요. 필수는 아니지만 입력해 두면 개월수 자동 계산, 발달 발자국, 성장 추이가 훨씬 유용해져요.<br><br>
-        <strong>💾 데이터 보관</strong>&nbsp; 수유·수면·성장 기록은 이 기기에만 저장돼요. 기기를 바꾸거나 앱을 삭제하면 사라지니 데이터 관리 → 백업으로 미리 저장해 두세요.
-      </div>
-
+      </div></div>
+      <div class="ann-item"><div class="ann-badge">D</div><div><div class="ann-title">⚙️ 데이터 관리</div><div class="ann-desc">데이터 관리 버튼을 탭하면 아기 정보 수정·백업·복원·전체 초기화를 할 수 있어요. 아기 이름·생일·성별을 입력해두면 개월수 자동 계산, 발달 발자국, 성장 기록이 훨씬 유용해져요.</div><div class="dc-tip"><div class="tip-dot"></div>앱 삭제 전 꼭 백업해 두세요 — 삭제하면 기록이 사라져요</div></div></div>
+      <div class="tip-box"><strong>💾 데이터 보관</strong>&nbsp; 수유·수면·성장 기록은 이 기기에만 저장돼요. 기기를 바꾸거나 앱을 삭제하면 사라지니 데이터 관리 → 백업으로 미리 저장해 두세요.</div>
     </div>
   </div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 08 / 육아 상자 &nbsp;|&nbsp; ← 07 · 감지 기록 &nbsp;&nbsp; 09 · 기능 상세 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 08 / 육아 상자 &nbsp;|&nbsp; ← 07 · 감지 기록 &nbsp;&nbsp; 09 · 기능 상세 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     09 · 육아 상자 기능 상세
+════════════════════════════════════════════════════════════ -->
 <section id="page09" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">09 · 육아 상자 기능 상세</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:940px;">
   <h1 class="hero-title">육아 상자 <span>4가지 기록 기능</span>을 알아봐요</h1>
   <p class="hero-sub">각 카드를 탭하면 해당 기능 화면으로 이동해요. 뒤로 가기 버튼으로 언제든 메인으로 돌아올 수 있어요.</p>
-
   <div class="feat-grid">
-
-    <!-- 🍼 수유 기록 -->
     <div class="feat-col">
       <div class="feat-label">🍼 수유 기록</div>
-      <div class="phone">
+      <div class="phone" style="min-height:340px;width:100%;">
         <div class="notch"></div>
-        <div class="feat-header">
-          <div class="feat-title-ui">🍼 수유 기록</div>
-          <div class="back-ui">← 뒤로</div>
-        </div>
-        <div class="ui-card" style="text-align:center;">
-          <div class="ui-label">마지막 수유</div>
-          <div class="ui-val">2시간 전</div>
-          <div class="ui-sub">다음 가슴: 우측</div>
-        </div>
-        <div class="ui-btn-row">
-          <div class="ui-btn btn-amber" style="flex:1;">🤱 모유 좌</div>
-          <div class="ui-btn btn-amber" style="flex:1;">🤱 모유 우</div>
-        </div>
+        <div class="feat-header"><div class="feat-title-ui">🍼 수유 기록</div><div class="back-ui">← 뒤로</div></div>
+        <div class="ui-card" style="text-align:center;"><div class="ui-label">마지막 수유</div><div class="ui-val">2시간 전</div><div class="ui-sub">다음 가슴: 우측</div></div>
+        <div class="ui-btn-row"><div class="ui-btn btn-amber" style="flex:1;">🤱 모유 좌</div><div class="ui-btn btn-amber" style="flex:1;">🤱 모유 우</div></div>
         <div class="ui-btn btn-primary">🍼 분유 기록</div>
-        <div class="ui-card">
-          <div class="ui-label">오늘의 수유 (3회)</div>
-          <div class="log-row"><span class="log-t">오전 7:20</span><span class="log-v">모유 좌 · 12분</span></div>
-          <div class="log-row"><span class="log-t">오전 10:45</span><span class="log-v">분유 · 120ml</span></div>
-          <div class="log-row"><span class="log-t">오후 1:30</span><span class="log-v">모유 우 · 10분</span></div>
-        </div>
+        <div class="ui-card"><div class="ui-label">오늘의 수유 (3회)</div><div class="log-row"><span class="log-t">오전 7:20</span><span class="log-v">모유 좌 · 12분</span></div><div class="log-row"><span class="log-t">오전 10:45</span><span class="log-v">분유 · 120ml</span></div><div class="log-row"><span class="log-t">오후 1:30</span><span class="log-v">모유 우 · 10분</span></div></div>
       </div>
       <div class="phone-caption">모유(좌/우) · 분유 기록</div>
     </div>
-
-    <!-- 🌙 수면 기록 -->
     <div class="feat-col">
       <div class="feat-label">🌙 수면 기록</div>
-      <div class="phone">
+      <div class="phone" style="min-height:340px;width:100%;">
         <div class="notch"></div>
-        <div class="feat-header">
-          <div class="feat-title-ui">🌙 수면 기록</div>
-          <div class="back-ui">← 뒤로</div>
-        </div>
-        <div class="sleep-status">
-          <div class="sleep-badge">😴 자고 있어요</div>
-        </div>
+        <div class="feat-header"><div class="feat-title-ui">🌙 수면 기록</div><div class="back-ui">← 뒤로</div></div>
+        <div class="sleep-status"><div class="sleep-badge">😴 자고 있어요</div></div>
         <div class="donut-mini">
           <svg width="80" height="80" viewBox="0 0 80 80">
             <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(180,83,9,0.15)" stroke-width="10"/>
-            <circle cx="40" cy="40" r="28" fill="none" stroke="#6366f1" stroke-width="10"
-              stroke-dasharray="88 88" stroke-dashoffset="0" stroke-linecap="round"
-              transform="rotate(-90 40 40)"/>
-            <circle cx="40" cy="40" r="28" fill="none" stroke="#818cf8" stroke-width="10"
-              stroke-dasharray="26 150" stroke-dashoffset="-88" stroke-linecap="round"
-              transform="rotate(-90 40 40)"/>
+            <circle cx="40" cy="40" r="28" fill="none" stroke="#6366f1" stroke-width="10" stroke-dasharray="88 88" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 40 40)"/>
             <text x="40" y="36" text-anchor="middle" font-size="10" fill="#fde68a">🌙</text>
             <text x="40" y="50" text-anchor="middle" font-size="10" font-weight="700" fill="#fde68a">6h30m</text>
           </svg>
         </div>
         <div class="ui-btn btn-primary">🌅 지금 깼어요</div>
-        <div class="ui-card">
-          <div class="ui-label">오늘의 수면</div>
-          <div class="log-row"><span class="log-t">오전 1:00 – 6:30</span><span class="log-v">밤잠 5h30m</span></div>
-          <div class="log-row"><span class="log-t">오후 1:20 –</span><span class="log-v">낮잠 진행중</span></div>
-        </div>
+        <div class="ui-card"><div class="ui-label">오늘의 수면</div><div class="log-row"><span class="log-t">오전 1:00 – 6:30</span><span class="log-v">밤잠 5h30m</span></div><div class="log-row"><span class="log-t">오후 1:20 –</span><span class="log-v">낮잠 진행중</span></div></div>
       </div>
       <div class="phone-caption">수면 시계 도넛 + 밤잠/낮잠</div>
     </div>
-
-    <!-- 💊 약 알림 -->
     <div class="feat-col">
       <div class="feat-label">💊 약 알림</div>
-      <div class="phone">
+      <div class="phone" style="min-height:340px;width:100%;">
         <div class="notch"></div>
-        <div class="feat-header">
-          <div class="feat-title-ui">💊 약 알림</div>
-          <div class="back-ui">← 뒤로</div>
-        </div>
-        <div class="med-item">
-          <div class="med-name">타이레놀 시럽</div>
-          <div class="med-time">🔔 오전 8:00 · 오후 2:00 · 오후 8:00</div>
-        </div>
-        <div class="med-item">
-          <div class="med-name">유산균</div>
-          <div class="med-time">🔔 오전 9:00</div>
-        </div>
+        <div class="feat-header"><div class="feat-title-ui">💊 약 알림</div><div class="back-ui">← 뒤로</div></div>
+        <div class="med-item"><div class="med-name">타이레놀 시럽</div><div class="med-time">🔔 오전 8:00 · 오후 2:00 · 오후 8:00</div></div>
+        <div class="med-item"><div class="med-name">유산균</div><div class="med-time">🔔 오전 9:00</div></div>
         <div class="ui-btn btn-teal">+ 새 약 추가</div>
-        <div class="ui-card">
-          <div class="ui-label">오늘 복용 기록</div>
-          <div class="log-row"><span class="log-t">오전 8:02</span><span class="log-v">타이레놀 시럽 ✓</span></div>
-          <div class="log-row"><span class="log-t">오전 9:10</span><span class="log-v">유산균 ✓</span></div>
-        </div>
+        <div class="ui-card"><div class="ui-label">오늘 복용 기록</div><div class="log-row"><span class="log-t">오전 8:02</span><span class="log-v">타이레놀 시럽 ✓</span></div><div class="log-row"><span class="log-t">오전 9:10</span><span class="log-v">유산균 ✓</span></div></div>
       </div>
       <div class="phone-caption">약 등록 → 시간 알림 수신</div>
     </div>
-
-    <!-- 🌟 성장 기록 -->
     <div class="feat-col">
       <div class="feat-label">🌟 성장 기록</div>
-      <div class="phone">
+      <div class="phone" style="min-height:340px;width:100%;">
         <div class="notch"></div>
-        <div class="feat-header">
-          <div class="feat-title-ui">🌟 성장 기록</div>
-          <div class="back-ui">← 뒤로</div>
-        </div>
-        <div class="ui-card" style="text-align:center;">
-          <div style="font-size:10px;font-weight:700;color:#fbbf24;">3개월의 마법</div>
-          <div style="font-size:7.5px;color:rgba(251,191,36,0.5);margin-top:2px;">발자국 3 / 44</div>
-          <div class="progress-bar" style="margin-top:6px;">
-            <div class="progress-fill" style="width:7%;"></div>
-          </div>
-        </div>
+        <div class="feat-header"><div class="feat-title-ui">🌟 성장 기록</div><div class="back-ui">← 뒤로</div></div>
+        <div class="ui-card" style="text-align:center;"><div style="font-size:10px;font-weight:700;color:#fbbf24;">3개월의 마법</div><div style="font-size:7.5px;color:rgba(251,191,36,0.5);margin-top:2px;">발자국 3 / 50</div><div class="progress-bar" style="margin-top:6px;"><div class="progress-fill" style="width:6%;"></div></div></div>
         <div class="milestone-section">
           <div class="ms-title">이번 달 발달 발자국</div>
-          <div class="ms-item">
-            <div class="ms-check ms-done">✓</div>
-            <span>소리 나는 방향으로 고개 돌리기</span>
-          </div>
-          <div class="ms-item">
-            <div class="ms-check ms-done">✓</div>
-            <span>엎드려 고개 들기</span>
-          </div>
-          <div class="ms-item">
-            <div class="ms-check ms-todo"></div>
-            <span>소리 내어 웃기</span>
-          </div>
-          <div class="ms-item">
-            <div class="ms-check ms-todo"></div>
-            <span>눈 맞추며 미소 짓기</span>
-          </div>
+          <div class="ms-item"><div class="ms-check ms-done">✓</div><span>소리 나는 방향으로 고개 돌리기</span></div>
+          <div class="ms-item"><div class="ms-check ms-done">✓</div><span>엎드려 고개 들기</span></div>
+          <div class="ms-item"><div class="ms-check ms-todo"></div><span>소리 내어 웃기</span></div>
+          <div class="ms-item"><div class="ms-check ms-todo"></div><span>눈 맞추며 미소 짓기</span></div>
         </div>
       </div>
       <div class="phone-caption">개월별 발달 발자국 체크</div>
     </div>
-
-  </div><!-- /feat-grid -->
-
-  <!-- 설명 카드 -->
-  <div class="desc-grid">
-    <div class="desc-card">
-      <div class="dc-title">🍼 수유 기록</div>
-      <div class="dc-body">모유(좌/우)와 분유를 구분해서 기록해요. 분유는 ml 단위로 양을 입력할 수 있어요. 마지막 수유 후 다음에 수유할 가슴(좌/우)을 알려줘요. 오늘·주간·월간 통계도 볼 수 있어요.</div>
-    </div>
-    <div class="desc-card">
-      <div class="dc-title">🌙 수면 기록</div>
-      <div class="dc-body">"잠들었어요" 버튼을 누르면 수면이 시작되고, "지금 깼어요"를 누르면 종료돼요. 수면 시계 도넛으로 오늘 밤잠과 낮잠 시간을 시각화해요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>진행 중인 수면은 육아 상자 메인 카드에 "자는 중"으로 표시돼요</div>
-    </div>
-    <div class="desc-card">
-      <div class="dc-title">💊 약 알림</div>
-      <div class="dc-body">약 이름과 복용 시간을 등록하면 정해진 시각에 알림이 와요. 여러 약을 등록할 수 있고, 오늘 복용 여부도 기록할 수 있어요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>알림을 받으려면 뷰어폰의 알림 권한이 허용되어 있어야 해요</div>
-    </div>
-    <div class="desc-card">
-      <div class="dc-title">🌟 성장 기록</div>
-      <div class="dc-body">개월수에 맞는 발달 발자국 체크리스트예요. 아기 생일을 입력하면 현재 개월의 발달 항목이 자동으로 표시돼요. 총 44개 발자국이 있어요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>이번 달에 못한 항목이 있어도 괜찮아요 — 다음 달에 이어져요</div>
-    </div>
   </div>
-
+  <div class="desc-grid">
+    <div class="desc-card"><div class="dc-title">🍼 수유 기록</div><div class="dc-body">모유(좌/우)와 분유를 구분해서 기록해요. 분유는 ml 단위로 양을 입력할 수 있어요. 마지막 수유를 기준으로 다음에 줄 가슴(좌/우)을 자동으로 알려줘요. 오늘·주간·월간 통계도 볼 수 있어요.</div></div>
+    <div class="desc-card"><div class="dc-title">🌙 수면 기록</div><div class="dc-body">"잠들었어요" 버튼을 누르면 수면이 시작되고, "지금 깼어요"를 누르면 종료돼요. 수면 시계 도넛으로 오늘 밤잠과 낮잠 시간을 시각화해요.</div><div class="dc-tip"><div class="tip-dot"></div>진행 중인 수면은 육아 상자 메인 카드에 "자는 중"으로 표시돼요</div></div>
+    <div class="desc-card"><div class="dc-title">💊 약 알림</div><div class="dc-body">약 이름과 복용 시간을 등록하면 정해진 시각에 알림이 와요. 여러 약을 등록할 수 있고, 오늘 복용 여부도 기록할 수 있어요.</div><div class="dc-tip"><div class="tip-dot"></div>알림을 받으려면 뷰어폰의 알림 권한이 허용되어 있어야 해요</div></div>
+    <div class="desc-card"><div class="dc-title">🌟 성장 기록</div><div class="dc-body">개월수에 맞는 발달 발자국 체크리스트예요. 아기 생일을 입력하면 현재 개월의 발달 항목이 자동으로 표시돼요. 총 50개 발자국이 있어요.</div><div class="dc-tip"><div class="tip-dot"></div>이번 달에 못한 항목이 있어도 괜찮아요 — 다음 달에 이어져요</div></div>
+  </div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 09 / 육아 상자 기능 상세 &nbsp;|&nbsp; ← 08 · 육아 상자 &nbsp;&nbsp; 10 · 둥지 설정 →
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 09 / 육아 상자 기능 상세 &nbsp;|&nbsp; ← 08 · 육아 상자 &nbsp;&nbsp; 10 · 둥지 설정 →</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
-
+<!-- ══════════════════════════════════════════════════════════
+     10 · 둥지 설정
+════════════════════════════════════════════════════════════ -->
 <section id="page10" class="manual-section">
 <div class="pg-header">
   <div class="logo">🦉 <span>OWLY</span> VIEW</div>
   <div class="badge-pill">10 · 둥지 설정</div>
 </div>
-
-<div class="wrap">
+<div class="wrap" style="max-width:940px;">
   <h1 class="hero-title"><span>둥지 설정</span>에서 AI·알림·가족을 관리해요</h1>
-  <p class="hero-sub">하단 탭의 ⚙️ 아이콘을 눌러요. <strong>방장(코드를 처음 입력한 부모)만</strong> 이 화면에 들어올 수 있어요.</p>
-
+  <p class="hero-sub">하단 탭의 ⚙️ 아이콘을 눌러요. <strong>방장(코드를 처음 입력한 분)만 볼 수 있어요.</strong></p>
   <div class="phones-row">
-
-    <!-- 왼쪽 폰: AI 감지 + 환경 센서 -->
     <div class="phone-block">
-      <div class="block-label">AI 감지 & 환경 센서</div>
-      <div class="phone">
+      <div class="block-label">AI 감지 &amp; 환경 센서</div>
+      <div class="phone" style="background:#2e1005;min-height:520px;">
         <div class="notch"></div>
-
-        <!-- 헤더 -->
-        <div class="set-header">
-          <div class="back-btn">←</div>
-          <div>
-            <div class="set-title">⚙️ 둥지 설정 ✦</div>
-            <div class="set-subtitle">🛡️ PURE SENSE ADMIN</div>
-          </div>
-        </div>
-
-        <!-- 1. AI 스마트 감지 -->
+        <div class="set-header"><div class="back-btn">←</div><div><div class="set-title">⚙️ 둥지 설정 ✦</div><div class="set-subtitle">🛡️ PURE SENSE ADMIN</div></div></div>
         <div class="sec-card">
-          <div class="sec-head">
-            <span class="sec-icon">🧠</span>
-            <span class="sec-title">AI 스마트 감지</span>
-          </div>
-          <!-- 울음 감지 -->
-          <div class="toggle-row">
-            <div>
-              <div class="toggle-label">🎙️ 울음 감지</div>
-            </div>
-            <div class="toggle-knob toggle-on"><div class="toggle-dot"></div></div>
-          </div>
-          <div class="slider-row">
-            <div class="slider-head">
-              <span class="slider-label">감지 음량 기준</span>
-              <span class="slider-val">70 dB</span>
-            </div>
-            <div class="slider-track">
-              <div class="slider-fill slider-fill-orange"></div>
-              <div class="slider-thumb thumb-orange"></div>
-            </div>
-          </div>
-
-          <!-- 얼굴/수면 감지 -->
-          <div class="toggle-row">
-            <div>
-              <div class="toggle-label">👁️ 수면 안전 감지</div>
-            </div>
-            <div class="toggle-knob toggle-off"><div class="toggle-dot"></div></div>
-          </div>
-          <div class="slider-row">
-            <div class="slider-head">
-              <span class="slider-label">얼굴 감지 안 될 시 알림 대기</span>
-              <span class="slider-val" style="color:rgba(180,83,9,0.4);">15초</span>
-            </div>
-            <div class="slider-track">
-              <div class="slider-fill slider-fill-amber" style="opacity:0.3;"></div>
-              <div class="slider-thumb thumb-amber" style="opacity:0.3;"></div>
-            </div>
-          </div>
+          <div class="sec-head"><span class="sec-icon">🧠</span><span class="sec-title">AI 스마트 감지</span></div>
+          <div class="toggle-row"><div><div class="toggle-label">🎙️ 울음 감지</div></div><div class="toggle-knob toggle-on"><div class="toggle-dot"></div></div></div>
+          <div class="slider-row"><div class="slider-head"><span class="slider-label">감지 음량 기준</span><span class="slider-val">70 dB</span></div><div class="slider-track"><div class="slider-fill slider-fill-orange"></div><div class="slider-thumb thumb-orange"></div></div></div>
+          <div class="toggle-row"><div><div class="toggle-label">👁️ 수면 안전 감지</div></div><div class="toggle-knob toggle-off"><div class="toggle-dot"></div></div></div>
+          <div class="slider-row"><div class="slider-head"><span class="slider-label">얼굴 감지 안 될 시 알림 대기</span><span class="slider-val" style="color:rgba(180,83,9,0.4);">15초</span></div><div class="slider-track"><div class="slider-fill slider-fill-amber" style="opacity:0.3;"></div><div class="slider-thumb thumb-amber" style="opacity:0.3;"></div></div></div>
         </div>
-
-        <!-- 2. 환경 센서 (블러) -->
         <div class="sec-card" style="position:relative;min-height:100px;">
-          <div class="sec-head">
-            <span class="sec-icon">🌡️</span>
-            <span class="sec-title">환경 센서 알림 기준</span>
-          </div>
-          <!-- 온도 -->
+          <div class="sec-head"><span class="sec-icon">🌡️</span><span class="sec-title">환경 센서 알림 기준</span></div>
           <div style="font-size:7px;color:rgba(180,83,9,0.7);margin-bottom:3px;">🌡️ 방 온도</div>
-          <div class="env-row">
-            <div class="env-input">18</div>
-            <span class="env-tilde">~</span>
-            <div class="env-input env-input-red">28</div>
-            <span class="env-unit">°C</span>
-          </div>
-          <!-- 습도 -->
+          <div class="env-row"><div class="env-input">18</div><span class="env-tilde">~</span><div class="env-input env-input-red">28</div><span class="env-unit">°C</span></div>
           <div style="font-size:7px;color:rgba(180,83,9,0.7);margin-bottom:3px;">💧 방 습도</div>
-          <div class="env-row">
-            <div class="env-input" style="color:#93c5fd;">30</div>
-            <span class="env-tilde">~</span>
-            <div class="env-input env-input-red">70</div>
-            <span class="env-unit">%</span>
-          </div>
-          <!-- 블러 오버레이 -->
-          <div class="env-blur-overlay">
-            🌡️ 센서 연결 필요<br>
-            <span style="font-size:7px;opacity:0.6;">블루투스 센서 연결 후 사용 가능</span>
-          </div>
+          <div class="env-row"><div class="env-input" style="color:#93c5fd;">30</div><span class="env-tilde">~</span><div class="env-input env-input-red">70</div><span class="env-unit">%</span></div>
+          <div class="env-blur-overlay">🌡️ 센서 연결 필요<br><span style="font-size:7px;opacity:0.6;">블루투스 센서 연결 후 사용 가능</span></div>
         </div>
-
       </div>
       <div class="phone-caption">AI 감지 · 환경 센서 (스크롤)</div>
     </div>
-
-    <!-- 오른쪽 폰: 알림 + 보안 -->
     <div class="phone-block">
-      <div class="block-label">기기 알림 & 보안·연결</div>
-      <div class="phone">
+      <div class="block-label">기기 알림 &amp; 보안·연결</div>
+      <div class="phone" style="background:#2e1005;min-height:520px;">
         <div class="notch"></div>
-
-        <!-- 헤더 -->
-        <div class="set-header">
-          <div class="back-btn">←</div>
-          <div>
-            <div class="set-title">⚙️ 둥지 설정 ✦</div>
-            <div class="set-subtitle">🛡️ PURE SENSE ADMIN</div>
-          </div>
-        </div>
-
-        <!-- 3. 기기 알림 및 소리 -->
+        <div class="set-header"><div class="back-btn">←</div><div><div class="set-title">⚙️ 둥지 설정 ✦</div><div class="set-subtitle">🛡️ PURE SENSE ADMIN</div></div></div>
         <div class="sec-card">
-          <div class="sec-head">
-            <span class="sec-icon">🔔</span>
-            <span class="sec-title">기기 알림 및 소리</span>
-          </div>
-          <div class="toggle-row">
-            <div>
-              <div class="toggle-label">📱 백그라운드 알림</div>
-              <span class="toggle-sub">화면이 꺼져도 알림 수신</span>
-            </div>
-            <div class="toggle-knob toggle-on"><div class="toggle-dot"></div></div>
-          </div>
-          <div class="slider-row" style="margin-top:4px;">
-            <div class="slider-head">
-              <span class="slider-label">🔊 알림 볼륨</span>
-              <span class="slider-val">70%</span>
-            </div>
-            <div class="slider-track">
-              <div class="slider-fill slider-fill-vol"></div>
-              <div class="slider-thumb thumb-vol"></div>
-            </div>
-          </div>
+          <div class="sec-head"><span class="sec-icon">🔔</span><span class="sec-title">기기 알림 및 소리</span></div>
+          <div class="toggle-row"><div><div class="toggle-label">📱 백그라운드 알림</div><span class="toggle-sub">화면이 꺼져도 알림 수신</span></div><div class="toggle-knob toggle-on"><div class="toggle-dot"></div></div></div>
+          <div class="slider-row" style="margin-top:4px;"><div class="slider-head"><span class="slider-label">🔊 알림 볼륨</span><span class="slider-val">70%</span></div><div class="slider-track"><div class="slider-fill slider-fill-vol"></div><div class="slider-thumb thumb-vol"></div></div></div>
         </div>
-
-        <!-- 4. 보안 및 연결 관리 -->
         <div class="sec-card">
-          <div class="sec-head">
-            <span class="sec-icon">🔒</span>
-            <span class="sec-title">보안 및 연결 관리</span>
-          </div>
-
-          <!-- 초대 -->
-          <div class="invite-card">
-            <div class="invite-code">접속 코드: A3F7 - K9M2</div>
-            <div class="invite-btns">
-              <div class="inv-btn inv-copy">🔗 링크 복사</div>
-              <div class="inv-btn inv-share">📤 초대 보내기</div>
-            </div>
-          </div>
-
-          <!-- 가족 명단 -->
+          <div class="sec-head"><span class="sec-icon">🔒</span><span class="sec-title">보안 및 연결 관리</span></div>
+          <div class="invite-card"><div class="invite-code">접속 코드: A3F7 - K9M2</div><div class="invite-btns"><div class="inv-btn inv-copy">🔗 링크 복사</div><div class="inv-btn inv-share">📤 초대 보내기</div></div></div>
           <div style="font-size:7px;color:rgba(180,83,9,0.7);margin-bottom:4px;letter-spacing:1px;">가족 명단 (2/2)</div>
-          <div class="fam-item">
-            <div>
-              <div class="fam-name">엄마 <span class="fam-badge badge-host">방장</span></div>
-            </div>
-            <div class="fam-right">
-              <div class="fam-toggle"><div class="fam-toggle-dot"></div></div>
-            </div>
-          </div>
-          <div class="fam-item">
-            <div>
-              <div class="fam-name">할머니 <span class="fam-badge badge-member">멤버</span></div>
-            </div>
-            <div class="fam-right">
-              <div class="fam-toggle" style="background:rgba(69,26,3,0.8);border:1px dashed rgba(180,83,9,0.4);justify-content:flex-start;">
-                <div class="fam-toggle-dot"></div>
-              </div>
-              <div style="width:18px;height:18px;border-radius:50%;background:rgba(127,29,29,0.4);border:1px dashed rgba(239,68,68,0.4);display:flex;align-items:center;justify-content:center;font-size:8px;color:#f87171;">✕</div>
-            </div>
-          </div>
+          <div class="fam-item"><div><div class="fam-name">엄마 <span class="fam-badge badge-host">방장</span></div></div><div class="fam-right"><div class="fam-toggle"><div class="fam-toggle-dot"></div></div></div></div>
+          <div class="fam-item"><div><div class="fam-name">할머니 <span class="fam-badge badge-member">멤버</span></div></div><div class="fam-right"><div class="fam-toggle" style="background:rgba(69,26,3,0.8);border:1px dashed rgba(180,83,9,0.4);justify-content:flex-start;"><div class="fam-toggle-dot"></div></div><div style="width:18px;height:18px;border-radius:50%;background:rgba(127,29,29,0.4);border:1px dashed rgba(239,68,68,0.4);display:flex;align-items:center;justify-content:center;font-size:8px;color:#f87171;">✕</div></div></div>
         </div>
-
       </div>
       <div class="phone-caption">알림 설정 · 가족 관리 (스크롤)</div>
     </div>
-
-  </div><!-- /phones-row -->
-
-  <!-- 설명 카드 -->
-  <div class="desc-grid">
-    <div class="desc-card">
-      <div class="dc-title">🧠 AI 스마트 감지</div>
-      <div class="dc-body">울음 감지와 수면 안전(얼굴) 감지를 각각 켜고 끌 수 있어요. 울음 감지는 dB 기준을, 수면 감지는 얼굴이 감지 안 될 때 알림을 보내기까지의 대기 시간(초)을 슬라이더로 조절해요. 위 화면처럼 <strong>수면 안전 감지 스위치를 끄면 얼굴 이탈 알림이 오지 않아요.</strong></div>
-      <div class="dc-tip"><div class="tip-dot"></div>알림이 너무 잦으면 dB 기준을 높이거나 대기 시간을 늘려보세요</div>
-    </div>
-    <div class="desc-card">
-      <div class="dc-title">🌡️ 환경 센서 알림 기준</div>
-      <div class="dc-body">블루투스 온습도 센서가 연결되어 있을 때만 사용할 수 있어요. 방 온도와 습도의 적정 범위를 설정하면, 범위를 벗어날 때 알림이 와요. 센서가 없으면 흐릿하게 표시돼요.</div>
-    </div>
-    <div class="desc-card">
-      <div class="dc-title">🔔 기기 알림 및 소리</div>
-      <div class="dc-body">백그라운드 알림을 켜두면 뷰어폰 화면이 꺼져 있어도 울음·얼굴 알림을 받을 수 있어요. 알림 볼륨 슬라이더로 알림음 크기를 조절할 수 있어요.</div>
-    </div>
-    <div class="desc-card">
-      <div class="dc-title">🔒 보안 및 연결 관리</div>
-      <div class="dc-body">접속 코드를 복사하거나 가족에게 초대 링크를 보낼 수 있어요. 가족 명단에서 각 멤버의 알림 수신 여부를 켜고 끌 수 있고, 멤버 이름(호칭)도 직접 수정할 수 있어요.</div>
-      <div class="dc-tip"><div class="tip-dot"></div>입장 대기 중인 가족이 있으면 이 섹션에서도 승인·거절할 수 있어요</div>
-      <div class="dc-tip"><div class="tip-dot"></div>설정 탭 아이콘에 빨간 점이 생기면 대기 중인 가족이 있다는 신호예요</div>
-    </div>
   </div>
-
+  <div class="desc-grid">
+    <div class="desc-card"><div class="dc-title">🧠 AI 스마트 감지</div><div class="dc-body">울음 감지와 수면 안전(얼굴) 감지를 각각 켜고 끌 수 있어요. 울음 감지는 dB 기준을, 수면 감지는 얼굴이 보이지 않을 때 알림까지의 대기 시간(초)을 슬라이더로 조절해요. 위 화면처럼 <strong>수면 안전 감지 스위치를 끄면 얼굴 이탈 알림이 오지 않아요.</strong></div><div class="dc-tip"><div class="tip-dot"></div>알림이 너무 자주 오면 dB 기준을 높이거나 대기 시간을 늘려보세요</div></div>
+    <div class="desc-card"><div class="dc-title">🌡️ 환경 센서 알림 기준</div><div class="dc-body">블루투스 온습도 센서가 연결되어 있을 때만 사용할 수 있어요. 방 온도와 습도의 적정 범위를 설정하면, 범위를 벗어날 때 알림이 와요. 센서가 없으면 흐릿하게 표시돼요.</div></div>
+    <div class="desc-card"><div class="dc-title">🔔 기기 알림 및 소리</div><div class="dc-body">백그라운드 알림을 켜두면 뷰어폰 화면이 꺼져 있어도 울음·얼굴 알림을 받을 수 있어요. 알림 볼륨 슬라이더로 알림음 크기를 조절할 수 있어요.</div></div>
+    <div class="desc-card"><div class="dc-title">🔒 보안 및 연결 관리</div><div class="dc-body">접속 코드를 복사하거나 가족에게 초대 링크를 보낼 수 있어요. 가족 명단에서 각 멤버의 알림 수신 여부를 켜고 끌 수 있고, 멤버 이름(호칭)도 직접 수정할 수 있어요.</div><div class="dc-tip"><div class="tip-dot"></div>입장 대기 중인 가족이 있으면 이 섹션에서도 승인·거절할 수 있어요</div><div class="dc-tip"><div class="tip-dot"></div>설정 탭 아이콘에 빨간 점이 생기면 대기 중인 가족이 있다는 신호예요</div></div>
+  </div>
 </div>
-
-<div class="pg-footer">
-  Owly View 사용 설명서 · 10 / 둥지 설정 &nbsp;|&nbsp; ← 09 · 육아 상자 기능 상세 &nbsp;&nbsp; 🦉 끝
-</div>
-<div class="section-nav">
-  <a href="#toc" class="nav-btn">↑ 목차로</a>
-</div>
+<div class="pg-footer">Owly View 사용 설명서 · 10 / 둥지 설정 &nbsp;|&nbsp; ← 09 · 육아 상자 기능 상세 &nbsp;&nbsp; 🦉 끝</div>
+<div class="section-nav"><a href="#toc" class="nav-btn">↑ 목차로</a></div>
 </section>
 <div class="page-divider"></div>
 
